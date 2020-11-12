@@ -101,6 +101,7 @@
         }
         if($count > 0){
             $_SESSION['unme'] = $id ;
+            $_SESSION['unme_real'] = $_POST['unme'];
             $_SESSION['hxid'] = "hxieiwccsd";
             header("Location: users/dash.php");
         }

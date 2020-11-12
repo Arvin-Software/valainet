@@ -72,7 +72,11 @@ if(isset($_POST['submit'])){
         $ret = khatral::khquerypar('SELECT * FROM user');
         $count = 1;
         foreach($ret as $p){
-            echo '<tr><td>' . $count . '</td><td>' . $p['user_nm'] . '</td><td>'. $p['user_typ'] . '</td><td><a href="colladd.php?id=' . $p['user_id'] . '">Add Collections to user</a></td></tr>';
+			if($p['user_typ'] == "0"){
+				echo '<tr><td>' . $count . '</td><td>' . $p['user_nm'] . '</td><td>'. $p['user_typ'] . '</td><td><a href="colladd.php?id=' . $p['user_id'] . '">Add Collections to user</a></td></tr>';
+			}else{
+				echo '<tr><td>' . $count . '</td><td>' . $p['user_nm'] . '</td><td>'. $p['user_typ'] . '</td></tr>';
+			}
             $count += 1;
         }
     ?>

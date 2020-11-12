@@ -211,4 +211,16 @@ if($conn->query($query) == TRUE){
 }else{
     echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table per_stat ' . $conn->error;
 }
+$query = 'CREATE TABLE IF NOT EXISTS assign_tick(
+            assign_id           INTEGER         NOT NULL        AUTO_INCREMENT,
+            assign_tick_id      VARCHAR(255)    NOT NULL,
+            assign_user_id      VARCHAR(255)    NOT NULL,
+            assign_user_nm      VARCHAR(255)    NOT NULL,
+            timestam            VARCHAR(255)    NOT NULL,
+            PRIMARY KEY(assign_id))';
+if($conn->query($query) == TRUE){
+    echo '<br /><img src="../images/tick.png" style="width: 22px;">&nbsp;&nbsp;Table assign_tick created successfully';
+}else{
+    echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table assign_tick ' . $conn->error;
+}
 echo '</div>';

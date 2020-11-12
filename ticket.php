@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-include '../valai.php';
+include 'valai.php';
 ?>
 <body class="" style="background-color: #FFFFFF;">
 <div class="container-fluid">
@@ -92,9 +92,7 @@ if(isset($_POST['submit'])){
     <th>Description</th>
     <th>actions</th>
     <?php
-        $ret = khatral::khquery('SELECT * FROM ticket WHERE ticket_unm=:unm', array(
-            ':unm'=>$_SESSION['unme']
-        ));
+        $ret = khatral::khquerypar('SELECT * FROM ticket');
         $count = 1;
         foreach($ret as $p){
             echo '<tr><td>' . $count . '</td><td>' . $p['ticket_ri_id'] . '</td><td>'. $p['ticket_ip'] . '</td><td>' . $p['ticket_mess'] . '</td><td><a href="viewtick.php?id=' . $p['ticket_id'] . '">View Ticket</a></td></tr>';
