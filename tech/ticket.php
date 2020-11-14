@@ -13,78 +13,7 @@ include '../valai.php';
 </div>
 
 <div class="col-xl-11 fade-in" id="" style="height: 100vh; padding: 1% 2% 2% 2%; background-color: #fff;">
-<?php
-if(isset($_POST['submit'])){
-    date_default_timezone_set('Asia/Kolkata');
-    $date = date('dmYhis', time());
-    $date1 = date('d/m/Y h:i:s', time());
-    khatral::khquery('INSERT INTO ticket VALUES(NULL, :tick_id, :mess, :ip, :group, :wherenm, :unm)', array(
-        ':tick_id'=>'valai' . $date,
-        ':mess'=>$_POST['des'],
-        ':ip'=>$_POST['ip'],
-        ':group'=>$_POST['gro'],
-        ':wherenm'=>'admin',
-        ':unm'=>$_SESSION['unme']
-    ));
-    echo 'ticket raised';
-}
-?>
-<!-- <a href="dash.php" class="btn btn-dark">Back</a> -->
-<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-  Create New
-</button>
-
-<!-- The Modal -->
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Ticket Creation</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        <form action="ticket.php" method="post">
-            <div class="form-group">
-                <label for="ip">Select IP</label>
-                <select name="ip" id="ip" class="custom-select">
-                    <?php
-                        $ret = khatral::khquery('SELECT * FROM modl WHERE modl_user=:user', array(
-                            ':user'=>$_SESSION['unme']
-                        ));
-                        $me = '';
-                        foreach($ret as $p){
-                            $me = $p['modl_nm'];
-                        }
-                        $res = khatral::khquery('SELECT * FROM comp_info WHERE comp_group=:group', array(
-                            ':group'=>$me
-                        ));
-                        foreach($res as $pi){
-                            echo '<option>' . $pi['comp_ip'] . '</option>';
-                        }
-                    ?>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="message">Ticket Description</label>
-                <input type="text" name="gro" id="gro" style="display: none;" value="<?php echo $me; ?>">
-                <textarea name="des" id="des" cols="30" rows="10" class="form-control"></textarea>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create and Forward" id="submit" name="submit" class="btn btn-dark">
-            </div>
-        </form>
-      </div>
-
-      <!-- Modal footer -->
-      
-
-    </div>
-  </div>
-</div>
+<div class="table-responsive">
 <table class="table table-bordered" style="margin-top: 2%;">
     <th>Sl.NO</th>
     <th>Ref. No</th>
@@ -92,13 +21,15 @@ if(isset($_POST['submit'])){
     <th>Description</th>
     <th>actions</th>
     <?php
-        $ret = khatral::khquery('SELECT * FROM ticket WHERE ticket_unm=:unm', array(
-            ':unm'=>$_SESSION['unme']
+
+        $ret = khatral::khquery('SELECT assign_tick.assign_tick_id, ticket.ticket_ri_id, ticket.ticket_ip, ticket.ticket_id, ticket.ticket_mess FROM assign_tick LEFT JOIN ticket ON assign_tick.assign_tick_id = ticket.ticket_id WHERE assign_tick.assign_user_nm=:unm', array(
+            ':unm'=>$_SESSION['unme_real']
         ));
         $count = 1;
         foreach($ret as $p){
-            echo '<tr><td>' . $count . '</td><td>' . $p['ticket_ri_id'] . '</td><td>'. $p['ticket_ip'] . '</td><td>' . $p['ticket_mess'] . '</td><td><a href="viewtick.php?id=' . $p['ticket_id'] . '">View Ticket</a></td></tr>';
+            echo '<tr><td>' . $count . '</td><td><a href="viewtick.php?id=' . $p['ticket_id'] . '">' . $p['ticket_ri_id'] . '</a></td><td>'. $p['ticket_ip'] . '</td><td>' . $p['ticket_mess'] . '</td><td><a href="viewtick.php?id=' . $p['ticket_id'] . '">View Ticket</a></td></tr>';
             $count += 1;
         }
     ?>
 </table>
+</div>

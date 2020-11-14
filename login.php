@@ -95,15 +95,21 @@
         ));
         $count = 0;
         $id;
+        $typ;
         foreach($ret as $p){
             $count += 1;
             $id=$p['user_id'];
+            $typ = $p['user_typ'];
         }
         if($count > 0){
             $_SESSION['unme'] = $id ;
             $_SESSION['unme_real'] = $_POST['unme'];
             $_SESSION['hxid'] = "hxieiwccsd";
-            header("Location: users/dash.php");
+            if($typ == "0"){
+                header("Location: users/dash.php");
+            }else{
+                header("Location: tech/ticket.php");
+            }
         }
     }
 ?>

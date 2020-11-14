@@ -88,9 +88,9 @@ if($auth == "success"){
                     foreach($ret as $p){
                         $count += 1;
                         if($p['act_stat'] == "success"){
-                            echo '<tr><td class="" style="width: 8px;"><img src="/valai/images/tick.png" style="width: 22px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="alert.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="fas fa-bolt"></i></a></td></tr>';
+                            echo '<tr><td class="" style="width: 8px;"><img src="/valainet/images/tick.png" style="width: 22px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="alert.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="fas fa-bolt"></i></a></td></tr>';
                         }else{
-                            echo '<tr><td class="" style="width: 8px;"><img src="/valai/images/warning.svg" style="width: 20px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="alert.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="fas fa-bolt"></i></a></td></tr>';
+                            echo '<tr><td class="" style="width: 8px;"><img src="/valainet/images/warning.svg" style="width: 20px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="alert.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="fas fa-bolt"></i></a></td></tr>';
                         }
                     }
                     echo '</table>';
@@ -111,9 +111,9 @@ if($auth == "success"){
                     foreach($ret as $p){
                         $count += 1;
                         if($p['act_stat'] == "success"){
-                            echo '<tr><td class="" style="width: 8px;"><img src="/valai/images/tick.png" style="width: 22px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a></td></tr>';
+                            echo '<tr><td class="" style="width: 8px;"><img src="/valainet/images/tick.png" style="width: 22px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a></td></tr>';
                         }else{
-                            echo '<tr><td class="" style="width: 8px;"><img src="/valai/images/warning.svg" style="width: 20px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a></td></tr>';
+                            echo '<tr><td class="" style="width: 8px;"><img src="/valainet/images/warning.svg" style="width: 20px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a></td></tr>';
                         }
                     }
                     echo '</table>';
@@ -139,6 +139,7 @@ if($auth == "success"){
                 echo 'success1';
             }
         }else if($_POST['act'] == "sayhello"){
+            
             echo 'hello';
         }else if($_POST['act'] == "addgroup"){
             valai::AddGroup($_POST['nm'], $_POST['descr']);
@@ -225,9 +226,9 @@ if($auth == "success"){
                 foreach($res as $p){
                     $count += 1;
                     if($p['moni_stat'] == "success"){
-                        echo '<tr><td>' . $p['moni_nm'] . '</td><td style="width: 5px;"><img src="/valai/images/tick.png" style="width: 22px;"></td></tr>';
+                        echo '<tr><td>' . $p['moni_nm'] . '</td><td style="width: 5px;"><img src="/valainet/images/tick.png" style="width: 22px;"></td></tr>';
                     }else{
-                        echo '<tr><td>' . $p['moni_nm'] . '</td><td style="width: 5px;"><img src="/valai/images/warning.svg" style="width: 20px;"></td></tr>';
+                        echo '<tr><td>' . $p['moni_nm'] . '</td><td style="width: 5px;"><img src="/valainet/images/warning.svg" style="width: 20px;"></td></tr>';
                     }
                 }
             }else{

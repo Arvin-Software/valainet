@@ -1,7 +1,11 @@
 <?php
 include 'header.php';
-echo '<div class="container">';
-echo '<h3><img src="../images/valaiweb.svg" style="width: 48px;">&nbsp;Valai Database Operations</h3>';
+echo '<body class="bg-dark">';
+echo '<div class="container-fluid" style="margin-top: 10%;">
+     <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 bg-white shadow border p-4" style="border-radius: 20px 20px 20px 20px;">';
+echo '<h3><img src="../images/valaiweb.svg" style="width: 48px;">&nbsp;Valai - Database creation and testing</h3>';
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -11,7 +15,9 @@ $conn = new mysqli($servername, $username, $password);
 
 // Check connection
 if ($conn->connect_error) {
+    echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error connecting to Database check configuration<br />';
     die("Connection failed: " . $conn->connect_error);
+    
 }
 
 echo '<img src="../images/tick.png" style="width: 22px;">&nbsp;&nbsp;Connected successfully';
@@ -223,4 +229,23 @@ if($conn->query($query) == TRUE){
 }else{
     echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table assign_tick ' . $conn->error;
 }
+$query = 'CREATE TABLE IF NOT EXISTS asset(
+            asset_id            INTEGER         NOT NULL        AUTO_INCREMENT,
+            asset_code          VARCHAR(255)    NOT NULL,
+            asset_loc           VARCHAR(255)    NOT NULL,
+            asset_inst          VARCHAR(255)    NOT NULL,
+            asset_war_exp       VARCHAR(255)    NOT NULL,
+            asset_last_serv     VARCHAR(255)    NOT NULL,
+            asset_ip            VARCHAR(255)    NOT NULL,
+            asset_group         VARCHAR(255)    NOT NULL,
+            PRIMARY KEY(asset_id))';
+if($conn->query($query) == TRUE){
+    echo '<br /><img src="../images/tick.png" style="width: 22px;">&nbsp;&nbsp;Table asset created successfully';
+}else{
+    echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table asset ' . $conn->error;
+}
+echo '<br /><br />';
+echo '<a href="../installation/second.php" class="btn btn-dark bor-ten float-left">&lt; Previous</a>
+<a href="../installation/finish.php" class="btn btn-dark bor-ten float-right">Next &gt;</a>';
 echo '</div>';
+echo '<div class="col-sm-4"></div>';

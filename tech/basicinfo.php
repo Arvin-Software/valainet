@@ -6,7 +6,7 @@ include 'header.php';
     <div class="row" style=" height: 100vh;">
         <div class="col-xl-1 fade-in border-right text-black bg-dark" style="padding: 0px 0px 0px 0px;">
    <?php
-   $curr = 'dash';
+   $curr = 'tickets';
    include 'includenav.php';
    ?> 
 </div>
@@ -14,7 +14,6 @@ include 'header.php';
 <div class="col-xl-11 bg-light fade-in" id="" style=" padding: 1% 2% 2% 2%;">
 <input type="text" name="ip" id="ip" style="display: none;" value="<?php echo $_GET['ip']; ?>">
 <input type="text" name="group" id="group" style="display: none;" value="<?php echo $_GET['group']; ?>">
-    <a href="dash.php" class="btn btn-dark" style="margin-left: 1.5%;">Back</a>
     <div class="row">
     <div class="col-xl-6">
     <div class="p-4">
@@ -28,12 +27,12 @@ include 'header.php';
                     <th>Details</th>
                 </tr>
                 <?php
-                 $img = '';
-                 $os = '';
-                 $os_human = '';
-                 $proc = '';
-                 $moni = '';
-                 $lap = '';
+                $img = '';
+                $os = '';
+                $os_human = '';
+                $proc = '';
+                $moni = '';
+                $lap = '';
                 $device = '';
                     $ret = khatral::khquery('SELECT * FROM comp_info WHERE comp_ip=:ip AND comp_group=:group', array(
                         ':ip'=>$_GET['ip'],

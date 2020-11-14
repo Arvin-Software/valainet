@@ -64,8 +64,13 @@ if(isset($_POST['submit'])){
                 $total = $active + $inactive;
             }
             $count += 1;
-            $actper = round($active / $total * 100, 0);
-            $inactper = round($inactive / $total * 100, 0);
+            if($total != 0){
+                $actper = round($active / $total * 100, 0);
+                $inactper = round($inactive / $total * 100, 0);
+            }else{
+                $actper = 0;
+                $inactper = 0;
+            }
             echo '<tr><td>' . $count . '</td><td>' . $p['group_nm'] . '</td><td>' . $p['group_descr'] . '</td><td>
             ';
             ?>

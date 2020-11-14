@@ -126,6 +126,39 @@ Build Number : 180820201150pm-alpha-r100
 </div> -->
 
 <script>
+	$.post("test.php",
+            {
+            act:"sayhello",
+            ip:"192.168.1.5",
+            nm:"stat",
+            stat:"failure",
+            inbox: "influx"
+            },
+          function(data, status){
+            // alert(data);
+            if(data == 'hello'){
+                $('#inc').html('<img src="images/tick.png" style="width: 32px;">&nbsp;&nbsp;Server connection established');
+                // $('#inc1').show()
+            }
+          });
+          $.post("test.php",
+            {
+            act:"retstatx",
+            ip:"192.168.1.5",
+            nm:"stat",
+            stat:"failure",
+            inbox: "influx"
+            },
+          function(data, status){
+              $('#inc1').html(data);
+              
+            //   if(data == "success"){
+            //     $('#ip1').html("Connected");
+            //   }else{
+            //       $('#ip1').html("Not Connected");
+            //   }
+            // alert(data);
+          });
   setInterval(function () {
         
         // alert('hello');

@@ -43,6 +43,7 @@ include '../valai.php';
                 echo '<tr><td>2</td><td>Description</td><td>' . $p['ticket_mess'] . '</td></tr>';
                 echo '<tr><td>3</td><td>IP</td><td>' . $p['ticket_ip'] . '</td></tr>';
                 echo '<tr><td>4</td><td>Group</td><td>' . $p['ticket_group'] . '</td></tr>';
+                echo '<tr><td>6</td><td>Actions</td><td><a href="basicinfo.php?ip=' . $p['ticket_ip'] . '&group=' . $p['ticket_group'] . '">View info</a></td></tr>';
             }
             $res = khatral::khquery('SELECT * FROM assign_tick WHERE assign_tick_id=:id', array(
                 ':id'=>$_GET['id']
@@ -60,6 +61,7 @@ include '../valai.php';
                 echo '<tr><td>5</td><td>Assigned</td><td>No</td></tr>';
                 $assigned = 0;
             }
+            
         ?>
     </table>
     <hr>

@@ -1,12 +1,14 @@
 <?php
 session_start();
-if(isset($_SESSION['unme'])){
-    if($_SESSION['hxid'] == "hxieiwccsd"){
+if(isset($inst) == FALSE){
+    if(isset($_SESSION['unme'])){
+        if($_SESSION['hxid'] == "hxieiwccsd"){
+        }else{
+            header("Location: logout.php");    
+        }
     }else{
-        header("Location: logout.php");    
+        header("Location: logout.php");
     }
-}else{
-    header("Location: logout.php");
 }
 ?>
 <?php
@@ -19,8 +21,8 @@ if(isset($_SESSION['unme'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="images/valaiweb.svg" />
-    <title>Valai<?php if(isset($server)){echo' - Server';}else{echo' - Admin';}?></title>
+    <link rel="icon" href="/valainet/images/valaiweb.svg" />
+    <title>Valai<?php if(isset($server)){echo' - Server';}elseif(isset($inst)){echo' - Installation';}else{echo' - Admin';}?></title>
      <!-- Latest compiled and minified CSS -->
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -118,6 +120,12 @@ if(isset($_SESSION['unme'])){
         50% {
             opacity: 0;
         }
+        }
+        .bor-ten{
+            border-radius: 10px 10px 10px 10px;
+        }
+        .bor-twen{
+            border-radius: 20px 20px 20px 20px;
         }
     </style>
 </head>
