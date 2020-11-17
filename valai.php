@@ -226,7 +226,22 @@ class valai{
         
     }
     public static function DisplayVerBuild(){
-        echo 'v1.0 Build 131120200715-alpha-r102';
+        // Australia/Adelaide
+        date_default_timezone_set('Australia/Adelaide');
+        $date = date('dmYhis', time());
+        // echo 'v1.0 Build 13112020071510-alpha-r102';
+        echo 'v1.0 Build 18112020023550am-beta1-r100';
+    }
+    public static function DisplayVersion(){
+        echo 'v1.0';
+    }
+    public static function DisplayChangeLog(){
+        echo '<ul><li>Changed User Interface to accommodate more items</li>';
+        echo '<li>Changed Primary Navigation</li>';
+        echo '<li>Changed API file name to better suit the operation</li>';
+        echo '<li>Numerous Bug Fixes</li>';
+        echo '<li>Performance Improvements</li>';
+        echo '</ul>';
     }
 }
 ?>

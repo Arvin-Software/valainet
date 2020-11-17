@@ -1,18 +1,10 @@
 <?php
-include 'header.php';
+$mainnav = 'about';
+include 'headerabout.php';
 ?>
-<body class="" style="background-color: #FFFFFF;">
-<div class="container-fluid">
-    <div class="row" style=" height: 100vh;">
-        <div class="col-xl-1 fade-in text-black bg-dark" style="padding: 0px 0px 0px 0px;">
-   <?php
-   $curr = 'about';
-   include 'includenav.php';
-   ?> 
-</div>
-
-<div class="col-xl-11 fade-in" id="" style="height: 100vh; padding: 1% 2% 2% 2%; background-color: #fff; overflow:auto;">
-<div class=" container">
+<br>
+<br>
+<div class="container">
 <img src="images/valaiweb.svg" alt="Valai Logo" style="width: 128px;">
 <h3>Valai - v1.0</h3>
 <p>
@@ -30,16 +22,38 @@ include 'header.php';
     </tr>
     <tr>
         <td>Valai Server</td>
-        <td><?php valai::DisplayVerBuild() ?></td>
+        <td><?php valai::DisplayVerBuild(); ?></td>
+    </tr>
+    <tr>
+        <td>Aves Engine</td>
+        <td>v2.0-r300</td>
+    </tr>
+    <tr>
+        <td>Glade Renderer</td>
+        <td>v1.3-r150</td>
+    </tr>
+    <tr>
+        <td>Softview CSS</td>
+        <td>v2.0-r55</td>
+    </tr>
+    <tr>
+        <td>Khatral-DB Connector and classes</td>
+        <td>0.0.3-r552</td>
+    </tr>
+    <tr>
+        <td>Change Log for the latest build</td>
+        <td><?php valai::DisplayChangeLog(); ?></td>
     </tr>
 </table>
 <hr>
 <h3>PHP Configuration</h3>
-<iframe src="phpinfo.php" frameborder="0" style="width: 100%; height: 40vh;"></iframe>
+<iframe src="phpinfo.php" frameborder="0" class="border bg-white" style="width: 100%; height: 40vh;"></iframe>
 <hr>
-<h3>License</h3>
-<iframe src="LICENSE" frameborder="0" style="width: 100%; height: 40vh;"></iframe>
+<h3>License GNU GPL v3.0</h3>
+<iframe src="LICENSE" frameborder="0" class="border bg-white" style="width: 100%; height: 40vh;"></iframe>
 <hr>
 <h6 class="text-center">Valai is a Open Source software which is licensed under GNU GPL v3 License</h6>
-<h6 class="text-center">&copy; 2020 ValaiNet. All Rights Reserved.</h6>
+<h6 class="text-center">Valai Logo, Valai Name, Softview Name, Khatral name are a property of Arvin Soft R & D, Icons in the project are the copyright of the respective owners.</h6>
+<h6 class="text-center">Components like bootstrap, jquery and other products used in this project are the copyright of the respective owners.</h6>
+<h6 class="text-center">&copy; 2020 ValaiNet Project. All Rights Reserved.</h6>
 </div>

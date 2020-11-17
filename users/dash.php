@@ -78,7 +78,7 @@ include 'header.php';
             },
         }
   });
-  $.post("../test.php",
+  $.post("../api.php",
             {
             act:"rettot",
             ip:"192.168.1.5",
@@ -140,7 +140,7 @@ Build Number : 180820201150pm-alpha-r100
   setInterval(function () {
         
         // alert('hello');
-			$.post("../test.php",
+			$.post("../api.php",
             {
             act:"sayhello",
             ip:"192.168.1.5",
@@ -158,7 +158,7 @@ Build Number : 180820201150pm-alpha-r100
            
     }, 500);
     setInterval(function () {
-        $.post("../test.php",
+        $.post("../api.php",
             {
             act:"retstatxuser",
             ip:"192.168.1.5",
@@ -178,7 +178,7 @@ Build Number : 180820201150pm-alpha-r100
           });
         }, 1000);		
         setInterval(function () {
-        $.post("../test.php",
+        $.post("../api.php",
             {
             act:"rettot",
             ip:"192.168.1.5",

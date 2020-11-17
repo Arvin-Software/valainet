@@ -205,7 +205,7 @@ Build Number : 020920200236am-alpha-r101 | An open source software
 setInterval(function () {
         
         // alert('hello');
-			$.post("../test.php",
+			$.post("../api.php",
             {
             act:"sayhello",
             ip:"192.168.1.5",
@@ -227,7 +227,7 @@ setInterval(function () {
     setInterval(function () {
         
         // alert('hello');
-			$.post("../test.php",
+			$.post("../api.php",
             {
             act:"retprocstatx",
             ip:$('#ip').val(),
@@ -246,7 +246,7 @@ setInterval(function () {
            
     }, 1000);
 setInterval(function () {
-        $.post("../test.php",
+        $.post("../api.php",
             {
             act:"retstat",
             ip:$('#ip').val(),

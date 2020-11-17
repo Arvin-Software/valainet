@@ -1,17 +1,7 @@
 <?php
+$curr = 'dash';
 include 'header.php';
 ?>
-<body class="" style="background-color: #FFFFFF;">
-<div class="container-fluid">
-    <div class="row" style=" height: 100vh;">
-        <div class="col-xl-1 fade-in text-black bg-dark" style="padding: 0px 0px 0px 0px;">
-   <?php
-   $curr = 'dash';
-   include 'includenav.php';
-   ?> 
-</div>
-
-<div class="col-xl-11 fade-in" id="" style="height: 100vh; padding: 1% 2% 2% 2%;">
 <h3>Dashboard</h3><hr>
 <div class="row">
 <div class="col-lg-4 text-center">
@@ -67,7 +57,7 @@ include 'header.php';
             },
         }
   });
-  $.post("test.php",
+  $.post("api.php",
             {
             act:"rettot",
             ip:"192.168.1.5",
@@ -116,7 +106,7 @@ include 'header.php';
 </div>
 
 <script>
-	$.post("test.php",
+	$.post("api.php",
             {
             act:"sayhello",
             ip:"192.168.1.5",
@@ -131,7 +121,7 @@ include 'header.php';
                 // $('#inc1').show()
             }
           });
-          $.post("test.php",
+          $.post("api.php",
             {
             act:"retstatx",
             ip:"192.168.1.5",
@@ -152,7 +142,7 @@ include 'header.php';
   setInterval(function () {
         
         // alert('hello');
-			$.post("test.php",
+			$.post("api.php",
             {
             act:"sayhello",
             ip:"192.168.1.5",
@@ -170,7 +160,7 @@ include 'header.php';
            
     }, 500);
     setInterval(function () {
-        $.post("test.php",
+        $.post("api.php",
             {
             act:"retstatx",
             ip:"192.168.1.5",
@@ -190,7 +180,7 @@ include 'header.php';
           });
         }, 1000);		
         setInterval(function () {
-        $.post("test.php",
+        $.post("api.php",
             {
             act:"rettot",
             ip:"192.168.1.5",

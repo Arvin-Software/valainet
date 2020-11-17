@@ -131,18 +131,6 @@ if(isset($inst) == FALSE){
     ?>
 <body class="" style="background-color: #FFFFFF;">
 <?php
-$mainnav="comp";
 include 'primarynav.php';
-?>
-<div class="container-fluid">
-    <div class="row" style=" height: 100vh;">
-        <div class="col-lg-2 fade-in border-right text-black" style="background-color: #454545; padding: 0px 0px 0px 0px;">
-   <?php
-   
-   include 'includenav.php';
-   ?> 
-</div>
-<div class="col-lg-10 fade-in" id="" style=" padding: 1% 2% 2% 2%;">
-<?php
 }
 ?>

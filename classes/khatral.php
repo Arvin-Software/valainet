@@ -1,5 +1,5 @@
 <?php
-//Khatral API version alpha 0.0.2
+//Khatral API version 0.0.3-r552
 //This is a database handler class that is used to handle all the database queyr with condition checking and many more
 //This is a improved version of a previously deprecated Softquery API
 class Khatral{

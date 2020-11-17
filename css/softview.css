@@ -50,6 +50,7 @@ a:focus{
     /* border-radius: 10px 10px 10px 10px; */
     width: 100%;
     /* color: #FFFFFF; */
+    border-right: none;
 }
 .btn-col-pink{
     background-color: #8a008a;

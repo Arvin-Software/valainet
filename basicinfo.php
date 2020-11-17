@@ -1,17 +1,7 @@
 <?php
+$curr = 'dash';
 include 'header.php';
 ?>
-<body class="" style="background-color: #FFFFFF;">
-<div class="container-fluid">
-    <div class="row" style=" height: 100vh;">
-        <div class="col-xl-1 fade-in border-right text-black bg-dark" style="padding: 0px 0px 0px 0px;">
-   <?php
-   $curr = 'dash';
-   include 'includenav.php';
-   ?> 
-</div>
-
-<div class="col-xl-11 bg-light fade-in" id="" style=" padding: 1% 2% 2% 2%;">
 <input type="text" name="ip" id="ip" style="display: none;" value="<?php echo $_GET['ip']; ?>">
 <input type="text" name="group" id="group" style="display: none;" value="<?php echo $_GET['group']; ?>">
     <a href="dash.php" class="btn btn-dark" style="margin-left: 1.5%;">Back</a>
@@ -70,7 +60,7 @@ include 'header.php';
                             $device = 'Desktop / Workstation / Server';
                         }
                         echo '<tr><td>1</td><td>IP</td><td>' . $_GET['ip'] . '</td></tr>';
-                        echo '<tr><td>2</td><td>Asset Tag</td><td>' . $p['comp_asset_tag'] . '</td></tr>';
+                        echo '<tr><td>2</td><td>Asset Tag</td><td><a href="asset.php?id=' . $p['comp_ip'] . '&group=' . $p['comp_group'] . '&asset=' . $p['comp_asset_tag'] . '">' . $p['comp_asset_tag'] . '</a></td></tr>';
                         echo '<tr><td>3</td><td>Name</td><td><img src="' . $lap . '" style="width: 24px;">&nbsp;&nbsp;' . $p['comp_nm'] . '</td></tr>';
                         echo '<tr><td>4</td><td>Operating System</td><td><img src="' . $img . '" style="width: 24px;">&nbsp;&nbsp;' . $p['comp_os'] . '</td></tr>';
                         echo '<tr><td>5</td><td>Processor</td><td><img src="' . $proc . '" style="width: 24px;">&nbsp;&nbsp;' . $p['comp_processor'] . '</td></tr>';
@@ -205,7 +195,7 @@ include 'header.php';
 setInterval(function () {
         
         // alert('hello');
-			$.post("test.php",
+			$.post("api.php",
             {
             act:"sayhello",
             ip:"192.168.1.5",
@@ -227,7 +217,7 @@ setInterval(function () {
     setInterval(function () {
         
         // alert('hello');
-			$.post("test.php",
+			$.post("api.php",
             {
             act:"retprocstatx",
             ip:$('#ip').val(),
@@ -246,7 +236,7 @@ setInterval(function () {
            
     }, 1000);
 setInterval(function () {
-        $.post("test.php",
+        $.post("api.php",
             {
             act:"retstat",
             ip:$('#ip').val(),

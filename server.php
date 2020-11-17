@@ -43,7 +43,7 @@ Build Number : 020920200236am-alpha-r101
     setInterval(function () {
         
         // alert('hello');
-			$.post("test.php",
+			$.post("api.php",
             {
             act:"sayhello",
             ip:"192.168.1.5",
@@ -64,7 +64,7 @@ Build Number : 020920200236am-alpha-r101
     setInterval(function () {
         
         // alert('hello');
-			$.post("test.php",
+			$.post("api.php",
             {
             act:"updatestatx",
             ip:"192.168.1.5",
@@ -85,7 +85,7 @@ Build Number : 020920200236am-alpha-r101
     setInterval(function () {
         
         // alert('hello');
-			$.post("test.php",
+			$.post("api.php",
             {
             act:"updateallproc",
             ip:"192.168.1.5",

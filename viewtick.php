@@ -1,17 +1,7 @@
 <?php
-include 'header.php';
+$mainnav = 'serv';
+include 'headerabout.php';
 ?>
-<body class="" style="background-color: #FFFFFF;">
-<div class="container-fluid">
-    <div class="row" style=" height: 100vh;">
-        <div class="col-xl-1 fade-in text-black bg-dark" style="padding: 0px 0px 0px 0px;">
-   <?php
-   $curr = 'tickets';
-   include 'includenav.php';
-   ?> 
-</div>
-
-<div class="col-xl-11 fade-in" id="" style="height: 100vh; padding: 1% 2% 2% 2%; background-color: #fff; overflow:auto;">
 <?php
     date_default_timezone_set('Asia/Kolkata');
     $date = date('dmYhis', time());
@@ -35,7 +25,8 @@ include 'header.php';
         echo 'Technician Assigned';
     }
 ?>
-<a href="ticket.php" class="btn-dark btn">Back</a>
+<div class="container">
+<a onclick="window.history.back();" href="#" class="btn btn-dark">Back</a>
     <table class="table border table-bordered">
         <tr class="bg-dark text-white">
             <th>Sl.No</th>
@@ -43,9 +34,15 @@ include 'header.php';
             <th>Details</th>
         </tr>
         <?php
-            $ret = khatral::khquery('SELECT * FROM ticket WHERE ticket_ri_id=:id', array(
-                ':id'=>$_GET['id']
-            ));
+            if(isset($_GET['comp'])){
+                $ret = khatral::khquery('SELECT * FROM ticket_finish WHERE ticket_ri_id=:id', array(
+                    ':id'=>$_GET['id']
+                ));
+            }else{
+                $ret = khatral::khquery('SELECT * FROM ticket WHERE ticket_ri_id=:id', array(
+                    ':id'=>$_GET['id']
+                ));
+            }
             foreach($ret as $p){
                 echo '<tr><td>1</td><td>Reference Number</td><td>' . $p['ticket_ri_id'] . '</td></tr>';
                 echo '<tr><td>2</td><td>Description</td><td>' . $p['ticket_mess'] . '</td></tr>';
@@ -90,7 +87,13 @@ include 'header.php';
             ?>
         </tr>
     </table>
-    <hr>
+    
+    <?php
+     if(isset($_GET['comp'])){
+        echo '<br /><br /><h4 class="text-center text-success">This Service ticket has been closed</h4><br /><br />';
+    }else{
+        ?>
+        <hr>
     <form action="viewtick.php?id=<?php echo $_GET['id']; ?>" method="post">
         <div class="form-group">
             <h3><label for="message">Your Message</label></h3>
@@ -102,6 +105,7 @@ include 'header.php';
     </form>
     <?php
     if($assigned == 0){
+       
     ?>
     <form action="viewtick.php?id=<?php echo $_GET['id']; ?>" method="post">
         <label for="assign">Assign To</label>
@@ -118,6 +122,7 @@ include 'header.php';
         <input type="submit" value="Assign technician" id="submit1" name="submit1" class="btn btn-dark">
     </form>
     <?php
+        }
     } 
     ?>
 </div>

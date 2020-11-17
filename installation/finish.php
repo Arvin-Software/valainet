@@ -30,7 +30,7 @@ include '../header.php';
     setInterval(function () {
         
         // alert('hello');
-			$.post("../test.php",
+			$.post("../api.php",
             {
             act:"sayhello",
             ip:"192.168.1.5",

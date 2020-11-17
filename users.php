@@ -1,22 +1,14 @@
 <?php
-include 'header.php';
+$mainnav = 'users';
+include 'headerabout.php';
 if(isset($_POST['submit'])){
     valai::InsertUsers($_POST['unme'], $_POST['pass'], $_POST['role']);
     echo 'Users inserted';
 }
 ?>
-<body class="" style="background-color: #FFFFFF;">
-<div class="container-fluid">
-    <div class="row" style=" height: 100vh;">
-        <div class="col-xl-1 fade-in text-black bg-dark" style="padding: 0px 0px 0px 0px;">
-   <?php
-   $curr = 'user';
-   include 'includenav.php';
-   ?> 
-</div>
-
-<div class="col-xl-11 fade-in" id="" style="height: 100vh; padding: 1% 2% 2% 2%; background-color: #fff;">
 <!-- Button to Open the Modal -->
+<br><br>
+<div class="container">
 <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
   Create New
 </button>
@@ -62,6 +54,7 @@ if(isset($_POST['submit'])){
     </div>
   </div>
 </div>
+
 <table class="table table-bordered" style="margin-top: 2%;">
     <th>Sl.NO</th>
     <th>Name</th>

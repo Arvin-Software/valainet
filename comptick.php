@@ -1,17 +1,7 @@
 <?php
-include 'header.php';
+$mainnav = 'serv';
+include 'headerabout.php';
 ?>
-<body class="" style="background-color: #FFFFFF;">
-<div class="container-fluid">
-    <div class="row" style=" height: 100vh;">
-        <div class="col-xl-1 fade-in text-black bg-dark" style="padding: 0px 0px 0px 0px;">
-   <?php
-   $curr = 'tickets';
-   include 'includenav.php';
-   ?> 
-</div>
-
-<div class="col-xl-11 fade-in" id="" style="height: 100vh; padding: 1% 2% 2% 2%; background-color: #fff;">
 <?php
 if(isset($_POST['submit'])){
     date_default_timezone_set('Asia/Kolkata');
@@ -28,7 +18,8 @@ if(isset($_POST['submit'])){
     echo 'ticket raised';
 }
 ?>
-<a href="comptick.php" class="btn btn-dark">View Completed</a>
+<div class="container">
+<a onclick="window.history.back();" href="#" class="btn btn-dark">Back</a>
 <!-- <a href="dash.php" class="btn btn-dark">Back</a> -->
 <!-- <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
   Create New
@@ -87,7 +78,7 @@ if(isset($_POST['submit'])){
         $ret = khatral::khquerypar('SELECT * FROM ticket_finish');
         $count = 1;
         foreach($ret as $p){
-            echo '<tr><td>' . $count . '</td><td>' . $p['ticket_ri_id'] . '</td><td>'. $p['ticket_ip'] . '</td><td>' . $p['ticket_mess'] . '</td><td><a href="viewtick.php?id=' . $p['ticket_ri_id'] . '">View Ticket</a></td></tr>';
+            echo '<tr><td>' . $count . '</td><td>' . $p['ticket_ri_id'] . '</td><td>'. $p['ticket_ip'] . '</td><td>' . $p['ticket_mess'] . '</td><td><a href="viewtick.php?id=' . $p['ticket_ri_id'] . '&comp=1">View Ticket</a></td></tr>';
             $count += 1;
         }
     ?>

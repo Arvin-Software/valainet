@@ -83,14 +83,22 @@ if($auth == "success"){
                     echo '<h4>Collection : ' . $pi['group_nm'] . '</h4>';
                     $ret = khatral::khquery('SELECT * FROM stat WHERE act_group=:group', array(':group'=>$pi['group_nm']));
                     echo '<div class="table-responsive">';
-                    echo '<table class="table"><tr class="bg-dark text-white"><th>Status</th><th style="width: 30%;">IP</th><th style="width: 30%;">Computer Name</th><th>Actions</th></tr>';
+                    echo '<table class="table"><tr class="bg-dark text-white"><th>Status</th><th style="width: 30%;">IP</th><th style="width: 30%;">Asset Code</th><th style="width: 30%;">Computer Name</th><th>Actions</th></tr>';
                     $count = 0;
                     foreach($ret as $p){
                         $count += 1;
+                        $rex = khatral::khquery('SELECT * FROM comp_info WHERE comp_ip=:ip AND comp_group=:group', array(
+                            ':ip'=>$p['act_ip'],
+                            ':group'=>$p['act_group']
+                        ));
+                        $assetcode = '';
+                        foreach($rex as $px){
+                            $assetcode = $px['comp_asset_tag'];
+                        }
                         if($p['act_stat'] == "success"){
-                            echo '<tr><td class="" style="width: 8px;"><img src="/valainet/images/tick.png" style="width: 22px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="alert.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="fas fa-bolt"></i></a></td></tr>';
+                            echo '<tr><td class="" style="width: 8px;"><img src="/valainet/images/tick.png" style="width: 22px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td><a href="asset.php?id=' . $p['act_ip'] . '&group=' . $p['act_group'] . '&asset=' . $assetcode . '">' . $assetcode . '</a></td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="alert.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="fas fa-bolt"></i></a></td></tr>';
                         }else{
-                            echo '<tr><td class="" style="width: 8px;"><img src="/valainet/images/warning.svg" style="width: 20px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="alert.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="fas fa-bolt"></i></a></td></tr>';
+                            echo '<tr><td class="" style="width: 8px;"><img src="/valainet/images/warning.svg" style="width: 20px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td><a href="asset.php?id=' . $p['act_ip'] . '&group=' . $p['act_group'] . '&asset=' . $assetcode . '">' . $assetcode . '</a></td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="alert.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="fas fa-bolt"></i></a></td></tr>';
                         }
                     }
                     echo '</table>';
@@ -106,14 +114,22 @@ if($auth == "success"){
                     echo '<h4>Collection : ' . $pi['group_nm'] . '</h4>';
                     $ret = khatral::khquery('SELECT * FROM stat WHERE act_group=:group', array(':group'=>$pi['group_nm']));
                     echo '<div class="table-responsive">';
-                    echo '<table class="table"><tr class="bg-dark text-white"><th>Status</th><th style="width: 30%;">IP</th><th style="width: 30%;">Computer Name</th><th>Actions</th></tr>';
+                    echo '<table class="table"><tr class="bg-dark text-white"><th>Status</th><th style="width: 30%;">IP</th><th style="width: 30%;">Asset Code</th><th style="width: 30%;">Computer Name</th><th>Actions</th></tr>';
                     $count = 0;
                     foreach($ret as $p){
                         $count += 1;
+                        $rex = khatral::khquery('SELECT * FROM comp_info WHERE comp_ip=:ip AND comp_group=:group', array(
+                            ':ip'=>$p['act_ip'],
+                            ':group'=>$p['act_group']
+                        ));
+                        $assetcode = '';
+                        foreach($rex as $px){
+                            $assetcode = $px['comp_asset_tag'];
+                        }
                         if($p['act_stat'] == "success"){
-                            echo '<tr><td class="" style="width: 8px;"><img src="/valainet/images/tick.png" style="width: 22px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a></td></tr>';
+                            echo '<tr><td class="" style="width: 8px;"><img src="/valainet/images/tick.png" style="width: 22px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td>' . $assetcode . '</td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a></td></tr>';
                         }else{
-                            echo '<tr><td class="" style="width: 8px;"><img src="/valainet/images/warning.svg" style="width: 20px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a></td></tr>';
+                            echo '<tr><td class="" style="width: 8px;"><img src="/valainet/images/warning.svg" style="width: 20px;"></td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '">' . $p['act_ip'] . '</a></td><td>' . $assetcode . '</td><td>' . $p['act_nm'] . '</td><td><a class="" href="basicinfo.php?ip=' . $p['act_ip'] . '&group=' . $p['act_group'] . '"><i class="far fa-eye"></i></a></td></tr>';
                         }
                     }
                     echo '</table>';

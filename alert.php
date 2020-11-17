@@ -1,6 +1,6 @@
 <?php
+$curr = 'dash';
 include 'header.php';
-include 'valai.php';
 if(isset($_GET['act'])){
     if($_GET['act'] == "del"){
         valai::DeleteAlert($_GET['id']);
@@ -8,17 +8,6 @@ if(isset($_GET['act'])){
     }
 }
 ?>
-<body class="" style="background-color: #FFFFFF;">
-<div class="container-fluid">
-    <div class="row" style=" height: 100vh;">
-        <div class="col-xl-1 fade-in text-black bg-dark" style="padding: 0px 0px 0px 0px;">
-   <?php
-   $curr = 'dash';
-   include 'includenav.php';
-   ?> 
-</div>
-
-<div class="col-xl-11 fade-in" id="" style="height: 100vh; padding: 1% 2% 2% 2%; background-color: #fff;">
 <a href="dash.php" class="btn btn-dark">Back</a>
 <?php
     if(isset($_POST['submit'])){
@@ -46,7 +35,7 @@ if(isset($_GET['act'])){
 <br>
 <hr>
 <br>
-<table class="table">
+<table class="table table-bordered">
     <tr>
         <th>Sl.No</th>
         <th>Process Name</th>
@@ -60,7 +49,7 @@ if(isset($_GET['act'])){
     $count = 0;
     foreach($ret as $p){
         $count += 1;
-        echo '<tr><td>' . $count . '</td><td>' . $p['moni_nm'] . '</td><td><a href="alert.php?act=del&id=' . $p['moni_id'] . '&ip=' . $_GET['ip'] . '&group=' . $_GET['group'] . '" class="btn btn-danger"> Delete</a></td></tr>';
+        echo '<tr><td>' . $count . '</td><td>' . $p['moni_nm'] . '</td><td><a href="alert.php?act=del&id=' . $p['moni_id'] . '&ip=' . $_GET['ip'] . '&group=' . $_GET['group'] . '" class="bg-danger p-2 text-white"> Delete</a></td></tr>';
     }
     ?>
 </table>
