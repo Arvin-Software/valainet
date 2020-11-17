@@ -162,7 +162,7 @@
         </div>  
         <h6 class="text-left fixed-bottom" style="">
             <p class="text-dark">	&copy; 2020 Valai Net. All Rights Reserved.|
-		Build Number : 020920200236am-alpha-r101</p>
+		<?php include 'valai.php'; valai::DisplayVerBuild() ?></p>
         </h6>
     </div>
 </body>

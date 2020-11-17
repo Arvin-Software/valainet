@@ -1,6 +1,5 @@
 <?php
 include 'header.php';
-include 'valai.php';
 if(isset($_POST['submit'])){
     valai::InsertUsers($_POST['unme'], $_POST['pass'], $_POST['role']);
     echo 'Users inserted';

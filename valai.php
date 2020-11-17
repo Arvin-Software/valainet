@@ -206,5 +206,27 @@ class valai{
         echo '<br />Valai API security version alpha081020201652 build 2010';
         echo '<br />Copyright &copy; 2020 Valai API. All Rights Reserved.';
     }
+    public static function UpdateTickComplete($id){
+        $ret = khatral::khquery('SELECT * FROM ticket WHERE ticket_ri_id=:id', array(
+            ':id'=>$id
+        ));
+        foreach($ret as $p){
+            khatral::khquery('INSERT INTO ticket_finish VALUES(NULL, :tick_id, :mess, :ip, :group, :wherenm, :unm)', array(
+                ':tick_id'=>$p['ticket_ri_id'],
+                ':mess'=>$p['ticket_mess'],
+                ':ip'=>$p['ticket_ip'],
+                ':group'=>$p['ticket_group'],
+                ':wherenm'=>$p['ticket_wherenm'],
+                ':unm'=>$p['ticket_unm']
+            ));
+        }
+        khatral::khquery('DELETE FROM ticket WHERE ticket_ri_id=:id', array(
+            ':id'=>$id
+        ));
+        
+    }
+    public static function DisplayVerBuild(){
+        echo 'v1.0 Build 131120200715-alpha-r102';
+    }
 }
 ?>

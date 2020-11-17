@@ -205,6 +205,20 @@ if($conn->query($query) == TRUE){
 }else{
     echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table ticket ' . $conn->error;
 }
+$query = 'CREATE TABLE IF NOT EXISTS ticket_finish(
+            ticket_id           INTEGER         NOT NULL        AUTO_INCREMENT,
+            ticket_ri_id        VARCHAR(255)    NOT NULL,
+            ticket_mess         LONGTEXT        NOT NULL,
+            ticket_ip           VARCHAR(255)    NOT NULL,
+            ticket_group        VARCHAR(255)    NOT NULL,
+            ticket_wherenm      VARCHAR(255)    NOT NULL,
+            ticket_unm          VARCHAR(255)    NOT NULL,
+            PRIMARY KEY(ticket_id))';
+if($conn->query($query) == TRUE){
+    echo '<br /><img src="../images/tick.png" style="width: 22px;">&nbsp;&nbsp;Table ticket_finish created successfully';
+}else{
+    echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table ticket_finish ' . $conn->error;
+}
 $query = 'CREATE TABLE IF NOT EXISTS per_stat(
             stat_id             INTEGER         NOT NULL        AUTO_INCREMENT,
             ticket_nm           VARCHAR(255)    NOT NULL,

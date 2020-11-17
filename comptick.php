@@ -1,6 +1,5 @@
 <?php
 include 'header.php';
-include '../valai.php';
 ?>
 <body class="" style="background-color: #FFFFFF;">
 <div class="container-fluid">
@@ -29,10 +28,11 @@ if(isset($_POST['submit'])){
     echo 'ticket raised';
 }
 ?>
+<a href="comptick.php" class="btn btn-dark">View Completed</a>
 <!-- <a href="dash.php" class="btn btn-dark">Back</a> -->
-<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+<!-- <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
   Create New
-</button>
+</button> -->
 
 <!-- The Modal -->
 <div class="modal" id="myModal">
@@ -52,18 +52,10 @@ if(isset($_POST['submit'])){
                 <label for="ip">Select IP</label>
                 <select name="ip" id="ip" class="custom-select">
                     <?php
-                        $ret = khatral::khquery('SELECT * FROM modl WHERE modl_user=:user', array(
-                            ':user'=>$_SESSION['unme']
-                        ));
-                        $me = '';
-                        foreach($ret as $p){
-                            $me = $p['modl_nm'];
-                        }
-                        $res = khatral::khquery('SELECT * FROM comp_info WHERE comp_group=:group', array(
-                            ':group'=>$me
-                        ));
+                      
+                        $res = khatral::khquerypar('SELECT * FROM comp_info');
                         foreach($res as $pi){
-                            echo '<option>' . $pi['comp_ip'] . '</option>';
+                            echo '<option value="' . $pi['comp_ip'] . '">' . $pi['comp_ip'] . '</option>';
                         }
                     ?>
                 </select>
@@ -92,9 +84,7 @@ if(isset($_POST['submit'])){
     <th>Description</th>
     <th>actions</th>
     <?php
-        $ret = khatral::khquery('SELECT * FROM ticket WHERE ticket_unm=:unm', array(
-            ':unm'=>$_SESSION['unme']
-        ));
+        $ret = khatral::khquerypar('SELECT * FROM ticket_finish');
         $count = 1;
         foreach($ret as $p){
             echo '<tr><td>' . $count . '</td><td>' . $p['ticket_ri_id'] . '</td><td>'. $p['ticket_ip'] . '</td><td>' . $p['ticket_mess'] . '</td><td><a href="viewtick.php?id=' . $p['ticket_ri_id'] . '">View Ticket</a></td></tr>';

@@ -1,6 +1,5 @@
 <?php
 include 'header.php';
-include 'valai.php';
 ?>
 <body class="" style="background-color: #FFFFFF;">
 <div class="container-fluid">

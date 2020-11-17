@@ -111,19 +111,9 @@ include 'header.php';
 				<div class="spinner-border text-primary"></div>&nbsp;&nbsp;Connecting to interface please wait...
 			</div>
 		</div>
-		<!-- <div class="text-center fixed-bottom">
-		&copy; 2020 Valai Net. All Rights Reserved.|
-		Build Number : 020920200236am-alpha-r101 | An open source software<br />
-    <b class="bg-danger text-white">This software is in alpha version so it is not for production. The api is not protected so use it at your own risk.</b>
-		</div> -->
 	</div>
 </div>
 </div>
-
-<!-- <div class="text-center">
-&copy; 2020 Valai(வலை). All Rights Reserved.| &copy; 2020 Arvin Soft R & D |
-Build Number : 180820201150pm-alpha-r100
-</div> -->
 
 <script>
 	$.post("test.php",

@@ -3,10 +3,10 @@ session_start();
 if(isset($_SESSION['unme'])){
     if($_SESSION['hxid'] == "hxieiwccsd"){
     }else{
-        header("Location: logout.php");    
+        // header("Location: logout.php");    
     }
 }else{
-    header("Location: logout.php");
+    // header("Location: logout.php");
 }
 ?>
 <?php
@@ -32,7 +32,6 @@ if(isset($_SESSION['unme'])){
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
     <script src="https://kit.fontawesome.com/0d58c98fc8.js" crossorigin="anonymous"></script>
     <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>

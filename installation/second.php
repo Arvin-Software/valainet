@@ -1,7 +1,6 @@
 <?php
 $inst = "installation";
 include '../header.php';
-include '../valai.php';
 ?>
 <body class="bg-dark" style="background-color: #FFFFFF;">
 <div class="container-fluid" style="margin-top: 10%;">

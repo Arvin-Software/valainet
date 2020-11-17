@@ -1,6 +1,5 @@
 <?php
 include 'header.php';
-include 'valai.php';
 ?>
 <body class="" style="background-color: #FFFFFF;">
 <div class="container-fluid">
@@ -31,7 +30,7 @@ include 'valai.php';
     </tr>
     <tr>
         <td>Valai Server</td>
-        <td>v1.0 Build 131120200715A2</td>
+        <td><?php valai::DisplayVerBuild() ?></td>
     </tr>
 </table>
 <hr>

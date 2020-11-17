@@ -199,7 +199,7 @@ include 'header.php';
 </div>
 <div class="fixed-bottom text-center">
 &copy; 2020 Valai Net. All Rights Reserved.|
-Build Number : 020920200236am-alpha-r101 | An open source software
+<?php valai::DisplayVerBuild() ?> | An open source software
 </div>
 <script>
 setInterval(function () {

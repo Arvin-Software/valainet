@@ -15,36 +15,66 @@ include '../valai.php';
 <div class="col-xl-11 fade-in" id="" style="height: 100vh; padding: 1% 2% 2% 2%; background-color: #fff; overflow:auto;">
 <?php
     if(isset($_POST['submit'])){
-        date_default_timezone_set('Asia/Kolkata');
-        $date = date('dmYhis', time());
-        $date1 = date('d/m/Y h:i:s', time());
-        khatral::khquery('INSERT INTO per_stat VALUES(NULL, :nm, :usr, :conv, :timestam)', array(
-            ':nm'=>$_GET['id'],
-            ':usr'=>$_SESSION['unme_real'],
-            ':conv'=>$_POST['mess'],
-            ':timestam'=>$date1
-        ));
-        echo 'Message posted';
+        if($_POST['act'] == "0"){
+            date_default_timezone_set('Asia/Kolkata');
+            $date = date('dmYhis', time());
+            $date1 = date('d/m/Y h:i:s', time());
+            khatral::khquery('INSERT INTO per_stat VALUES(NULL, :nm, :usr, :conv, :timestam)', array(
+                ':nm'=>$_GET['id'],
+                ':usr'=>$_SESSION['unme_real'],
+                ':conv'=>$_POST['mess'],
+                ':timestam'=>$date1
+            ));
+            echo 'Message posted';
+        }else if($_POST['act'] == "1"){
+            date_default_timezone_set('Asia/Kolkata');
+            $date = date('dmYhis', time());
+            $date1 = date('d/m/Y h:i:s', time());
+            khatral::khquery('INSERT INTO per_stat VALUES(NULL, :nm, :usr, :conv, :timestam)', array(
+                ':nm'=>$_GET['id'],
+                ':usr'=>$_SESSION['unme_real'],
+                ':conv'=>$_POST['mess'],
+                ':timestam'=>$date1
+            ));
+            echo 'Message posted';
+        }else if($_POST['act'] == "2"){
+            
+            date_default_timezone_set('Asia/Kolkata');
+            $date = date('dmYhis', time());
+            $date1 = date('d/m/Y h:i:s', time());
+            khatral::khquery('INSERT INTO per_stat VALUES(NULL, :nm, :usr, :conv, :timestam)', array(
+                ':nm'=>$_GET['id'],
+                ':usr'=>$_SESSION['unme_real'],
+                ':conv'=>$_POST['mess'],
+                ':timestam'=>$date1
+            ));
+            valai::UpdateTickComplete($_GET['id']);
+            echo 'completed';
+        }
     }
 ?>
 <a href="ticket.php" class="btn-dark btn">Back</a>
-    <table class="table border table-bordered">
-        <tr class="bg-dark text-white">
-            <th>Sl.No</th>
-            <th>Particulars</th>
-            <th>Details</th>
-        </tr>
+    
         <?php
-            $ret = khatral::khquery('SELECT * FROM ticket WHERE ticket_id=:id', array(
+            $ret = khatral::khquery('SELECT * FROM ticket WHERE ticket_ri_id=:id', array(
                 ':id'=>$_GET['id']
             ));
+            $vald = 0;
             foreach($ret as $p){
+                $vald = 1;
+                echo '<table class="table border table-bordered">
+                <tr class="bg-dark text-white">
+                    <th>Sl.No</th>
+                    <th>Particulars</th>
+                    <th>Details</th>
+                </tr>';
                 echo '<tr><td>1</td><td>Reference Number</td><td>' . $p['ticket_ri_id'] . '</td></tr>';
                 echo '<tr><td>2</td><td>Description</td><td>' . $p['ticket_mess'] . '</td></tr>';
                 echo '<tr><td>3</td><td>IP</td><td>' . $p['ticket_ip'] . '</td></tr>';
                 echo '<tr><td>4</td><td>Group</td><td>' . $p['ticket_group'] . '</td></tr>';
                 echo '<tr><td>6</td><td>Actions</td><td><a href="basicinfo.php?ip=' . $p['ticket_ip'] . '&group=' . $p['ticket_group'] . '">View info</a></td></tr>';
             }
+            if($vald ==1){
             $res = khatral::khquery('SELECT * FROM assign_tick WHERE assign_tick_id=:id', array(
                 ':id'=>$_GET['id']
             ));
@@ -90,7 +120,18 @@ include '../valai.php';
             <textarea name="mess" id="mess" cols="30" rows="10" class="form-control"></textarea>
         </div>
         <div class="form-group">
+            <label for="act">Action</label>
+            <select name="act" id="act" class="custom-select">
+                <option value="0">Save Message</option>
+                <option value="1">Pending for purchase</option>
+                <option value="2">Completed</option>
+            </select>
+        </div>
+        <div class="form-group">
             <input type="submit" value="Post Message" id="submit" name="submit" class="btn btn-dark">
         </div>
     </form>
+    <?php
+            }
+    ?>
 </div>

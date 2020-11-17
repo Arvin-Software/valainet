@@ -22,13 +22,15 @@ include '../valai.php';
     <th>actions</th>
     <?php
 
-        $ret = khatral::khquery('SELECT assign_tick.assign_tick_id, ticket.ticket_ri_id, ticket.ticket_ip, ticket.ticket_id, ticket.ticket_mess FROM assign_tick LEFT JOIN ticket ON assign_tick.assign_tick_id = ticket.ticket_id WHERE assign_tick.assign_user_nm=:unm', array(
+        $ret = khatral::khquery('SELECT assign_tick.assign_tick_id, ticket.ticket_ri_id, ticket.ticket_ip, ticket.ticket_id, ticket.ticket_mess FROM assign_tick LEFT JOIN ticket ON assign_tick.assign_tick_id = ticket.ticket_ri_id WHERE assign_tick.assign_user_nm=:unm', array(
             ':unm'=>$_SESSION['unme_real']
         ));
         $count = 1;
         foreach($ret as $p){
-            echo '<tr><td>' . $count . '</td><td><a href="viewtick.php?id=' . $p['ticket_id'] . '">' . $p['ticket_ri_id'] . '</a></td><td>'. $p['ticket_ip'] . '</td><td>' . $p['ticket_mess'] . '</td><td><a href="viewtick.php?id=' . $p['ticket_id'] . '">View Ticket</a></td></tr>';
-            $count += 1;
+            if(isset($p['ticket_ri_id'])){
+                echo '<tr><td>' . $count . '</td><td><a href="viewtick.php?id=' . $p['ticket_ri_id'] . '">' . $p['ticket_ri_id'] . '</a></td><td>'. $p['ticket_ip'] . '</td><td>' . $p['ticket_mess'] . '</td><td><a href="viewtick.php?id=' . $p['ticket_ri_id'] . '">View Ticket</a></td></tr>';
+                $count += 1;
+            }
         }
     ?>
 </table>

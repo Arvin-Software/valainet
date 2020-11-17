@@ -1,6 +1,5 @@
 <?php
 include 'header.php';
-include 'valai.php';
 ?>
 <body class="" style="background-color: #FFFFFF;">
 <div class="container-fluid">
@@ -44,7 +43,7 @@ include 'valai.php';
             <th>Details</th>
         </tr>
         <?php
-            $ret = khatral::khquery('SELECT * FROM ticket WHERE ticket_id=:id', array(
+            $ret = khatral::khquery('SELECT * FROM ticket WHERE ticket_ri_id=:id', array(
                 ':id'=>$_GET['id']
             ));
             foreach($ret as $p){
