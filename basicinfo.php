@@ -6,9 +6,9 @@ include 'header.php';
 <input type="text" name="group" id="group" style="display: none;" value="<?php echo $_GET['group']; ?>">
     <a href="dash.php" class="btn btn-dark" style="margin-left: 1.5%;">Back</a>
     <div class="row">
-    <div class="col-xl-6">
+    <div class="col-xl-12">
     <div class="p-4">
-    <div class="card border bor-ten shadow ">
+    <div class="card border bor-ten ">
         <div class="card-header bg-dark  text-white">Basic Information</div>
         <div class="card-body">
             <table class="table table-all">
@@ -83,7 +83,7 @@ include 'header.php';
         </div>
         <div class="card-footer">Need information about this section click <a href="#">here</a></div>
     </div>
-    <div class="card border bor-ten shadow " style="margin-top: 5%;">
+    <div class="card border bor-ten " style="margin-top: 5%;">
         <div class="card-header bg-dark  text-white">Operating System Information</div>
         <div class="card-body">
             <table class="table table-all">
@@ -98,11 +98,18 @@ include 'header.php';
                         ':group'=>$_GET['group']
                     ));
                     foreach($ret as $p){
-                        echo '<tr><td>1</td><td>OS Architecture</td><td>' . $p['os_bit'] . ' - bit</td></tr>';
-                        echo '<tr><td>2</td><td>OS Serial Number</td><td>' . $p['os_serial'] . '</td></tr>';
-                        echo '<tr><td>3</td><td>OS Installed / Updated Date</td><td>' . $p['os_installed'] . '</td></tr>';
-                        echo '<tr><td>4</td><td>System Running Since</td><td>' . $p['os_booted'] . '</td></tr>';
-                        echo '<tr><td>5</td><td>System Connected to internet using IP</td><td>' . $p['os_extip'] . '</td></tr>';
+                        if($os_human == "Windows"){
+                            echo '<tr><td>1</td><td>OS Architecture</td><td>' . $p['os_bit'] . ' - bit</td></tr>';
+                            echo '<tr><td>2</td><td>OS Serial Number</td><td>' . $p['os_serial'] . '</td></tr>';
+                            echo '<tr><td>3</td><td>OS Installed / Updated Date</td><td>' . $p['os_installed'] . '</td></tr>';
+                            echo '<tr><td>4</td><td>System Running Since</td><td>' . $p['os_booted'] . '</td></tr>';
+                            echo '<tr><td>5</td><td>System Connected to internet using IP</td><td>' . $p['os_extip'] . '</td></tr>';
+                        }else{
+                            echo '<tr><td>1</td><td>OS Architecture</td><td>' . $p['os_bit'] . '</td></tr>';
+                            echo '<tr><td>2</td><td>Kernal Version</td><td>' . $p['os_installed'] . '</td></tr>';
+                            echo '<tr><td>3</td><td>System Running Since</td><td>' . $p['os_booted'] . '</td></tr>';
+                            echo '<tr><td>4</td><td>System Connected to internet using IP</td><td>' . $p['os_extip'] . '</td></tr>';
+                        }
                     }
                 ?>
                 </table>
@@ -111,9 +118,9 @@ include 'header.php';
     </div>
     </div>
     </div>
-    <div class="col-xl-6">
+    <div class="col-xl-12">
         <div class="p-4">
-        <div class="card border bor-ten shadow ">
+        <div class="card border bor-ten ">
             <div class="card-header bg-dark text-white">Client Status</div>
             <div class="card-body">
                 <table class="table table-all">
@@ -167,16 +174,20 @@ include 'header.php';
             <div class="card-footer">Need information about this section click <a href="#">here</a></div>
         </div>
         </div>
+       
         <div class="p-4">
-        <div class="card border bor-ten shadow ">
+        <div class="card border bor-ten ">
             <div class="card-header bg-dark text-white">Process Monitor</div>
             <div class="card-body" id="incproc">
             </div>
             <div class="card-footer">Need information about this section click <a href="#">here</a></div>
         </div>
         </div>
+        <?php
+        if($os_human == "Windows"){
+            ?>
         <div class="p-4">
-            <div class="card border bor-ten shadow ">
+            <div class="card border bor-ten ">
                 <div class="card-header bg-dark text-white">Processes running in computer</div>
                 <div class="card-body">
                     <a href="processrun.php?ip=<?php echo $_GET['ip']; ?>&group=<?php echo $_GET['group']; ?>">View</a>
@@ -184,6 +195,9 @@ include 'header.php';
                 <div class="card-footer">Need information about this section click <a href="#">here</a></div>
             </div>
         </div>
+        <?php
+        }
+        ?>
     </div>
     </div>
 </div>

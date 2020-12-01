@@ -230,7 +230,8 @@ class valai{
         date_default_timezone_set('Australia/Adelaide');
         $date = date('dmYhis', time());
         // echo 'v1.0 Build 13112020071510-alpha-r102';
-        echo 'v1.0 Build 18112020023550am-beta1-r100';
+        // echo 'v1.0 Build 18112020023550am-beta1-r100';
+        echo 'v1.0 Build 02122020035515am-beta2-r103';
     }
     public static function DisplayVersion(){
         echo 'v1.0';

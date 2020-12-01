@@ -1,7 +1,6 @@
 <?php
 echo '<div class="bg-dark">';
-echo '
-<nav class="navbar navbar-expand-lg navbar-light shadow">
+echo '<nav class="navbar navbar-expand-lg navbar-light shadow">
   <!-- Brand -->
   <img src="images/valaiweb.svg" class="mx-auto d-block rounded-circle p-2" style="background-color: #fff; width: 48px;" alt="logo">
   <!-- Toggler/collapsibe Button -->

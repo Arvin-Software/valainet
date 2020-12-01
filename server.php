@@ -1,5 +1,6 @@
 <?php
 $server = 'server';
+$inst="server";
 include 'header.php';
 ?>
 <body class="" style="background-color: #FFFFFF;">
