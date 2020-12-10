@@ -278,6 +278,20 @@ if($auth == "success"){
         }else if($_POST['act'] == "deleteprocess"){
             valai::DeleteProcess($_POST['ip'], $_POST['group']);
             echo 'success1';
+        }else if($_POST['act'] == "retsamplejson"){
+            $ret = khatral::khquery('SELECT * FROM process_moni WHERE moni_ip=:ip AND moni_group=:group', array(
+                ':ip'=>$_POST['ip'],
+                ':group'=>$_POST['group']
+            ));
+            $count = 0;
+            $rows = array();
+            foreach($ret as $p){
+                ${'file' . $count} = array("mm$count" => $p['moni_nm']);
+                $rows += ${'file' . $count};
+                $count += 1;
+            }
+            $rows += array("count" => $count);
+            echo (json_encode($rows));
         }
         else{
             echo '<img src="images/valaiweb.svg" style="width: 32px;"><h3>Valai API</h3><br />This is a api file and it will not execute on its own. <br />Please refer documentation for more information on how to access it and work with it. <br />Copyright &copy; 2020 Valainet. All Rights Reserved.';
