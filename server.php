@@ -32,11 +32,6 @@ include 'header.php';
 </div>
 </div>
 
-<!-- <div class="fixed-bottom bg-light border text-center">
-&copy; 2020 Valai Net. All Rights Reserved.|
-Build Number : 020920200236am-alpha-r101
-</div> -->
-
 <script>
     $('#inc1').hide()
     $('#inc2').hide()
@@ -108,4 +103,4 @@ Build Number : 020920200236am-alpha-r101
 </script>
 </div>
 <b class="bg-dark text-white p-2 bor-ten" style="font-size: 38px;">Valai Server</b><br><br>
-This is a server page and it will not execute on its own. <br />Please refer documentation for more information on how to access it and work with it. <br /> <br> <b class="bg-danger text-white p-2 bor-ten">Please don't close this window</b><br /><br />Build Number : 020920200236am-alpha-r101 | An open source software<br />Copyright &copy; 2020 Valainet. All Rights Reserved.
+This is a server page and it will not execute on its own. <br />Please refer documentation for more information on how to access it and work with it. <br /> <br> <b class="bg-danger text-white p-2 bor-ten">Please don't close this window</b><br /><br /><?php valai::DisplayVerBuild() ?> | An open source software<br />Copyright &copy; 2020 Valainet. All Rights Reserved.

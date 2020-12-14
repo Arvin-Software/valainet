@@ -225,6 +225,18 @@ class valai{
         ));
         
     }
+    public static function insertSoftware($nm, $des, $purdt, $expdt, $rendt, $code, $loc){
+        khatral::khquery('INSERT INTO pur_soft VALUES(NULL, :nm,
+        :descr, :purdt, :expdt, :rendt, :code, :loc)', array(
+            ':nm'=>$nm,
+            ':descr'=>$des,
+            ':purdt'=>$purdt,
+            ':expdt'=>$expdt,
+            ':rendt'=>$rendt,
+            ':code'=>$code,
+            ':loc'=>$loc
+        ));
+    }
     public static function DisplayVerBuild(){
         // Australia/Adelaide
         date_default_timezone_set('Australia/Adelaide');

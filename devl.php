@@ -1,5 +1,5 @@
 <?php
-$mainnav = 'pur';
+$mainnav = 'it';
 include 'headerabout.php';
 ?>
 <br>

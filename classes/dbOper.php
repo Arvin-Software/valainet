@@ -258,6 +258,21 @@ if($conn->query($query) == TRUE){
 }else{
     echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table asset ' . $conn->error;
 }
+$query = 'CREATE TABLE IF NOT EXISTS pur_soft(
+            soft_id             INTEGER         NOT NULL        AUTO_INCREMENT,
+            soft_nm             VARCHAR(500)    NOT NULL,
+            soft_des            LONGTEXT        NOT NULL,
+            soft_pur_date       VARCHAR(255)    NOT NULL,
+            soft_exp_date       VARCHAR(255)    NOT NULL,
+            soft_ren_date       VARCHAR(255)    NOT NULL,
+            asset_code          VARCHAR(255)    NOT NULL,
+            loc                 VARCHAR(255)    NOT NULL,
+            PRIMARY KEY(soft_id))';
+if($conn->query($query) == TRUE){
+    echo '<br /><img src="../images/tick.png" style="width: 22px;">&nbsp;&nbsp;Table pur_soft created successfully';
+}else{
+    echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table pur_soft ' . $conn->error;
+}
 echo '<br /><br />';
 echo '<a href="../installation/second.php" class="btn btn-dark bor-ten float-left">&lt; Previous</a>
 <a href="../installation/finish.php" class="btn btn-dark bor-ten float-right">Next &gt;</a>';

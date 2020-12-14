@@ -19,21 +19,21 @@ echo '<nav class="navbar navbar-expand-lg navbar-light shadow">
         }
       echo '</li><li class="nav-item">';
       if($mainnav=="pur"){
-        echo '<a class="btn-nav nav-item nav-link btn text-left  bor-none bg-light text-dark" href="devl.php"><img src="images/software.png" class="" style="width: 28px;">&nbsp;&nbsp;Purchased Software</a>';
+        echo '<a class="btn-nav nav-item nav-link btn text-left  bor-none bg-light text-dark" href="pursoft.php"><img src="images/software.png" class="" style="width: 28px;">&nbsp;&nbsp;Purchased Software</a>';
       }else{
-        echo '<a class="btn-nav nav-item nav-link btn text-left text-light bor-none" href="devl.php"><img src="images/software.png" class="" style="width: 28px;">&nbsp;&nbsp;Purchased Software</a>';
+        echo '<a class="btn-nav nav-item nav-link btn text-left text-light bor-none" href="pursoft.php"><img src="images/software.png" class="" style="width: 28px;">&nbsp;&nbsp;Purchased Software</a>';
       }
       echo '</li><li class="nav-item">';
-      if($mainnav=="pur"){
+      if($mainnav=="it"){
         echo '<a class="btn-nav nav-item nav-link btn text-left  bor-none bg-light text-dark" href="devl.php"><img src="images/other.svg" class="" style="width: 28px;">&nbsp;&nbsp;Non IT Equipment</a>';
       }else{
         echo '<a class="btn-nav nav-item nav-link btn text-left text-light bor-none" href="devl.php"><img src="images/other.svg" class="" style="width: 28px;">&nbsp;&nbsp;Non IT Equipment</a>';
       }
       echo '</li><li class="nav-item">';
       if($mainnav=="about"){
-        echo '<a class="btn-nav nav-item nav-link btn text-left  bor-none bg-light text-dark" href="about.php"><img src="images/info.svg" class="" style="width: 28px;">&nbsp;&nbsp;About Valai</a>';
+        echo '<a class="btn-nav nav-item nav-link btn text-left  bor-none bg-light text-dark" href="about.php"><img src="images/info.svg" class="" style="width: 28px;">&nbsp;&nbsp;ValaiNet Project</a>';
       }else{
-        echo '<a class="btn-nav nav-item nav-link btn text-left text-light bor-none" href="about.php"><img src="images/info.svg" class="" style="width: 28px;">&nbsp;&nbsp;About Valai</a>';
+        echo '<a class="btn-nav nav-item nav-link btn text-left text-light bor-none" href="about.php"><img src="images/info.svg" class="" style="width: 28px;">&nbsp;&nbsp;ValaiNet Project</a>';
       }
       echo '</li><li class="nav-item">';
       if($mainnav=="users"){
