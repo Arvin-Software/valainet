@@ -46,8 +46,8 @@ function retSoft(){
         return response.json();
     }).then(function(data){
         console.log(data);
-        var output = '<table class="table table-bordered">';
-        output += `<tr>
+        var output = '<table class="table table-striped">';
+        output += `<tr class="bg-dark text-white">
         <th>SL.NO</th>
         <th>Computer Name</th>
         <th>Description</th>

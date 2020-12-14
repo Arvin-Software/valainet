@@ -7,8 +7,8 @@ $ret = khatral::khquery('DELETE FROM pur_soft WHERE soft_id=:id', array(
 ));
 }
 ?>
-<div class="container">
-<a onclick="window.history.back();" href="#" class="btn btn-dark">Back</a>
+<div class="container" style="margin-top: 5%;">
+<!-- <a onclick="window.history.back();" href="#" class="btn btn-dark">Back</a> -->
     <div class="form-group">
         <label for="Asset Code">Asset Code</label>
         <input type="text" name="assetcode" id="assetcode" class="form-control" value="">
@@ -19,7 +19,7 @@ $ret = khatral::khquery('DELETE FROM pur_soft WHERE soft_id=:id', array(
     </div>
     <div class="form-group">
         <label for="Des">Software Description</label>
-        <textarea name="softdes" id="softdes" cols="30" rows="10" class="form-control"></textarea>
+        <textarea name="softdes" id="softdes" cols="30" rows="3" class="form-control"></textarea>
     </div>
     <div class="form-group">
         <label for="loc">Location</label>

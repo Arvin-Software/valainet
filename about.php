@@ -26,7 +26,8 @@ include 'headerabout.php';
     </tr>
     <tr>
         <td>Aves Engine</td>
-        <td>v2.0-r300</td>
+        <!-- <td>v2.0-r300</td> -->
+        <td><?php valai::DisplayAvesEngineVersion(); ?></td>
     </tr>
     <tr>
         <td>Glade Renderer</td>
@@ -38,7 +39,8 @@ include 'headerabout.php';
     </tr>
     <tr>
         <td>Khatral-DB Connector and classes</td>
-        <td>0.0.3-r552</td>
+        <!-- <td>0.0.3-r552</td> -->
+        <td><?php valai::DisplayKhatralVersion();?></td>
     </tr>
     <tr>
         <td>Change Log for the latest build</td>

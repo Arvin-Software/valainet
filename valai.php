@@ -243,18 +243,31 @@ class valai{
         $date = date('dmYhis', time());
         // echo 'v1.0 Build 13112020071510-alpha-r102';
         // echo 'v1.0 Build 18112020023550am-beta1-r100';
-        echo 'v1.0 Build 02122020035515am-beta2-r103';
+        // echo 'v1.0 Build 02122020035515am-beta2-r103';
+        echo 'v1.0 Build 14122020091145pm-beta3-r105';
     }
     public static function DisplayVersion(){
         echo 'v1.0';
     }
+    public static function DisplayAvesEngineVersion(){
+        echo 'v2.1-r401';
+    }
+    public static function DisplayKhatralVersion(){
+        echo '0.0.4-r600';
+    }
     public static function DisplayChangeLog(){
-        echo '<ul><li>Changed User Interface to accommodate more items</li>';
-        echo '<li>Changed Primary Navigation</li>';
-        echo '<li>Changed API file name to better suit the operation</li>';
-        echo '<li>Numerous Bug Fixes</li>';
-        echo '<li>Performance Improvements</li>';
-        echo '</ul>';
+        // echo '<ul><li>Changed User Interface to accommodate more items</li>';
+        // echo '<li>Changed Primary Navigation</li>';
+        // echo '<li>Changed API file name to better suit the operation</li>';
+        // echo '<li>Numerous Bug Fixes</li>';
+        // echo '<li>Performance Improvements</li>';
+        // echo '</ul>';
+        echo '<ul><li>Added functionality to purchased software for asset management</li>
+        <li>Purchased Software module is developed using fetchAPI without JQuery</li>
+        <li>API improvements</li>
+        <li>Bug fixes</li>
+        <li>Performance Improvements</li></ul>
+        ';
     }
 }
 ?>
