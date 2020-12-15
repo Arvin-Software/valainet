@@ -34,12 +34,13 @@ include 'header.php';
                 $moni = '';
                 $lap = '';
                 $device = '';
+                $set = '';
                     $ret = khatral::khquery('SELECT * FROM comp_info WHERE comp_ip=:ip AND comp_group=:group', array(
                         ':ip'=>$_GET['ip'],
                         ':group'=>$_GET['group']
                     ));
                     foreach($ret as $p){
-                       
+                        $set = 'yes';
                         if(strpos($p['comp_os'], "Windows") !== false){
                             $img = '../images/windows.svg';
                             $os = 'Windows Management Instrumentation';
@@ -87,6 +88,9 @@ include 'header.php';
                             echo '<tr><td>' . $countx .'</td><td>Harddisk(' . $hrdcount . ')</td><td>' . $pi['nm'] . ' Size : ' . $pi['tot'] . '</td></tr>';
                         }
                     }
+                    if($set == ''){
+                        echo '<tr><td></td><td><b class="text-danger">No info available</b></td><td></td></tr>';
+                    }
                 ?>
             </table>
         </div>
@@ -102,16 +106,21 @@ include 'header.php';
                     <th>Details</th>
                 </tr>
                 <?php
+                    $set = '';
                     $ret = khatral::khquery('SELECT * FROM os WHERE os_ip=:ip AND os_group=:group', array(
                         ':ip'=>$_GET['ip'],
                         ':group'=>$_GET['group']
                     ));
                     foreach($ret as $p){
+                        $set = 'yes';
                         echo '<tr><td>1</td><td>OS Architecture</td><td>' . $p['os_bit'] . ' - bit</td></tr>';
                         echo '<tr><td>2</td><td>OS Serial Number</td><td>' . $p['os_serial'] . '</td></tr>';
                         echo '<tr><td>3</td><td>OS Installed / Updated Date</td><td>' . $p['os_installed'] . '</td></tr>';
                         echo '<tr><td>4</td><td>System Running Since</td><td>' . $p['os_booted'] . '</td></tr>';
                         echo '<tr><td>5</td><td>System Connected to internet using IP</td><td>' . $p['os_extip'] . '</td></tr>';
+                    }
+                    if($set == ''){
+                        echo '<tr><td></td><td><b class="text-danger">No info available</b></td><td></td></tr>';
                     }
                 ?>
                 </table>
@@ -125,6 +134,11 @@ include 'header.php';
         <div class="card border bor-ten shadow ">
             <div class="card-header bg-dark text-white">Client Status</div>
             <div class="card-body">
+            <?php
+            if($set == ''){
+                echo '<tr><td></td><td><b class="text-danger">No info available</b></td><td></td></tr>';
+            }else{
+                ?>
                 <table class="table table-all">
                     <tr class="">
                         <th style="width: 10px;">SL.NO</th>
@@ -172,6 +186,9 @@ include 'header.php';
                         <td id=""><?php echo $device; ?></td>
                     </tr>
                 </table>
+                <?php
+            }
+            ?>
             </div>
             <div class="card-footer">Need information about this section click <a href="#">here</a></div>
         </div>
@@ -180,6 +197,11 @@ include 'header.php';
         <div class="card border bor-ten shadow ">
             <div class="card-header bg-dark text-white">Process Monitor</div>
             <div class="card-body" id="incproc">
+            <?php
+            if($set == ''){
+                        echo '<tr><td></td><td><b class="text-danger">No info available</b></td><td></td></tr>';
+                    }
+                    ?>
             </div>
             <div class="card-footer">Need information about this section click <a href="#">here</a></div>
         </div>
@@ -188,7 +210,15 @@ include 'header.php';
             <div class="card border bor-ten shadow ">
                 <div class="card-header bg-dark text-white">Processes running in computer</div>
                 <div class="card-body">
+                <?php
+                if($set == ''){
+                        echo '<tr><td></td><td><b class="text-danger">No info available</b></td><td></td></tr>';
+                    }else{
+                        ?>
                     <a href="processrun.php?ip=<?php echo $_GET['ip']; ?>&group=<?php echo $_GET['group']; ?>">View</a>
+                    <?php
+                    }
+                    ?>
                 </div>
                 <div class="card-footer">Need information about this section click <a href="#">here</a></div>
             </div>

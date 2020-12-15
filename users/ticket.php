@@ -2,7 +2,7 @@
 include 'header.php';
 include '../valai.php';
 ?>
-<body class="" style="background-color: #FFFFFF;">
+<body class="" style="background-color: #FFFFFF;" onload="hideOther()">
 <div class="container-fluid">
     <div class="row" style=" height: 100vh;">
         <div class="col-xl-2 fade-in text-black bg-dark" style="padding: 0px 0px 0px 0px;">
@@ -12,16 +12,22 @@ include '../valai.php';
    ?> 
 </div>
 
-<div class="col-xl-10 fade-in" id="" style="height: 100vh; padding: 1% 2% 2% 2%; background-color: #fff;">
+<div class="col-xl-10 fade-in" " id="" style="height: 100vh; padding: 1% 2% 2% 2%; background-color: #fff;">
 <?php
 if(isset($_POST['submit'])){
     date_default_timezone_set('Asia/Kolkata');
     $date = date('dmYhis', time());
     $date1 = date('d/m/Y h:i:s', time());
+    $titl = '';
+    if($_POST['titl'] != ''){
+        $titl = $_POST['titl'];
+    }else{
+        $titl = $_POST['ip'];
+    }
     khatral::khquery('INSERT INTO ticket VALUES(NULL, :tick_id, :mess, :ip, :group, :wherenm, :unm)', array(
         ':tick_id'=>'valai' . $date,
         ':mess'=>$_POST['des'],
-        ':ip'=>$_POST['ip'],
+        ':ip'=>$titl,
         ':group'=>$_POST['gro'],
         ':wherenm'=>'admin',
         ':unm'=>$_SESSION['unme']
@@ -49,8 +55,8 @@ if(isset($_POST['submit'])){
       <div class="modal-body">
         <form action="ticket.php" method="post">
             <div class="form-group">
-                <label for="ip">Select IP</label>
-                <select name="ip" id="ip" class="custom-select">
+                <label for="ip">Select IP/Select Other</label>
+                <select name="ip" id="ip" class="custom-select" onchange="getSelect()">
                     <?php
                         $ret = khatral::khquery('SELECT * FROM modl WHERE modl_user=:user', array(
                             ':user'=>$_SESSION['unme']
@@ -66,10 +72,15 @@ if(isset($_POST['submit'])){
                             echo '<option>' . $pi['comp_ip'] . '</option>';
                         }
                     ?>
+                    <option>Other</option>
                 </select>
             </div>
+            <div class="form-group" id="otherfl">
+                <label for="title">Service Ticket Title</label>
+                <input type="text" name="titl" id="titl" class="form-control">
+            </div>
             <div class="form-group">
-                <label for="message">Ticket Description</label>
+                <label for="message">Service Ticket Description</label>
                 <input type="text" name="gro" id="gro" style="display: none;" value="<?php echo $me; ?>">
                 <textarea name="des" id="des" cols="30" rows="10" class="form-control"></textarea>
             </div>
@@ -85,10 +96,28 @@ if(isset($_POST['submit'])){
     </div>
   </div>
 </div>
+<script>
+
+window.onload = function() {
+  document.getElementById('otherfl').style.display = 'none';
+};
+    function getSelect(){
+        var e = document.getElementById("ip");
+        var value = e.options[e.selectedIndex].value;
+        var text = e.options[e.selectedIndex].text;
+        if(text == "Other"){
+            // alert('other');
+            document.getElementById('otherfl').style.display = 'block';
+        }else{
+            document.getElementById('otherfl').style.display = 'none';
+        }
+    }
+    
+</script>
 <table class="table table-bordered" style="margin-top: 2%;">
     <th>Sl.NO</th>
     <th>Ref. No</th>
-    <th>IP</th>
+    <th>IP Address / Title</th>
     <th>Description</th>
     <th>actions</th>
     <?php

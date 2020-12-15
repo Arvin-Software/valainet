@@ -30,8 +30,8 @@ include 'headerabout.php';
         <td><?php valai::DisplayAvesEngineVersion(); ?></td>
     </tr>
     <tr>
-        <td>Glade Renderer</td>
-        <td>v1.3-r150</td>
+        <td>ChartJS</td>
+        <td>v2.0</td>
     </tr>
     <tr>
         <td>Softview CSS</td>
@@ -54,8 +54,9 @@ include 'headerabout.php';
 <h3>License GNU GPL v3.0</h3>
 <iframe src="LICENSE" frameborder="0" class="border bg-white" style="width: 100%; height: 40vh;"></iframe>
 <hr>
-<h6 class="text-center">Valai is a Open Source software which is licensed under GNU GPL v3 License</h6>
-<h6 class="text-center">Valai Logo, Valai Name, Softview Name, Khatral name are a property of Arvin Soft R & D, Icons in the project are the copyright of the respective owners.</h6>
-<h6 class="text-center">Components like bootstrap, jquery and other products used in this project are the copyright of the respective owners.</h6>
+<h6 class="text-center">ValaiNet is a Open Source software which is licensed under GNU GPL v3 License</h6>
+<h6 class="text-center">ValaiNet Logo, ValaiNet Name, Softview Name, Khatral name, Aves Engine Name are a property of Arvin Soft R & D.</h6>
+<h6 class="text-center">Icons in the project are the copyright of the respective owners.</h6>
+<h6 class="text-center">Components like bootstrap, ChartJS, jquery and other products used in this project are the copyright of the respective owners.</h6>
 <h6 class="text-center">&copy; 2020 ValaiNet Project. All Rights Reserved.</h6>
 </div>

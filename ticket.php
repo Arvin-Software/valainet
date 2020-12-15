@@ -71,7 +71,7 @@ if(isset($_POST['submit'])){
 <table class="table table-bordered" style="margin-top: 2%;">
     <th>Sl.NO</th>
     <th>Ref. No</th>
-    <th>IP</th>
+    <th>IP Address / Title</th>
     <th>Description</th>
     <th>actions</th>
     <?php

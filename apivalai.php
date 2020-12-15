@@ -26,6 +26,31 @@ if($data['apikey'] == 'influx'){
             ':id'=>$data['softid']
         ));
         echo 'success';
+    }else if($data['act'] == 'insertequip'){
+        $code = $data['ascode'];
+        $coll = $data['equipcollec'];
+        $nm = $data['equipNm'];
+        $des = $data['equipDes'];
+        $loc = $data['equipLoc'];
+        $purdt = $data['equipPurDt'];
+        $expdt = $data['equipWarDt'];
+        $rendt = $data['equipRenDt'];
+        valai::insertNONIT($nm, $coll, $des, $purdt, $expdt, $rendt, $code, $loc);
+        echo 'success';
+    }else if($data['act'] == 'retequip'){
+        $ret = khatral::khquery('SELECT * FROM nonit WHERE nonit_coll=:coll', array(
+            ':coll'=>$data['collNm']
+        ));
+        $retVal = array();
+        foreach($ret as $p){
+            $retVal[] = array('id'=>$p['nonit_id'], 'coll'=>$p['nonit_coll'], 'nm'=>$p['nonit_nm'], 'des'=>$p['nonit_des'], 'purdt'=>$p['nonit_pur_date'], 'expdt'=>$p['nonit_exp_date'], 'rendt'=>$p['nonit_ren_date'], 'assetcode'=>$p['asset_code'], 'loc'=>$p['loc']);
+        }$expo = $retVal;
+        echo(json_encode($expo));
+    }else if($data['act'] == 'deleteequip'){
+        $ret = khatral::khquery('DELETE FROM nonit WHERE nonit_id=:id', array(
+            ':id'=>$data['equipid']
+        ));
+        echo 'success';
     }
     else{
         echo 'failure';

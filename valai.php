@@ -237,6 +237,19 @@ class valai{
             ':loc'=>$loc
         ));
     }
+    public static function insertNONIT($nm, $coll, $des, $purdt, $expdt, $rendt, $code, $loc){
+        khatral::khquery('INSERT INTO nonit VALUES(NULL, :coll, :nm,
+        :descr, :purdt, :expdt, :rendt, :code, :loc)', array(
+            ':coll'=>$coll,
+            ':nm'=>$nm,
+            ':descr'=>$des,
+            ':purdt'=>$purdt,
+            ':expdt'=>$expdt,
+            ':rendt'=>$rendt,
+            ':code'=>$code,
+            ':loc'=>$loc
+        ));
+    }
     public static function DisplayVerBuild(){
         // Australia/Adelaide
         date_default_timezone_set('Australia/Adelaide');
@@ -244,16 +257,19 @@ class valai{
         // echo 'v1.0 Build 13112020071510-alpha-r102';
         // echo 'v1.0 Build 18112020023550am-beta1-r100';
         // echo 'v1.0 Build 02122020035515am-beta2-r103';
-        echo 'v1.0 Build 14122020091145pm-beta3-r105';
+        // echo 'v1.0 Build 14122020091145pm-beta3-r105';
+        echo 'v1.0 Release Candidate';
     }
     public static function DisplayVersion(){
         echo 'v1.0';
     }
     public static function DisplayAvesEngineVersion(){
-        echo 'v2.1-r401';
+        // echo 'v2.1-r401';
+        echo 'v2.1-Release Candidate';
     }
     public static function DisplayKhatralVersion(){
-        echo '0.0.4-r600';
+        // echo '0.0.4-r600';
+        echo '0.0.4-Release Candidate';
     }
     public static function DisplayChangeLog(){
         // echo '<ul><li>Changed User Interface to accommodate more items</li>';
@@ -262,8 +278,18 @@ class valai{
         // echo '<li>Numerous Bug Fixes</li>';
         // echo '<li>Performance Improvements</li>';
         // echo '</ul>';
-        echo '<ul><li>Added functionality to purchased software for asset management</li>
-        <li>Purchased Software module is developed using fetchAPI without JQuery</li>
+        // echo '<ul><li>Added functionality to purchased software for asset management</li>
+        // <li>Purchased Software module is developed using fetchAPI without JQuery</li>
+        // <li>API improvements</li>
+        // <li>Bug fixes</li>
+        // <li>Performance Improvements</li></ul>
+        // ';
+        echo '<ul><li>Added functionality to NONIT Equipment for asset management</li>
+        <li>NONIT Equipment module is developed using fetchAPI without JQuery</li>
+        <li>Fixed bugs in purchased software and NON IT Equipments Page</li>
+        <li>Added option to raise generalized service tickets without specifying a particular IP</li>
+        <li>API Bug Fixes</li>
+        <li>JSON Improvements</li>
         <li>API improvements</li>
         <li>Bug fixes</li>
         <li>Performance Improvements</li></ul>

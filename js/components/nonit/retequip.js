@@ -1,14 +1,14 @@
 import { getObjID, renderHTML, renderText } from "../../avesengine/aves.js"
-function deleteSoftware(softId){
+function deleteEquipment(softId){
     const val = softId
     // return `
     // alert('${softId}')
     // `
     return `
     const payload = {
-        act: 'delSoft',
+        act: 'deleteequip',
         apikey: 'influx',
-        softid: '${softId}',
+        equipid: '${softId}',
     };
     console.log(payload);
     fetch('apivalai.php',{
@@ -28,11 +28,13 @@ function deleteSoftware(softId){
     })
     `;
 }
-const payload = {
-    act: 'retSoft',
-    apikey: 'influx',
-};
-function retSoft(){
+
+function retequip(collNm){
+    const payload = {
+        act: 'retequip',
+        collNm: collNm,
+        apikey: 'influx',
+    };
     function sayHello(){
         return "alert('hello 1')";
     }
@@ -45,12 +47,13 @@ function retSoft(){
     }).then(function(response){
         return response.json();
     }).then(function(data){
-        if(data.length > 0){
+        if(data.length >0){
             console.log(data);
             var output = '<table class="table table-striped">';
             output += `<tr class="bg-dark text-white">
             <th>SL.NO</th>
-            <th>Software Name</th>
+            <th>Collection</th>
+            <th>Equipment Name</th>
             <th>Description</th>
             <th>Purchase Date</th>
             <th>Warrenty Date</th>
@@ -65,11 +68,12 @@ function retSoft(){
                 count += 1;
                 output += `
                     <tr><td>${count}</td>
+                    <td>${comp.coll}</td>
                     <td>${comp.nm}</td><td>${comp.des}</td>
                     <td>${comp.purdt}</td><td>${comp.expdt}</td>
                     <td>${comp.rendt}</td><td>${comp.assetcode}</td>
                     <td>${comp.loc}</td>
-                    <td><button id="${comp.nm}" class="btn btn btn-danger" onClick="${deleteSoftware(comp.id)}">Delete</button></td>
+                    <td><button id="${comp.nm}" class="btn btn btn-danger" onClick="${deleteEquipment(comp.id)}">Delete</button></td>
                     </tr>
                 `;
                 
@@ -79,9 +83,7 @@ function retSoft(){
             var output = '<h4 class="text-center text-danger">No value to show</h4>';
             getObjID('app').innerHTML = output;
         }
-    }).catch(function(error){
-        console.log(error);
     })
     console.log("final");
 }
-export { retSoft }
+export { retequip }

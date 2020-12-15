@@ -273,6 +273,22 @@ if($conn->query($query) == TRUE){
 }else{
     echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table pur_soft ' . $conn->error;
 }
+$query = 'CREATE TABLE IF NOT EXISTS nonit(
+            nonit_id            INTEGER         NOT NULL        AUTO_INCREMENT,
+            nonit_coll          VARCHAR(255)    NOT NULL,
+            nonit_nm            VARCHAR(500)    NOT NULL,
+            nonit_des           LONGTEXT        NOT NULL,
+            nonit_pur_date      VARCHAR(255)    NOT NULL,
+            nonit_exp_date      VARCHAR(255)    NOT NULL,
+            nonit_ren_date      VARCHAR(255)    NOT NULL,
+            asset_code          VARCHAR(255)    NOT NULL,
+            loc                 VARCHAR(255)    NOT NULL,
+            PRIMARY KEY(nonit_id))';
+if($conn->query($query) == TRUE){
+    echo '<br /><img src="../images/tick.png" style="width: 22px;">&nbsp;&nbsp;Table nonit created successfully';
+}else{
+    echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table nonit ' . $conn->error;
+}
 echo '<br /><br />';
 echo '<a href="../installation/second.php" class="btn btn-dark bor-ten float-left">&lt; Previous</a>
 <a href="../installation/finish.php" class="btn btn-dark bor-ten float-right">Next &gt;</a>';

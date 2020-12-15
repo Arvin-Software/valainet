@@ -46,7 +46,7 @@ include 'headerabout.php';
             foreach($ret as $p){
                 echo '<tr><td>1</td><td>Reference Number</td><td>' . $p['ticket_ri_id'] . '</td></tr>';
                 echo '<tr><td>2</td><td>Description</td><td>' . $p['ticket_mess'] . '</td></tr>';
-                echo '<tr><td>3</td><td>IP</td><td>' . $p['ticket_ip'] . '</td></tr>';
+                echo '<tr><td>3</td><td>IP Address / Title</td><td>' . $p['ticket_ip'] . '</td></tr>';
                 echo '<tr><td>4</td><td>Group</td><td>' . $p['ticket_group'] . '</td></tr>';
             }
             $res = khatral::khquery('SELECT * FROM assign_tick WHERE assign_tick_id=:id', array(
@@ -119,7 +119,7 @@ include 'headerabout.php';
             }
         ?>
         </select>
-        <input type="submit" value="Assign technician" id="submit1" name="submit1" class="btn btn-dark">
+        <input type="submit" value="Assign technician" id="submit1" name="submit1" class="btn btn-dark" style="margin-top: 2%; margin-bottom: 2%;">
     </form>
     <?php
         }

@@ -117,7 +117,7 @@
                                 
                     
                         
-                        <div class="container bg-white border " style="height: 100%; padding: 8% 8% 8% 8%;">
+                        <div class="container bg-white border shadow" style="height: 100%; padding: 8% 8% 8% 8%;">
                         <?php
                                         if(isset($_GET['id'])){
                                             echo '<div class="alert alert-danger alert-dismissible fade show text-center">

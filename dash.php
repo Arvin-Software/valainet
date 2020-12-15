@@ -57,7 +57,7 @@ include 'header.php';
             },
         }
   });
-  $.post("api.php",
+  $.post("/valainet/api.php",
             {
             act:"rettot",
             ip:"192.168.1.5",
@@ -106,7 +106,7 @@ include 'header.php';
 </div>
 
 <script>
-	$.post("api.php",
+	$.post("/valainet/api.php",
             {
             act:"sayhello",
             ip:"192.168.1.5",
@@ -117,11 +117,11 @@ include 'header.php';
           function(data, status){
             // alert(data);
             if(data == 'hello'){
-                $('#inc').html('<img src="images/tick.png" style="width: 32px;">&nbsp;&nbsp;Server connection established');
+                $('#inc').html('<img src="/valainet/images/tick.png" style="width: 32px;">&nbsp;&nbsp;Server connection established');
                 // $('#inc1').show()
             }
           });
-          $.post("api.php",
+          $.post("/valainet/api.php",
             {
             act:"retstatx",
             ip:"192.168.1.5",
@@ -142,7 +142,7 @@ include 'header.php';
   setInterval(function () {
         
         // alert('hello');
-			$.post("api.php",
+			$.post("/valainet/api.php",
             {
             act:"sayhello",
             ip:"192.168.1.5",
@@ -153,14 +153,14 @@ include 'header.php';
           function(data, status){
             // alert(data);
             if(data == 'hello'){
-                $('#inc').html('<img src="images/tick.png" style="width: 32px;">&nbsp;&nbsp;Server connection established');
+                $('#inc').html('<img src="/valainet/images/tick.png" style="width: 32px;">&nbsp;&nbsp;Server connection established');
                 // $('#inc1').show()
             }
           });
            
     }, 500);
     setInterval(function () {
-        $.post("api.php",
+        $.post("/valainet/api.php",
             {
             act:"retstatx",
             ip:"192.168.1.5",

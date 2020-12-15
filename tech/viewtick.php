@@ -70,7 +70,7 @@ include '../valai.php';
                 </tr>';
                 echo '<tr><td>1</td><td>Reference Number</td><td>' . $p['ticket_ri_id'] . '</td></tr>';
                 echo '<tr><td>2</td><td>Description</td><td>' . $p['ticket_mess'] . '</td></tr>';
-                echo '<tr><td>3</td><td>IP</td><td>' . $p['ticket_ip'] . '</td></tr>';
+                echo '<tr><td>3</td><td>IP Address / Title</td><td>' . $p['ticket_ip'] . '</td></tr>';
                 echo '<tr><td>4</td><td>Group</td><td>' . $p['ticket_group'] . '</td></tr>';
                 echo '<tr><td>6</td><td>Actions</td><td><a href="basicinfo.php?ip=' . $p['ticket_ip'] . '&group=' . $p['ticket_group'] . '">View info</a></td></tr>';
             }

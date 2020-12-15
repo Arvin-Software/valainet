@@ -45,6 +45,7 @@ function pursoft(assetCode, softNm, softDes, softLoc, softPurDt, softWarDt, soft
         getObjID(softRenDt).value = '';
         getObjID(softLoc).value = '';
         renderHTML(getObjID(errorId), errorMess);
+        document.getElementById('refresh').click();
     }else{
         const errorMess = `
             <div class="alert alert-danger alert-dismissible">
@@ -62,7 +63,7 @@ function pursoft(assetCode, softNm, softDes, softLoc, softPurDt, softWarDt, soft
 
 getObjID('submit').addEventListener('click', function(){
     pursoft('assetcode', 'softnm', 'softdes', 'loc', 'purchaseddt', 'wardt', 'lastrenew', 'error');
-    document.getElementById('refresh').click();
+    
 })
 getObjID('refresh').addEventListener('click', function(){
     retSoft();
