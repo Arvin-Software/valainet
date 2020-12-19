@@ -295,5 +295,10 @@ class valai{
         <li>Performance Improvements</li></ul>
         ';
     }
+    public static function KnownBugs(){
+        echo '<ul><li>Bug in the puruchased software and nonit when server is not enabled</li>
+        <li>Bug in process that is running (windows client)</li>
+        </ul>';
+    }
 }
 ?>

@@ -46,6 +46,10 @@ include 'headerabout.php';
         <td>Change Log for the latest build</td>
         <td><?php valai::DisplayChangeLog(); ?></td>
     </tr>
+    <tr>
+        <td>Known Bugs in latest build</td>
+        <td><?php valai::KnownBugs(); ?></td>
+    </tr>
 </table>
 <hr>
 <h3>PHP Configuration</h3>
