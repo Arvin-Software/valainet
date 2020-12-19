@@ -6,8 +6,6 @@ ValaiNet consists of Server and Client Software. The server software is the poin
 ## Installing ValaiNet Server
 This software requires linux to run using LAMP stack installed. The software is easy to install and configure with minimal effort. I've only tested with Ubuntu server 20.04. This software also works with Windows and other operating systems.
 
-
-
 ## Installing LAMP stack in Ubuntu 20.04 Server
 ### 1. Install Apache 2
 
@@ -25,7 +23,7 @@ Output
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
 Syntax OK
 ```
-Open the main configuration file in your text
+Open the main configuration file in your text editor
 ```Bash
 sudo nano /etc/apache2/apache2.conf
 ```
