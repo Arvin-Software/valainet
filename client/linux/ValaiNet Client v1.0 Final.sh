@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "#######################################################"
 echo "#            ValaiNet compatible Linux client         #"
-echo "#                v1.0 build 02122020beta2             #"
+echo "#                       v1.0 Final                    #"
 echo "#            Bash client Program for VALAI NET        #"
 echo "#  using curl, pgrep, grep, sed, getconf, python3 etc #"
 echo "#   (C) 2020 Valainet Project. All Rights Reserved    #"
