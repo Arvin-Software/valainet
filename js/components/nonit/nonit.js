@@ -1,6 +1,9 @@
 import { getObjID, renderHTML, renderText } from "../../avesengine/aves.js"
 // import { retSoft } from './retsoft.js';
 import { retequip } from './retequip.js';
+
+// Summary
+/* This Function sends data to our backend. It is hitting the "insertequip" function in the backen which saves data  */
 function nonit(assetCode, coll, equipNm, equipDes, equipLoc, equipPurDt, equipWarDt, equipRenDt, errorId){
     const asCde = getObjID(assetCode).value;
     const equipName = getObjID(equipNm).value;
@@ -63,6 +66,7 @@ function nonit(assetCode, coll, equipNm, equipDes, equipLoc, equipPurDt, equipWa
         // alert('sorry one of your field is empty');
     }
 }
+// Onsubmit this collects the data from form and inserts into backend using nonit function
 getObjID('submit').addEventListener('click', function(){
     nonit('assetcode', 'coll', 'equipnm', 'equipdes', 'loc', 'purchaseddt', 'wardt', 'lastrenew', 'error');
     
@@ -77,6 +81,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
     
 });
+// Selects the group and based on that retrives data from backend 
 getObjID('collsel').addEventListener('change', function(){
     var e = getObjID('collsel');
     var value = e.options[e.selectedIndex].value;
