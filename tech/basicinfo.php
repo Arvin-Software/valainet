@@ -15,7 +15,7 @@ include 'header.php';
 <input type="text" name="ip" id="ip" style="display: none;" value="<?php echo $_GET['ip']; ?>">
 <input type="text" name="group" id="group" style="display: none;" value="<?php echo $_GET['group']; ?>">
     <div class="row">
-    <div class="col-xl-6">
+    <div class="col-xl-12">
     <div class="p-4">
     <div class="card border bor-ten shadow ">
         <div class="card-header bg-dark  text-white">Basic Information</div>
@@ -129,7 +129,7 @@ include 'header.php';
     </div>
     </div>
     </div>
-    <div class="col-xl-6">
+    <div class="col-xl-12">
         <div class="p-4">
         <div class="card border bor-ten shadow ">
             <div class="card-header bg-dark text-white">Client Status</div>
@@ -234,7 +234,7 @@ Build Number : 020920200236am-alpha-r101 | An open source software
 setInterval(function () {
         
         // alert('hello');
-			$.post("../test.php",
+			$.post("../api.php",
             {
             act:"sayhello",
             ip:"192.168.1.5",
@@ -256,7 +256,7 @@ setInterval(function () {
     setInterval(function () {
         
         // alert('hello');
-			$.post("../test.php",
+			$.post("../api.php",
             {
             act:"retprocstatx",
             ip:$('#ip').val(),
@@ -275,7 +275,7 @@ setInterval(function () {
            
     }, 1000);
 setInterval(function () {
-        $.post("../test.php",
+        $.post("../api.php",
             {
             act:"retstat",
             ip:$('#ip').val(),

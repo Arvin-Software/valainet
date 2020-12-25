@@ -1,6 +1,6 @@
 <?php
 $curr = 'announce';
-include 'header.php';
+include '../header.php';
 ?>
 <h3>Collection</h3><hr>
 <?php

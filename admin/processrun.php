@@ -1,6 +1,6 @@
 <?php
 $curr = 'dash';
-include 'header.php';
+include '../header.php';
 
 ?>
 

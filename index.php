@@ -10,7 +10,7 @@
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- jQuery library -->
-    <script src="js/jquery-min.js"></script>
+    <script src="js/jquery.min.js"></script>
 
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -23,4 +23,4 @@
     <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/softview.css">
 <h1><img src="images/valaiweb.svg" style="width: 32px;">Welcome to Valai</h1>
-click <a href="login.php">here</a> to login
+click <a href="loginhandle/login.php">here</a> to login

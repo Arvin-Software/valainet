@@ -1,6 +1,6 @@
 <?php
 $mainnav = 'it';
-include 'headerabout.php';
+include '../headerabout.php';
 if(isset($_GET['del'])){
 $ret = khatral::khquery('DELETE FROM pur_soft WHERE soft_id=:id', array(
     ':id'=>$_GET['id']

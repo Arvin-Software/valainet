@@ -12,7 +12,7 @@
                             <a href="alertview.php" style="margin-bottom: 15%;" <?php if($curr == 'mod'){ echo 'class=" btn-nav nav-item nav-link btn text-left btn-bb btn-col bor-none"';} else{ echo 'class=" btn-nav nav-item nav-link btn text-left btn-bb bor-none"';} ?>  id="dash" name="dash"><img src="images/warning.svg" class="" style="width: 28px;">&nbsp;&nbsp;Alerts</a>
                             <a href="users.php" style="margin-bottom: 15%;" <?php if($curr == 'user'){ echo 'class=" btn-nav nav-item nav-link btn text-left btn-bb btn-col bor-none"';} else{ echo 'class=" btn-nav nav-item nav-link btn text-left btn-bb bor-none"';} ?>  id="dash" name="dash"><img src="images/painter.svg" class="" style="width: 28px;">&nbsp;&nbsp;Users</a> -->
                             <a href="ticket.php" style="margin-bottom: 15%;" <?php if($curr == 'tickets'){ echo 'class=" btn-nav nav-item nav-link btn text-left btn-bb btn-col bor-none"';} else{ echo 'class=" btn-nav nav-item nav-link btn text-left btn-bb bor-none"';} ?>  id="dash" name="dash"><img src="../images/ticket.svg" class="" style="width: 28px;">&nbsp;&nbsp;Tickets</a>
-                            <a href="../logout.php" class="btn-nav nav-item nav-link btn text-left btn-bb bor-none"  id="invoi" name="invoi"><img src="../images/logout.svg" class=" bg-white bor-twen p-1" style="width: 28px;">&nbsp;&nbsp;Logout</a> 
+                            <a href="../loginhandle/logout.php" class="btn-nav nav-item nav-link btn text-left btn-bb bor-none"  id="invoi" name="invoi"><img src="../images/logout.svg" class=" bg-white bor-twen p-1" style="width: 28px;">&nbsp;&nbsp;Logout</a> 
                     </div>
                 </div>
             </nav>

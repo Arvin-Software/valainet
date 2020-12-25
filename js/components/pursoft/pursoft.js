@@ -1,4 +1,4 @@
-import { getObjID, renderHTML, renderText } from "../../avesengine/aves.js"
+import { getObjID, renderHTML, renderText } from "/valainet/js/avesengine/aves.js"
 import { retSoft } from './retsoft.js';
 function pursoft(assetCode, softNm, softDes, softLoc, softPurDt, softWarDt, softRenDt, errorId){
     const asCde = getObjID(assetCode).value;

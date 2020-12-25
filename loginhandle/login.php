@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- jQuery library -->
-    <script src="js/jquery-min.js"></script>
+    <script src="js/jquery.min.js"></script>
 
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -75,7 +75,7 @@
     session_start();
     // echo '<h1 class="text-dark"> hello</h1>';
     // echo '<h1>' . $_SESSION['nm'] . '</h1>';
-    include 'classes/khatral.php';
+    include '../classes/khatral.php';
     // echo '<h1>' . $_POST['unme'];
     //         echo $_POST['pass'] .  $_POST['submit'] . '</h1>';
     if(isset($_POST['submit'])){
@@ -85,7 +85,7 @@
 
             $_SESSION['unme'] = "admin";
             $_SESSION['hxid'] = "hxieiwccsd";
-            header("Location: dash.php");
+            header("Location: ../admin/dash.php");
         }
         $ret = khatral::khquery('SELECT * FROM user WHERE user_nm=:nm AND user_pass=:pass', array(
             ':nm'=>$_POST['unme'],
@@ -104,9 +104,9 @@
             $_SESSION['unme_real'] = $_POST['unme'];
             $_SESSION['hxid'] = "hxieiwccsd";
             if($typ == "0"){
-                header("Location: users/dash.php");
+                header("Location: ../users/dash.php");
             }else{
-                header("Location: tech/ticket.php");
+                header("Location: ../tech/ticket.php");
             }
         }
     }
@@ -128,7 +128,7 @@
                                     ?>
                                     <div class=""  >  
                                        <!-- <h2 class="fnt-cur text-center">Valai</h2> -->
-                                        <img src="images/valaiweb.svg" class="mx-auto d-block" style="width: 200px; margin: 1% 1% 1% 1%;">
+                                        <img src="../images/valaiweb.svg" class="mx-auto d-block" style="width: 200px; margin: 1% 1% 1% 1%;">
                                         <h3 class="text-center">Valai</h3>
                                         <!-- <h4 style="margin-bottom: 10%;">Your account details</h4> -->
                                         <!-- <h6>your details</h6> -->
@@ -160,7 +160,7 @@
         </div>  
         <h6 class="text-left fixed-bottom" style="">
             <p class="text-dark">	&copy; 2020 Valai Net. All Rights Reserved.|
-		<?php include 'valai.php'; valai::DisplayVerBuild() ?></p>
+		<?php include '../valai.php'; valai::DisplayVerBuild() ?></p>
         </h6>
     </div>
 </body>

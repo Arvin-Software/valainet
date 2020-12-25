@@ -1,6 +1,6 @@
 <?php
 $curr = 'dash';
-include 'header.php';
+include '../header.php';
 ?>
 <input type="text" name="ip" id="ip" style="display: none;" value="<?php echo $_GET['ip']; ?>">
 <input type="text" name="group" id="group" style="display: none;" value="<?php echo $_GET['group']; ?>">
@@ -32,19 +32,19 @@ include 'header.php';
                     foreach($ret as $p){
                        
                         if(strpos($p['comp_os'], "Windows") !== false){
-                            $img = 'images/windows.svg';
+                            $img = '../images/windows.svg';
                             $os = 'Windows Management Instrumentation';
                             $os_human = "Windows";
                         }else{
-                            $img = 'images/linux.svg';
+                            $img = '../images/linux.svg';
                             $os = "Bash Command Interface";
                             $os_human = 'Linux';
                         }
                         
                         if(strpos($p['comp_processor'], "AMD") !== false){
-                            $proc = 'images/amd.svg';
+                            $proc = '../images/amd.svg';
                         }else{
-                            $proc = 'images/intel.svg';
+                            $proc = '../images/intel.svg';
                         }
                         
                         if($p['display'] == '1920 X 1080'){
@@ -52,11 +52,11 @@ include 'header.php';
                         }
                         
                         if(substr($p['comp_nm'], 0, 6) == 'LAPTOP'){
-                            $lap = 'images/laptop.svg';
+                            $lap = '../images/laptop.svg';
                             $device = 'Laptop';
                         }else{
                             // echo substr($p['comp_nm'], 0, 6);
-                            $lap = 'images/pc.svg';
+                            $lap = '../images/pc.svg';
                             $device = 'Desktop / Workstation / Server';
                         }
                         echo '<tr><td>1</td><td>IP</td><td>' . $_GET['ip'] . '</td></tr>';
@@ -132,27 +132,27 @@ include 'header.php';
                     <tr>
                         <td>1</td>
                         <td>Status</td>
-                        <td id="inc"><img src="images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected</td>
+                        <td id="inc"><img src="../images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected</td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td>API Status</td>
-                        <td id="inc1"><img src="images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected</td>
+                        <td id="inc1"><img src="../images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected</td>
                     </tr>
                     <tr>
                         <td>3</td>
                         <td>Valai Computer Monitor</td>
-                        <td id="inc2"><img src="images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected</td>
+                        <td id="inc2"><img src="../images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected</td>
                     </tr>
                     <tr>
                         <td>4</td>
                         <td>Valai Action Execution service</td>
-                        <td id="inc3"><img src="images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected</td>
+                        <td id="inc3"><img src="../images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected</td>
                     </tr>
                     <tr>
                         <td>5</td>
                         <td>Valai Agent (<?php echo $os_human; ?>)</td>
-                        <td id="inc4"><img src="images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected</td>
+                        <td id="inc4"><img src="../images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected</td>
                     </tr>
                     <tr>
                         <td>6</td>
@@ -162,7 +162,7 @@ include 'header.php';
                     <tr>
                         <td>7</td>
                         <td>Valai Agent Timer Based Execution</td>
-                        <td id="inc5"><img src="images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected</td>
+                        <td id="inc5"><img src="../images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected</td>
                     </tr>
                     <tr>
                         <td>8</td>
@@ -209,7 +209,7 @@ include 'header.php';
 setInterval(function () {
         
         // alert('hello');
-			$.post("api.php",
+			$.post("/valainet/api.php",
             {
             act:"sayhello",
             ip:"192.168.1.5",
@@ -220,10 +220,10 @@ setInterval(function () {
           function(data, status){
             // alert(data);
             if(data == 'hello'){
-                $('#inc1').html('<img src="images/tick.png" style="width: 20px;">&nbsp;&nbsp;ValaiNet Connected');
+                $('#inc1').html('<img src="../images/tick.png" style="width: 20px;">&nbsp;&nbsp;ValaiNet Connected');
                 // $('#inc1').show()
             }else{
-                $('#inc1').html('<img src="images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected');
+                $('#inc1').html('<img src="../images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected');
             }
           });
            
@@ -231,7 +231,7 @@ setInterval(function () {
     setInterval(function () {
         
         // alert('hello');
-			$.post("api.php",
+			$.post("/valainet/api.php",
             {
             act:"retprocstatx",
             ip:$('#ip').val(),
@@ -250,7 +250,7 @@ setInterval(function () {
            
     }, 1000);
 setInterval(function () {
-        $.post("api.php",
+        $.post("/valainet/api.php",
             {
             act:"retstat",
             ip:$('#ip').val(),
@@ -263,17 +263,17 @@ setInterval(function () {
             //   alert(data);
               if(data == "success"){
 
-                $('#inc').html('<img src="images/tick.png" style="width: 20px;">&nbsp;&nbsp;Connected');
-                $('#inc2').html('<img src="images/tick.png" style="width: 20px;">&nbsp;&nbsp;Connected');
-                $('#inc3').html('<img src="images/tick.png" style="width: 20px;">&nbsp;&nbsp;Connected');
-                $('#inc4').html('<img src="images/tick.png" style="width: 20px;">&nbsp;&nbsp;Up and Running');
-                $('#inc5').html('<img src="images/tick.png" style="width: 20px;">&nbsp;&nbsp;Working Properly');
+                $('#inc').html('<img src="../images/tick.png" style="width: 20px;">&nbsp;&nbsp;Connected');
+                $('#inc2').html('<img src="../images/tick.png" style="width: 20px;">&nbsp;&nbsp;Connected');
+                $('#inc3').html('<img src="../images/tick.png" style="width: 20px;">&nbsp;&nbsp;Connected');
+                $('#inc4').html('<img src="../images/tick.png" style="width: 20px;">&nbsp;&nbsp;Up and Running');
+                $('#inc5').html('<img src="../images/tick.png" style="width: 20px;">&nbsp;&nbsp;Working Properly');
               }else{
-                $('#inc').html('<img src="images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected');
-                $('#inc2').html('<img src="images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected');
-                $('#inc3').html('<img src="images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected');
-                $('#inc4').html('<img src="images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected');
-                $('#inc5').html('<img src="images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected');
+                $('#inc').html('<img src="../images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected');
+                $('#inc2').html('<img src="../images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected');
+                $('#inc3').html('<img src="../images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected');
+                $('#inc4').html('<img src="../images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected');
+                $('#inc5').html('<img src="../images/warning.svg" style="width: 20px;">&nbsp;&nbsp;Not Connected');
               }
             //   if(data == "success"){
             //     $('#ip1').html("Connected");

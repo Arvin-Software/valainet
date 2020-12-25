@@ -289,6 +289,17 @@ if($conn->query($query) == TRUE){
 }else{
     echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table nonit ' . $conn->error;
 }
+$query = 'CREATE TABLE IF NOT EXISTS api_valai(
+            api_id          INTEGER             NOT NULL        AUTO_INCREMENT,
+            api_nm          VARCHAR(255)        NOT NULL,
+            api_key         VARCHAR(255)        NOT NULL,
+            api_hash        VARCHAR(255)        NOT NULL,
+            PRIMARY KEY(api_id))';
+if($conn->query($query) == TRUE){
+    echo '<br /><img src="../images/tick.png" style="width: 22px;">&nbsp;&nbsp;Table api_valai created successfully';
+}else{
+    echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table api_valai ' . $conn->error;
+}
 echo '<br /><br />';
 echo '<a href="../installation/second.php" class="btn btn-dark bor-ten float-left">&lt; Previous</a>
 <a href="../installation/finish.php" class="btn btn-dark bor-ten float-right">Next &gt;</a>';

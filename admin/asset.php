@@ -1,6 +1,6 @@
 <?php
 $curr = 'dash';
-include 'header.php';
+include '../header.php';
 if(isset($_POST['submit'])){
     khatral::khquery('DELETE FROM asset WHERE asset_code=:code', array(
         ':code'=>$_GET['asset']

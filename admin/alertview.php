@@ -1,6 +1,6 @@
 <?php
 $curr = 'mod';
-include 'header.php';
+include '../header.php';
 ?>
 <!-- <a href="dash.php" class="btn btn-dark">Back</a> -->
 <?php

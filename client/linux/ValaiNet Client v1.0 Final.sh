@@ -1,11 +1,12 @@
 #!/bin/bash
-echo "#######################################################"
-echo "#            ValaiNet compatible Linux client         #"
-echo "#                       v1.0 Final                    #"
-echo "#            Bash client Program for VALAI NET        #"
-echo "#  using curl, pgrep, grep, sed, getconf, python3 etc #"
-echo "#   (C) 2020 Valainet Project. All Rights Reserved    #"
-echo "#######################################################"
+echo "########################################################################"
+echo "#                  ValaiNet compatible Linux client                    #"
+echo "#                            v1.0 Final                                #"
+echo "#                  Bash client Program for VALAI NET                   #"
+echo "#           using curl, pgrep, grep, sed, getconf, python3 etc         #"
+echo '# this client uses opendns.com. if you want any other please configure #'
+echo "#            (C) 2020 Valainet Project. All Rights Reserved            #"
+echo "########################################################################"
 echo "Starting all modules..."
 #Parameters for the API Post function
 ip="192.168.5.128"

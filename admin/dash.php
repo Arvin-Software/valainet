@@ -1,6 +1,6 @@
 <?php
 $curr = 'dash';
-include 'header.php';
+include '../header.php';
 ?>
 <h3>Dashboard</h3><hr>
 <div class="row">
@@ -180,7 +180,7 @@ include 'header.php';
           });
         }, 1000);		
         setInterval(function () {
-        $.post("api.php",
+        $.post("/valainet/api.php",
             {
             act:"rettot",
             ip:"192.168.1.5",

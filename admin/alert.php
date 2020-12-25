@@ -1,6 +1,6 @@
 <?php
 $curr = 'dash';
-include 'header.php';
+include '../header.php';
 if(isset($_GET['act'])){
     if($_GET['act'] == "del"){
         valai::DeleteAlert($_GET['id']);

@@ -49,9 +49,9 @@ echo '<nav class="navbar navbar-expand-lg navbar-light shadow">
       }
       echo '</li><li class="nav-item">';
       if($mainnav=="logout"){
-        echo '<a class="btn-nav nav-item nav-link btn text-left  bor-none bg-light text-dark" href="logout.php"><img src="/valainet/images/logout.svg" class=" bg-white bor-twen p-1" style="width: 28px;">&nbsp;&nbsp;Logout session</a>';
+        echo '<a class="btn-nav nav-item nav-link btn text-left  bor-none bg-light text-dark" href="../loginhandle/logout.php"><img src="/valainet/images/logout.svg" class=" bg-white bor-twen p-1" style="width: 28px;">&nbsp;&nbsp;Logout session</a>';
       }else{
-        echo '<a class="btn-nav nav-item nav-link btn text-left text-light bor-none" href="logout.php"><img src="/valainet/images/logout.svg" class=" bg-white bor-twen p-1" style="width: 28px;">&nbsp;&nbsp;Logout session</a>';
+        echo '<a class="btn-nav nav-item nav-link btn text-left text-light bor-none" href="../loginhandle/logout.php"><img src="/valainet/images/logout.svg" class=" bg-white bor-twen p-1" style="width: 28px;">&nbsp;&nbsp;Logout session</a>';
       }
       echo '</li>
     </ul>
