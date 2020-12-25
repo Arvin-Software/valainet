@@ -28,7 +28,7 @@ function deleteEquipment(softId){
     })
     `;
 }
-
+// Retrives equipment data from backend 
 function retequip(collNm){
     const payload = {
         act: 'retequip',
