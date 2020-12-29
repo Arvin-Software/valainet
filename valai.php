@@ -129,13 +129,31 @@ class valai{
             ':group'=>$group
         ));
     }
+    public static function UpdateIndivIpStat($nm, $stat, $ip, $group){
+        khatral::khquery('UPDATE ip_addr_moni SET aip_stat=:stat WHERE aip_nm=:nm AND aip_ip=:ip AND aip_group=:group', array(
+            ':nm'=>$nm,
+            ':stat'=>$stat,
+            ':ip'=>$ip,
+            ':group'=>$group
+        ));
+    }
     public static function UpdateAllProcessMoni(){
         khatral::khquery('UPDATE process_moni SET moni_stat=:stat', array(
             ':stat'=>"failure"
         ));
     }
+    public static function UpdateAllIp(){
+        khatral::khquery('UPDATE ip_addr_moni SET aip_stat=:stat', array(
+            ':stat'=>"failure"
+        ));
+    }
     public static function DeleteAlert($id){
         khatral::khquery('DELETE FROM process_moni WHERE moni_id=:id', array(
+            ':id'=>$id
+        ));
+    }
+    public static function DeleteIpMoni($id){
+        khatral::Khquery('DELETE FROM ip_addr_moni WHERE aip_id=:id', array(
             ':id'=>$id
         ));
     }
@@ -258,10 +276,12 @@ class valai{
         // echo 'v1.0 Build 18112020023550am-beta1-r100';
         // echo 'v1.0 Build 02122020035515am-beta2-r103';
         // echo 'v1.0 Build 14122020091145pm-beta3-r105';
-        echo 'v1.0 Release Candidate';
+        // echo 'v1.0 Release Candidate';
+        echo 'v1.1 Build 301220200200am-r100';
     }
     public static function DisplayVersion(){
-        echo 'v1.0';
+        // echo 'v1.0';
+        echo 'v1.1';
     }
     public static function DisplayAvesEngineVersion(){
         // echo 'v2.1-r401';
@@ -284,16 +304,20 @@ class valai{
         // <li>Bug fixes</li>
         // <li>Performance Improvements</li></ul>
         // ';
-        echo '<ul><li>Added functionality to NONIT Equipment for asset management</li>
-        <li>NONIT Equipment module is developed using fetchAPI without JQuery</li>
-        <li>Fixed bugs in purchased software and NON IT Equipments Page</li>
-        <li>Added option to raise generalized service tickets without specifying a particular IP</li>
-        <li>API Bug Fixes</li>
-        <li>JSON Improvements</li>
-        <li>API improvements</li>
-        <li>Bug fixes</li>
-        <li>Performance Improvements</li></ul>
-        ';
+        // echo '<ul><li>Added functionality to NONIT Equipment for asset management</li>
+        // <li>NONIT Equipment module is developed using fetchAPI without JQuery</li>
+        // <li>Fixed bugs in purchased software and NON IT Equipments Page</li>
+        // <li>Added option to raise generalized service tickets without specifying a particular IP</li>
+        // <li>API Bug Fixes</li>
+        // <li>JSON Improvements</li>
+        // <li>API improvements</li>
+        // <li>Bug fixes</li>
+        // <li>Performance Improvements</li></ul>
+        // ';
+        echo '<ul>';
+        echo '<li>Added Functionality to monitor ping from a particular computer</li>';
+        echo '<li>JSON improvements</li>';
+        echo '</ul>';
     }
     public static function KnownBugs(){
         echo '<ul><li>Bug in the puruchased software and nonit when server is not enabled</li>

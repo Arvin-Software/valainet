@@ -228,9 +228,53 @@ if($auth == "success"){
             }
             $rows += array("count" => $count);
             echo (json_encode($rows));
+        }else if($_POST['act'] == "retjsonip"){
+            $ret = khatral::khquery('SELECT * FROM ip_addr_moni WHERE aip_ip=:ip AND aip_group=:group', array(
+                ':ip'=>$_POST['ip'],
+                ':group'=>$_POST['group']
+            ));
+            $count = 0;
+            $rows = array();
+            foreach($ret as $p){
+                ${'file' . $count} = array("mm$count" => $p['aip_nm']);
+                $rows += ${'file' . $count};
+                $count += 1;
+            }
+            $rows += array("count" => $count);
+            echo (json_encode($rows));
         }else if($_POST['act'] == "updateprocstat"){
             valai::UpdateProcessMoni($_POST['nm'], $_POST['stat'], $_POST['ip'], $_POST['group']);
-        }else if($_POST['act'] == "retprocstatx"){
+        }else if($_POST['act'] == "updateipstat"){
+            valai::UpdateIndivIpStat($_POST['nm'], $_POST['stat'], $_POST['ip'], $_POST['group']);
+        }else if($_POST['act'] == "retipstatx"){
+            if(isset($_SESSION['unme'])){
+                $res = khatral::khquery('SELECT * FROM ip_addr_moni WHERE aip_ip=:ip AND aip_group=:group', array(
+                    ':ip'=>$_POST['ip'],
+                    ':group'=>$_POST['group']
+                ));
+                echo '<div class="table-responsive">';
+                echo '<table class="table"><tr class=""><th style="width: 2px;">IP Address</th><th style="width: 30px;">Status</th></tr>';
+                $count = 0;
+                foreach($res as $p){
+                    $count += 1;
+                    if($p['aip_stat'] == "success"){
+                        echo '<tr><td>' . $p['aip_nm'] . '</td><td style="width: 5px;"><img src="/valainet/images/tick.png" style="width: 22px;"></td></tr>';
+                    }else{
+                        echo '<tr><td>' . $p['aip_nm'] . '</td><td style="width: 5px;"><img src="/valainet/images/warning.svg" style="width: 20px;"></td></tr>';
+                    }
+                }
+            }else{
+                valai::DisplayError();
+            }
+        }else if($_POST['act'] == "updateallip"){
+            if(isset($_SESSION['unme'])){
+                valai::UpdateAllIp();
+                echo 'success';
+            }else{
+                valai::DisplayError();
+            }
+        }
+        else if($_POST['act'] == "retprocstatx"){
             if(isset($_SESSION['unme'])){
                 $res = khatral::khquery('SELECT * FROM process_moni WHERE moni_ip=:ip AND moni_group=:group', array(
                     ':ip'=>$_POST['ip'],

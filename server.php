@@ -30,11 +30,16 @@ include 'header.php';
 <div id="inc2">
 <div class="spinner-border text-primary"></div>&nbsp;&nbsp;Process monitor server is booting up please wait...
 </div>
+<br>
+<div id="inc3">
+<div class="spinner-border text-primary"></div>&nbsp;&nbsp;IP monitor server is booting up please wait...
+</div>
 </div>
 
 <script>
     $('#inc1').hide()
     $('#inc2').hide()
+    $('#inc3').hide()
 // alert('hello');
     setInterval(function () {
         
@@ -53,6 +58,7 @@ include 'header.php';
                 $('#inc').html('<img src="images/tick.png" style="width: 32px;">&nbsp;&nbsp;Connection established to primary server');
                 $('#inc1').show()
                 $('#inc2').show()
+                $('#inc3').show()
             }
           });
            
@@ -95,6 +101,27 @@ include 'header.php';
                 $('#inc2').html('<img src="images/tick.png" style="width: 32px;">&nbsp;&nbsp;Process monitor server is booted up and running...');
             }else{
                 $('#inc2').html('<img src="images/error.svg" style="width: 28px;">&nbsp;&nbsp;Error booting up Process monitor server please refer documentation ( error code : SERBT433509X )');
+            }
+          });
+           
+    }, 20000);
+    setInterval(function () {
+        
+        // alert('hello');
+			$.post("api.php",
+            {
+            act:"updateallip",
+            ip:"192.168.1.5",
+            nm:"stat",
+            stat:"failure",
+            inbox:"influx"
+            },
+          function(data, status){
+            // alert(data);
+            if(data == 'success'){
+                $('#inc3').html('<img src="images/tick.png" style="width: 32px;">&nbsp;&nbsp;IP monitor server is booted up and running...');
+            }else{
+                $('#inc3').html('<img src="images/error.svg" style="width: 28px;">&nbsp;&nbsp;Error booting up IP monitor server please refer documentation ( error code : SERBT433509X )');
             }
           });
            

@@ -198,6 +198,16 @@ include '../header.php';
         <?php
         }
         ?>
+        <div class="p-4">
+            <div class="card border bor-ten ">
+                <div class="card-header bg-dark text-white">IP Address to Monitor (Ping)</div>
+                <div class="card-body">
+                    <div id="incip"></div>
+                    <a href="addip.php?ip=<?php echo $_GET['ip']; ?>&group=<?php echo $_GET['group']; ?>">Add IP address to monitor</a>
+                </div>
+                <div class="card-footer">Need information about this section click <a href="#">here</a></div>
+            </div>
+        </div>
     </div>
     </div>
 </div>
@@ -249,6 +259,28 @@ setInterval(function () {
           });
            
     }, 1000);
+    setInterval(function () {
+        
+        // alert('hello');
+			$.post("/valainet/api.php",
+            {
+            act:"retipstatx",
+            ip:$('#ip').val(),
+            nm:"stat",
+            stat:"failure",
+            inbox: "influx",
+            group:$('#group').val()
+            },
+          function(data, status){
+            // alert(data);
+            
+                $('#incip').html(data);
+                // $('#inc1').show()
+            
+          });
+           
+    }, 1000);
+    
 setInterval(function () {
         $.post("/valainet/api.php",
             {

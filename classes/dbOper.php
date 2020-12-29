@@ -300,6 +300,25 @@ if($conn->query($query) == TRUE){
 }else{
     echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table api_valai ' . $conn->error;
 }
+// $query = 'CREATE TABLE IF NOT EXISTS process_moni(
+//     moni_id             INTEGER             NOT NULL        AUTO_INCREMENT,
+//     moni_nm             VARCHAR(255)        NOT NULL,
+//     moni_stat           VARCHAR(255)        NOT NULL,
+//     moni_ip             VARCHAR(255)        NOT NULL,
+//     moni_group          VARCHAR(255)        NOT NULL,
+//     PRIMARY KEY(moni_id))';
+$query = 'CREATE TABLE IF NOT EXISTS ip_addr_moni(
+                aip_id               INTEGER         NOT NULL        AUTO_INCREMENT,
+                aip_nm               VARCHAR(255)    NOT NULL,
+                aip_stat             VARCHAR(255)    NOT NULL,
+                aip_ip               VARCHAR(255)    NOT NULL,
+                aip_group            VARCHAR(255)    NOT NULL,
+                PRIMARY KEY(aip_id))';
+if($conn->query($query) == TRUE){
+    echo '<br /><img src="../images/tick.png" style="width: 22px;">&nbsp;&nbsp;Table ip_addr_moni created successfully';
+}else{
+    echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table ip_addr_moni ' . $conn->error;
+}
 echo '<br /><br />';
 echo '<a href="../installation/second.php" class="btn btn-dark bor-ten float-left">&lt; Previous</a>
 <a href="../installation/finish.php" class="btn btn-dark bor-ten float-right">Next &gt;</a>';
