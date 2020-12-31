@@ -136,13 +136,13 @@ include 'primarynav.php';
 ?>
 <div class="container-fluid">
     <div class="row" style=" height: 100vh;">
-        <div class="col-lg-2 fade-in border-right text-black" style="background-color: #454545; padding: 0px 0px 0px 0px;">
+        <div class="col-lg-2 fade-in text-black" style="background-color: #F2F2F2; padding: 0px 0px 0px 0px;">
    <?php
    
    include 'includenav.php';
    ?> 
 </div>
-<div class="col-lg-10 fade-in" id="" style=" padding: 1% 2% 2% 2%;">
+<div class="col-lg-10 fade-in shadow" id="" style=" padding: 1% 2% 2% 2%;">
 <?php
 }
 ?>

@@ -11,7 +11,7 @@ a{
     /* color: #FFFFFF; */
 }
 .btn-nav{
-    color: #FFFFFF;
+    color: #000000;
     transition: 0.3s;
     outline: none;
     box-shadow: none;
@@ -20,12 +20,12 @@ a{
     /* border-radius: 10px 10px 10px 10px; */
 }
 .btn-nav:hover{
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(92, 92, 92, 0.8);
     outline: none;
     box-shadow: none;
     -webkit-box-shadow: none!important;
     /* border: solid 1px; */
-    color: #0062CC;
+    color: #fff;
     /* border-left: solid #fff 5px; */
     /* border-left: solid #646464 5px; */
 }
@@ -41,10 +41,11 @@ a:focus{
     box-shadow: none;
     -webkit-box-shadow: none!important;
     /* background-color: #0062CC; */
-    background-color: rgba(255,255,255,1);
+    /* background-color: rgba(255,255,255,1); */
+    background-color: #666666;
     /* color: #0062CC; */
     /* border-left: solid #0062CC 5px; */
-    color: #000;
+    color: #fff;
     /* border-right: solid rgb(2, 120, 255) 5px; */
     /* border: solid 1px; */
     /* border-radius: 10px 10px 10px 10px; */
@@ -89,6 +90,9 @@ a:focus{
 .navigator:active{
     background-color: #0062CC;
     text-decoration: none;
+}
+.bor-five{
+    border-radius: 5px 5px 5px 5px;
 }
 #d-wrapper {
     background-color: #fff;
