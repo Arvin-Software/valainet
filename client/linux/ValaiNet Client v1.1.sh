@@ -42,7 +42,7 @@ done
 #uptime information
 uptime=$(uptime -s)
 #os bitness
-bitness=$(arch)
+bitness=$(uname -i)
 #kernal name
 kernal=$(uname -r)
 #ip information

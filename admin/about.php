@@ -6,7 +6,7 @@ include '../headerabout.php';
 <br>
 <div class="container">
 <img src="../images/valaiweb.svg" alt="Valai Logo" style="width: 128px;">
-<h3>Valai - v1.0</h3>
+<h3>Valai - v1.1</h3>
 <p>
     Valai is a IT management software that features server monitoring capabalities, <br />Software monitoring capabalities, Inventory Management, Maintenance Jobwork handling, etc
 </p>
@@ -62,5 +62,5 @@ include '../headerabout.php';
 <h6 class="text-center">ValaiNet Logo, ValaiNet Name, Softview Name, Khatral name, Aves Engine Name are a property of Arvin Soft R & D.</h6>
 <h6 class="text-center">Icons in the project are the copyright of the respective owners.</h6>
 <h6 class="text-center">Components like bootstrap, ChartJS, jquery and other products used in this project are the copyright of the respective owners.</h6>
-<h6 class="text-center">&copy; 2020 ValaiNet Project. All Rights Reserved.</h6>
+<h6 class="text-center">&copy; 2021 ValaiNet Project. All Rights Reserved.</h6>
 </div>
