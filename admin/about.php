@@ -6,7 +6,7 @@ include '../headerabout.php';
 <br>
 <div class="container">
 <img src="../images/valaiweb.svg" alt="Valai Logo" style="width: 128px;">
-<h3>Valai - v1.1</h3>
+<h3>Valai - <?php echo valai::DisplayVersion(); ?></h3>
 <p>
     Valai is a IT management software that features server monitoring capabalities, <br />Software monitoring capabalities, Inventory Management, Maintenance Jobwork handling, etc
 </p>

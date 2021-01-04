@@ -277,11 +277,12 @@ class valai{
         // echo 'v1.0 Build 02122020035515am-beta2-r103';
         // echo 'v1.0 Build 14122020091145pm-beta3-r105';
         // echo 'v1.0 Release Candidate';
-        echo 'v1.1 Build 301220200200am-r100';
+        // echo 'v1.1 Build 301220200200am-r100';
+        echo 'v1.2 Build 05012021032515am-r200';
     }
     public static function DisplayVersion(){
         // echo 'v1.0';
-        echo 'v1.1';
+        echo 'v1.2';
     }
     public static function DisplayAvesEngineVersion(){
         // echo 'v2.1-r401';
@@ -315,8 +316,11 @@ class valai{
         // <li>Performance Improvements</li></ul>
         // ';
         echo '<ul>';
-        echo '<li>Added Functionality to monitor ping from a particular computer</li>';
-        echo '<li>JSON improvements</li>';
+        // echo '<li>Added Functionality to monitor ping from a particular computer</li>';
+        // echo '<li>JSON improvements</li>';
+        echo '<li>Fixed interface bugs in both user and technician</li>';
+        echo '<li>Fixed bugs in linux clients when used under arch based linux</li>';
+        echo '<li>Performance Improvements</li>';
         echo '</ul>';
     }
     public static function KnownBugs(){
