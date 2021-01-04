@@ -4,14 +4,14 @@ include 'header.php';
 <body class="" style="background-color: #FFFFFF;">
 <div class="container-fluid">
     <div class="row" style=" height: 100vh;">
-        <div class="col-xl-2 fade-in text-black bg-dark" style="padding: 0px 0px 0px 0px;">
+        <div class="col-xl-2 fade-in text-black" style="background-color: #F2F2F2; padding: 0px 0px 0px 0px;">
    <?php
    $curr = 'dash';
    include 'includenav.php';
    ?> 
 </div>
 
-<div class="col-xl-10 fade-in" id="" style="height: 100vh; padding: 1% 2% 2% 2%;">
+<div class="col-xl-10 fade-in shadow" id="" style="height: 100vh; padding: 1% 2% 2% 2%;">
 <h3>Dashboard</h3><hr>
 <div class="row">
 <div class="col-lg-4 text-center">

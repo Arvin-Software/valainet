@@ -4,14 +4,14 @@ include 'header.php';
 <body class="" style="background-color: #FFFFFF;">
 <div class="container-fluid">
     <div class="row" style=" height: 100vh;">
-        <div class="col-xl-1 fade-in border-right text-black bg-dark" style="padding: 0px 0px 0px 0px;">
+        <div class="col-xl-2 fade-in border-right text-black" style="background-color: #F2F2F2; padding: 0px 0px 0px 0px;">
    <?php
    $curr = 'tickets';
    include 'includenav.php';
    ?> 
 </div>
 
-<div class="col-xl-11 bg-light fade-in" id="" style=" padding: 1% 2% 2% 2%;">
+<div class="col-xl-10 bg-light fade-in shadow" id="" style=" padding: 1% 2% 2% 2%;">
 <input type="text" name="ip" id="ip" style="display: none;" value="<?php echo $_GET['ip']; ?>">
 <input type="text" name="group" id="group" style="display: none;" value="<?php echo $_GET['group']; ?>">
     <div class="row">

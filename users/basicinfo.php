@@ -4,21 +4,21 @@ include 'header.php';
 <body class="" style="background-color: #FFFFFF;">
 <div class="container-fluid">
     <div class="row" style=" height: 100vh;">
-        <div class="col-xl-2 fade-in border-right text-black bg-dark" style="padding: 0px 0px 0px 0px;">
+        <div class="col-xl-2 fade-in border-right text-black" style="background-color: #F2F2F2; padding: 0px 0px 0px 0px;">
    <?php
    $curr = 'dash';
    include 'includenav.php';
    ?> 
 </div>
 
-<div class="col-xl-10 bg-light fade-in" id="" style=" padding: 1% 2% 2% 2%;">
+<div class="col-xl-10 bg-light fade-in shadow" id="" style=" padding: 1% 2% 2% 2%;">
 <input type="text" name="ip" id="ip" style="display: none;" value="<?php echo $_GET['ip']; ?>">
 <input type="text" name="group" id="group" style="display: none;" value="<?php echo $_GET['group']; ?>">
     <a href="dash.php" class="btn btn-dark" style="margin-left: 1.5%;">Back</a>
     <div class="row">
     <div class="col-xl-12">
     <div class="p-4">
-    <div class="card border bor-ten shadow ">
+    <div class="card border bor-ten ">
         <div class="card-header bg-dark  text-white">Basic Information</div>
         <div class="card-body">
             <table class="table table-all">
@@ -70,7 +70,7 @@ include 'header.php';
                             $device = 'Desktop / Workstation / Server';
                         }
                         echo '<tr><td>1</td><td>IP</td><td>' . $_GET['ip'] . '</td></tr>';
-                        echo '<tr><td>2</td><td>Asset Tag</td><td>' . $p['comp_asset_tag'] . '</td></tr>';
+                        echo '<tr><td>2</td><td>Asset Tag</td><td><a href="asset.php?id=' . $p['comp_ip'] . '&group=' . $p['comp_group'] . '&asset=' . $p['comp_asset_tag'] . '">' . $p['comp_asset_tag'] . '</a></td></tr>';
                         echo '<tr><td>3</td><td>Name</td><td><img src="' . $lap . '" style="width: 24px;">&nbsp;&nbsp;' . $p['comp_nm'] . '</td></tr>';
                         echo '<tr><td>4</td><td>Operating System</td><td><img src="' . $img . '" style="width: 24px;">&nbsp;&nbsp;' . $p['comp_os'] . '</td></tr>';
                         echo '<tr><td>5</td><td>Processor</td><td><img src="' . $proc . '" style="width: 24px;">&nbsp;&nbsp;' . $p['comp_processor'] . '</td></tr>';
@@ -93,7 +93,7 @@ include 'header.php';
         </div>
         <div class="card-footer">Need information about this section click <a href="#">here</a></div>
     </div>
-    <div class="card border bor-ten shadow " style="margin-top: 5%;">
+    <div class="card border bor-ten " style="margin-top: 5%;">
         <div class="card-header bg-dark  text-white">Operating System Information</div>
         <div class="card-body">
             <table class="table table-all">
@@ -115,7 +115,7 @@ include 'header.php';
                             echo '<tr><td>4</td><td>System Running Since</td><td>' . $p['os_booted'] . '</td></tr>';
                             echo '<tr><td>5</td><td>System Connected to internet using IP</td><td>' . $p['os_extip'] . '</td></tr>';
                         }else{
-                            echo '<tr><td>1</td><td>OS Architecture</td><td>' . $p['os_bit'] . ' - bit</td></tr>';
+                            echo '<tr><td>1</td><td>OS Architecture</td><td>' . $p['os_bit'] . '</td></tr>';
                             echo '<tr><td>2</td><td>Kernal Version</td><td>' . $p['os_installed'] . '</td></tr>';
                             echo '<tr><td>3</td><td>System Running Since</td><td>' . $p['os_booted'] . '</td></tr>';
                             echo '<tr><td>4</td><td>System Connected to internet using IP</td><td>' . $p['os_extip'] . '</td></tr>';
@@ -130,7 +130,7 @@ include 'header.php';
     </div>
     <div class="col-xl-12">
         <div class="p-4">
-        <div class="card border bor-ten shadow ">
+        <div class="card border bor-ten ">
             <div class="card-header bg-dark text-white">Client Status</div>
             <div class="card-body">
                 <table class="table table-all">
@@ -184,19 +184,20 @@ include 'header.php';
             <div class="card-footer">Need information about this section click <a href="#">here</a></div>
         </div>
         </div>
-        <?php
-        if($os_human == "Windows"){
-            ?>
+       
         <div class="p-4">
-        <div class="card border bor-ten shadow ">
+        <div class="card border bor-ten ">
             <div class="card-header bg-dark text-white">Process Monitor</div>
             <div class="card-body" id="incproc">
             </div>
             <div class="card-footer">Need information about this section click <a href="#">here</a></div>
         </div>
         </div>
+        <?php
+        if($os_human == "Windows"){
+            ?>
         <div class="p-4">
-            <div class="card border bor-ten shadow ">
+            <div class="card border bor-ten ">
                 <div class="card-header bg-dark text-white">Processes running in computer</div>
                 <div class="card-body">
                     <a href="processrun.php?ip=<?php echo $_GET['ip']; ?>&group=<?php echo $_GET['group']; ?>">View</a>
@@ -207,18 +208,28 @@ include 'header.php';
         <?php
         }
         ?>
+        <div class="p-4">
+            <div class="card border bor-ten ">
+                <div class="card-header bg-dark text-white">IP Address to Monitor (Ping)</div>
+                <div class="card-body">
+                    <div id="incip"></div>
+                    <a href="addip.php?ip=<?php echo $_GET['ip']; ?>&group=<?php echo $_GET['group']; ?>">Add IP address to monitor</a>
+                </div>
+                <div class="card-footer">Need information about this section click <a href="#">here</a></div>
+            </div>
+        </div>
     </div>
     </div>
 </div>
 <div class="fixed-bottom text-center">
-&copy; 2020 Valai Net. All Rights Reserved.|
-Build Number : 020920200236am-alpha-r101 | An open source software
+&copy; 2021 Valai Net. All Rights Reserved.|
+<?php include '../valai.php'; valai::DisplayVerBuild() ?> | An open source software
 </div>
 <script>
 setInterval(function () {
         
         // alert('hello');
-			$.post("../api.php",
+			$.post("/valainet/api.php",
             {
             act:"sayhello",
             ip:"192.168.1.5",
@@ -240,7 +251,7 @@ setInterval(function () {
     setInterval(function () {
         
         // alert('hello');
-			$.post("../api.php",
+			$.post("/valainet/api.php",
             {
             act:"retprocstatx",
             ip:$('#ip').val(),
@@ -258,8 +269,30 @@ setInterval(function () {
           });
            
     }, 1000);
+    setInterval(function () {
+        
+        // alert('hello');
+			$.post("/valainet/api.php",
+            {
+            act:"retipstatx",
+            ip:$('#ip').val(),
+            nm:"stat",
+            stat:"failure",
+            inbox: "influx",
+            group:$('#group').val()
+            },
+          function(data, status){
+            // alert(data);
+            
+                $('#incip').html(data);
+                // $('#inc1').show()
+            
+          });
+           
+    }, 1000);
+    
 setInterval(function () {
-        $.post("../api.php",
+        $.post("/valainet/api.php",
             {
             act:"retstat",
             ip:$('#ip').val(),
