@@ -222,7 +222,7 @@ class valai{
     public static function DisplayError(){
         echo 'You are not authorized to issue this request and your ip address will be reported';
         echo '<br />Valai API security version alpha081020201652 build 2010';
-        echo '<br />Copyright &copy; 2020 Valai API. All Rights Reserved.';
+        echo '<br />Copyright &copy; 2021 Valai API. All Rights Reserved.';
     }
     public static function UpdateTickComplete($id){
         $ret = khatral::khquery('SELECT * FROM ticket WHERE ticket_ri_id=:id', array(
@@ -278,11 +278,11 @@ class valai{
         // echo 'v1.0 Build 14122020091145pm-beta3-r105';
         // echo 'v1.0 Release Candidate';
         // echo 'v1.1 Build 301220200200am-r100';
-        echo 'v1.2 Build 05012021032515am-r200';
+        echo 'v1.2.1 Build 06012021015015am-r293';
     }
     public static function DisplayVersion(){
         // echo 'v1.0';
-        echo 'v1.2';
+        echo 'v1.2.1';
     }
     public static function DisplayAvesEngineVersion(){
         // echo 'v2.1-r401';
@@ -319,6 +319,7 @@ class valai{
         // echo '<li>Added Functionality to monitor ping from a particular computer</li>';
         // echo '<li>JSON improvements</li>';
         echo '<li>Fixed interface bugs in both user and technician</li>';
+        echo '<li>Fixed bugs in ticket view and admin user creation</li>';
         echo '<li>Fixed bugs in linux clients when used under arch based linux</li>';
         echo '<li>Performance Improvements</li>';
         echo '</ul>';
