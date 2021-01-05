@@ -1,6 +1,6 @@
 <?php
 $mainnav = 'users';
-include 'headerabout.php';
+include '../headerabout.php';
 ?>
 <?php
 if(isset($_POST['submit'])){
