@@ -15,3 +15,11 @@
     <div class="text-center" style="margin-top: 10%;">
     <img class="d-block mx-auto" src="images/valaiweb.svg" style="width: 256px;"><h2 class="text-center">Welcome to Valai</h2>
 click <a href="loginhandle/login.php">here</a> to login
+<?php
+include 'classes/khatral.php';
+try{
+    khatral::khquerypar('SELECT * FROM stat');
+}catch(exception $ex){
+    header('Location: installation');
+}
+?>
