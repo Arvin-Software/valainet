@@ -142,6 +142,7 @@ $query = 'CREATE TABLE IF NOT EXISTS alerts(
                 alert_ip                VARCHAR(255)    NOT NULL,
                 alert_group             VARCHAR(255)    NOT NULL,
                 alert_time              VARCHAR(255)    NOT NULL,
+                alert_stat              VARCHAR(255)    NOT NULL,
                 PRIMARY KEY(alert_id))';
 if($conn->query($query) == TRUE){
     echo '<br /><img src="../images/tick.png" style="width: 22px;">&nbsp;&nbsp;Table alerts created successfully';

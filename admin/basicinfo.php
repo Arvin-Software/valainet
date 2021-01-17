@@ -175,7 +175,7 @@ include '../header.php';
         </div>
         </div>
        
-        <div class="p-4">
+        <div class="p-4" id="process">
         <div class="card border bor-ten ">
             <div class="card-header bg-dark text-white">Process Monitor</div>
             <div class="card-body" id="incproc">

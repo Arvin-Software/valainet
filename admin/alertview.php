@@ -24,7 +24,7 @@ include '../header.php';
     $count = 0;
     foreach($ret as $p){
         $count += 1;
-        echo '<tr><td>' . $count . '</td><td>' . $p['alert_time'] . '</td><td>' . $p['alert_nm'] . '</td><td>' . $p['alert_mess'] . '</td><td>' . $p['alert_ip'] . '</td><td>' . $p['alert_group'] . '</td></tr>';
+        echo '<tr><td>' . $count . '</td><td>' . $p['alert_time'] . '</td><td>' . $p['alert_nm'] . '</td><td>' . $p['alert_mess'] . '</td><td><a href="basicinfo.php?ip=' . $p['alert_ip'] . '&group=' . $p['alert_group'] . '#process">' . $p['alert_ip'] . '</a></td><td>' . $p['alert_group'] . '</td></tr>';
     }
     ?>
 </table>

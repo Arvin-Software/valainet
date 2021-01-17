@@ -244,6 +244,36 @@ if($auth == "success"){
             echo (json_encode($rows));
         }else if($_POST['act'] == "updateprocstat"){
             valai::UpdateProcessMoni($_POST['nm'], $_POST['stat'], $_POST['ip'], $_POST['group']);
+            $ret = khatral::khquery('SELECT * FROM alerts WHERE alert_nm=:nm AND alert_ip=:ip AND alert_group=:group', array(
+            ':nm'=>$_POST['nm'],
+            ':ip'=>$_POST['ip'],
+            ':group'=>$_POST['group']
+            ));
+            $count = 0;
+            $failure = 0;
+            $id = '';
+            foreach($ret as $p){
+                $count += 1;
+                $failure = $p['alert_stat'];
+                $id = $p['alert_id'];
+            }
+            if($count > 0){
+                if($failure==$_POST['stat']){
+                    // echo 'failure';
+                    // valai::UpdateAlerts($_POST['nm'], $_POST['mess'], $_POST['ip'], $_POST['group']);
+                }else{
+                    if($_POST['stat'] != 'success'){
+                    valai::InsertAlerts($_POST['nm'], "failure", $_POST['ip'], $_POST['group'], $_POST['stat']);    
+                    }else{
+                        valai::DeleteAlerts($id);
+                    }
+                    // echo 'success';
+                }
+            }else{
+                if($_POST['stat'] != 'success'){
+                valai::InsertAlerts($_POST['nm'], "failure", $_POST['ip'], $_POST['group'], $_POST['stat']);    
+                }
+            }
         }else if($_POST['act'] == "updateipstat"){
             valai::UpdateIndivIpStat($_POST['nm'], $_POST['stat'], $_POST['ip'], $_POST['group']);
         }else if($_POST['act'] == "retipstatx"){
@@ -300,21 +330,6 @@ if($auth == "success"){
                 echo 'success';
             }else{
                 valai::DisplayError();
-            }
-        }else if($_POST['act'] == 'updatealerts'){
-            $ret = khatral::khquery('SELECT * FROM alerts WHERE alert_nm=:nm AND alert_ip=:ip AND alert_group=:group', array(
-                ':nm'=>$_POST['nm'],
-                ':ip'=>$_POST['ip'],
-                ':group'=>$_POST['group']
-            ));
-            $count = 0;
-            foreach($ret as $p){
-                $count += 1;
-            }
-            if($count > 0){
-                // valai::UpdateAlerts($_POST['nm'], $_POST['mess'], $_POST['ip'], $_POST['group']);
-            }else{
-                valai::InsertAlerts($_POST['nm'], $_POST['mess'], $_POST['ip'], $_POST['group']);
             }
         }else if($_POST['act'] == "updateprocess"){
             valai::UpdateProcess($_POST['id'], $_POST['nm'], $_POST['mem'], $_POST['ip'], $_POST['group']);

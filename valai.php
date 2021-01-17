@@ -157,16 +157,17 @@ class valai{
             ':id'=>$id
         ));
     }
-    public static function InsertAlerts($nm, $mess, $ip, $group){
+    public static function InsertAlerts($nm, $mess, $ip, $group, $statx){
         date_default_timezone_set('Asia/Kolkata');
         $date = date('dmYhis', time());
         $date1 = date('d/m/Y h:i:s', time());
-        khatral::khquery('INSERT INTO alerts VALUES(NULL, :nm, :mess, :ip, :group, :timesx)', array(
+        khatral::khquery('INSERT INTO alerts VALUES(NULL, :nm, :mess, :ip, :group, :timesx, :stat)', array(
             ':nm'=>$nm,
             ':mess'=>$mess,
             ':ip'=>$ip,
             ':group'=>$group,
-            ':timesx'=>$date1
+            ':timesx'=>$date1,
+            ':stat'=>$statx
         ));
     }
     public static function UpdateAlerts($nm, $message, $ip, $group){
