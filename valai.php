@@ -279,11 +279,12 @@ class valai{
         // echo 'v1.0 Build 14122020091145pm-beta3-r105';
         // echo 'v1.0 Release Candidate';
         // echo 'v1.1 Build 301220200200am-r100';
-        echo 'v1.2.1 Build 06012021015015am-r293';
+        // echo 'v1.2.1 Build 06012021015015am-r293';
+        echo 'v1.2.2 Build 17012021104020pm-r493';
     }
     public static function DisplayVersion(){
         // echo 'v1.0';
-        echo 'v1.2.1';
+        echo 'v1.2.2';
     }
     public static function DisplayAvesEngineVersion(){
         // echo 'v2.1-r401';
@@ -319,10 +320,13 @@ class valai{
         echo '<ul>';
         // echo '<li>Added Functionality to monitor ping from a particular computer</li>';
         // echo '<li>JSON improvements</li>';
-        echo '<li>Fixed interface bugs in both user and technician</li>';
-        echo '<li>Fixed bugs in ticket view and admin user creation</li>';
-        echo '<li>Fixed bugs in linux clients when used under arch based linux</li>';
-        echo '<li>Performance Improvements</li>';
+        // echo '<li>Fixed interface bugs in both user and technician</li>';
+        // echo '<li>Fixed bugs in ticket view and admin user creation</li>';
+        // echo '<li>Fixed bugs in linux clients when used under arch based linux</li>';
+        // echo '<li>Performance Improvements</li>';
+        echo '<li>Fixed alert system</li>';
+        echo '<li>Alert System will now correctly record the process that is stopped</li>';
+        echo '<li>Bug fixes</li>';
         echo '</ul>';
     }
     public static function KnownBugs(){
