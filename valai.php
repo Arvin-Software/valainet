@@ -129,6 +129,7 @@ class valai{
             ':group'=>$group
         ));
     }
+    //Update status of ip address
     public static function UpdateIndivIpStat($nm, $stat, $ip, $group){
         khatral::khquery('UPDATE ip_addr_moni SET aip_stat=:stat WHERE aip_nm=:nm AND aip_ip=:ip AND aip_group=:group', array(
             ':nm'=>$nm,
@@ -137,26 +138,31 @@ class valai{
             ':group'=>$group
         ));
     }
+    //Update all process status
     public static function UpdateAllProcessMoni(){
         khatral::khquery('UPDATE process_moni SET moni_stat=:stat', array(
             ':stat'=>"failure"
         ));
     }
+    //Update all ip address monitor status
     public static function UpdateAllIp(){
         khatral::khquery('UPDATE ip_addr_moni SET aip_stat=:stat', array(
             ':stat'=>"failure"
         ));
     }
+    //Delete Alerts
     public static function DeleteAlert($id){
         khatral::khquery('DELETE FROM process_moni WHERE moni_id=:id', array(
             ':id'=>$id
         ));
     }
+    //Delete ip address to monitor
     public static function DeleteIpMoni($id){
         khatral::Khquery('DELETE FROM ip_addr_moni WHERE aip_id=:id', array(
             ':id'=>$id
         ));
     }
+    //Insert alerts
     public static function InsertAlerts($nm, $mess, $ip, $group, $statx){
         date_default_timezone_set('Asia/Kolkata');
         $date = date('dmYhis', time());
@@ -170,6 +176,7 @@ class valai{
             ':stat'=>$statx
         ));
     }
+    //Update alerts
     public static function UpdateAlerts($nm, $message, $ip, $group){
         date_default_timezone_set('Asia/Kolkata');
         $date = date('dmYhis', time());
@@ -182,17 +189,20 @@ class valai{
             ':group'=>$group
         ));
     }
+    //Delete Alerts
     public static function DeleteAlerts($id){
         khatral::khquery('DELETE FROM alerts WHERE alert_id=:id', array(
             ':id'=>$id
         ));
     }
+    //Delete Processes running
     public static function DeleteProcess($ip, $group){
         khatral::khquery('DELETE FROM process_run WHERE pro_ip=:ip AND pro_group=:group', array(
             ':ip'=>$ip,
             ':group'=>$group
         ));
     }
+    //Update process
     public static function UpdateProcess($id, $nm, $mem, $ip, $group){
         khatral::khquery('INSERT INTO process_run VALUES(:nm, :id, :mem, :ip, :group)', array(
             ':nm'=>$nm,
@@ -202,6 +212,7 @@ class valai{
             ':group'=>$group
         ));
     }
+    //Insert users
     public static function InsertUsers($nm, $pass, $role){
         khatral::khquery('INSERT INTO user VALUES(NULL, :nm, :pass, :typ)', array(
             ':nm'=>$nm,
@@ -209,22 +220,26 @@ class valai{
             ':typ'=>$role
         ));
     }
+    //Insert Module to user
     public static function InsertModl($nm, $user){
         khatral::khquery('INSERT INTO modl VALUES(NULL, :nm, :user)', array(
             ':nm'=>$nm,
             ':user'=>$user
         ));
     }
+    //Delete module from user
     public static function DeleteModl($id){
         khatral::khquery('DELETE FROM modl WHERE modl_id=:id', array(
             ':id'=>$id
         ));
     }
+    //Display error for api
     public static function DisplayError(){
         echo 'You are not authorized to issue this request and your ip address will be reported';
         echo '<br />Valai API security version alpha081020201652 build 2010';
         echo '<br />Copyright &copy; 2021 Valai API. All Rights Reserved.';
     }
+    //Update ticket information
     public static function UpdateTickComplete($id){
         $ret = khatral::khquery('SELECT * FROM ticket WHERE ticket_ri_id=:id', array(
             ':id'=>$id
@@ -244,6 +259,7 @@ class valai{
         ));
         
     }
+    //Insert software
     public static function insertSoftware($nm, $des, $purdt, $expdt, $rendt, $code, $loc){
         khatral::khquery('INSERT INTO pur_soft VALUES(NULL, :nm,
         :descr, :purdt, :expdt, :rendt, :code, :loc)', array(
@@ -256,6 +272,7 @@ class valai{
             ':loc'=>$loc
         ));
     }
+    //Insert non it hardware information
     public static function insertNONIT($nm, $coll, $des, $purdt, $expdt, $rendt, $code, $loc){
         khatral::khquery('INSERT INTO nonit VALUES(NULL, :coll, :nm,
         :descr, :purdt, :expdt, :rendt, :code, :loc)', array(
@@ -269,6 +286,7 @@ class valai{
             ':loc'=>$loc
         ));
     }
+    //Display Build Information
     public static function DisplayVerBuild(){
         // Australia/Adelaide
         date_default_timezone_set('Australia/Adelaide');
@@ -282,18 +300,22 @@ class valai{
         // echo 'v1.2.1 Build 06012021015015am-r293';
         echo 'v1.2.2 Build 17012021104020pm-r493';
     }
+    //Display Version number
     public static function DisplayVersion(){
         // echo 'v1.0';
         echo 'v1.2.2';
     }
+    //Display Aves Engine version
     public static function DisplayAvesEngineVersion(){
         // echo 'v2.1-r401';
         echo 'v2.1-Release Candidate';
     }
+    //Display Khatral Version
     public static function DisplayKhatralVersion(){
         // echo '0.0.4-r600';
         echo '0.0.4-Release Candidate';
     }
+    //Display Change log
     public static function DisplayChangeLog(){
         // echo '<ul><li>Changed User Interface to accommodate more items</li>';
         // echo '<li>Changed Primary Navigation</li>';
@@ -329,6 +351,7 @@ class valai{
         echo '<li>Bug fixes</li>';
         echo '</ul>';
     }
+    //Display Known bugs
     public static function KnownBugs(){
         echo '<ul><li>Bug in the purchased software and nonit when server is not enabled</li>
         <li>Bug in process that is running (windows client)</li>
