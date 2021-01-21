@@ -1,7 +1,7 @@
 <?php
 //This file is the API File which handle all the valainet work
 //Refer documentation for more information on how to extend the functionality of the software.
-//Copyright (C) 2020 valainet. All Rights Reserved.
+//Copyright (C) 2020-2021 valainet. All Rights Reserved.
 //Developed by Aravindh
 //API security level update 081020201652
 //Import khatral DB access file
@@ -11,6 +11,7 @@ include 'valai.php';
 //if the action variable is set then proceed otherwise display a message
 $auth = "";
 session_start();
+//API key authorization
 if(isset($_POST['apikey'])){
     if($_POST['apikey'] == "61170bva084bb0vaf3185avaf34d20vae35dcc"){
         $auth = "success";
@@ -25,6 +26,7 @@ if(isset($_POST['inbox'])){
         $auth = "failure";
     }
 }
+//Once apikey is authenticated
 if($auth == "success"){
     if(isset($_POST['act'])){
         if($_POST['act'] == "insert"){
