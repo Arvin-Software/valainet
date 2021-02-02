@@ -236,7 +236,7 @@ class valai{
     //Display error for api
     public static function DisplayError(){
         echo 'You are not authorized to issue this request and your ip address will be reported';
-        echo '<br />Valai API security version alpha081020201652 build 2010';
+        echo '<br />Valai API security version 02022021103020pm build 2021';
         echo '<br />Copyright &copy; 2021 Valai API. All Rights Reserved.';
     }
     //Update ticket information
@@ -312,12 +312,12 @@ class valai{
         // echo 'v1.0 Release Candidate';
         // echo 'v1.1 Build 301220200200am-r100';
         // echo 'v1.2.1 Build 06012021015015am-r293';
-        echo 'v1.2.2 Build 17012021104020pm-r493';
+        echo 'v1.3 Build 02022021103020pm-r693';
     }
     //Display Version number
     public static function DisplayVersion(){
         // echo 'v1.0';
-        echo 'v1.2.2';
+        echo 'v1.3';
     }
     //Display Aves Engine version
     public static function DisplayAvesEngineVersion(){
@@ -360,9 +360,13 @@ class valai{
         // echo '<li>Fixed bugs in ticket view and admin user creation</li>';
         // echo '<li>Fixed bugs in linux clients when used under arch based linux</li>';
         // echo '<li>Performance Improvements</li>';
-        echo '<li>Fixed alert system</li>';
-        echo '<li>Alert System will now correctly record the process that is stopped</li>';
-        echo '<li>Bug fixes</li>';
+        // echo '<li>Fixed alert system</li>';
+        // echo '<li>Alert System will now correctly record the process that is stopped</li>';
+        // echo '<li>Bug fixes</li>';
+        echo '<li>Added graph to application downtime</li>';
+        echo '<li>Bug Fixes</li>';
+        echo '<li>Performance Improvements</li>';
+        echo '<li>JSON security improvement</li>';
         echo '</ul>';
     }
     //Display Known bugs
