@@ -320,6 +320,19 @@ if($conn->query($query) == TRUE){
 }else{
     echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table ip_addr_moni ' . $conn->error;
 }
+$query = 'CREATE TABLE IF NOT EXISTS down_record(
+            down_id             INTEGER         NOT NULL        AUTO_INCREMENT,
+            down_name           VARCHAR(255)    NOT NULL,
+            down_mess           VARCHAR(255)    NOT NULL,
+            down_ip             VARCHAR(255)    NOT NULL,
+            down_group          VARCHAR(255)    NOT NULL,
+            down_time           VARCHAR(255)    NOT NULL,
+            PRIMARY KEY(down_id))';
+if($conn->query($query) == TRUE){
+    echo '<br /><img src="../images/tick.png" style="width: 22px;">&nbsp;&nbsp;Table down_record created successfully';
+}else{
+    echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table down_record ' . $conn->error;
+}
 echo '<br /><br />';
 echo '<a href="../installation/second.php" class="btn btn-dark bor-ten float-left">&lt; Previous</a>
 <a href="../installation/finish.php" class="btn btn-dark bor-ten float-right">Next &gt;</a>';

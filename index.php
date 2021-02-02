@@ -12,9 +12,28 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/softview.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        .image {
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+    </style>
+    <body class="bg-white">
     <div class="text-center" style="margin-top: 10%;">
-    <img class="d-block mx-auto" src="images/valaiweb.svg" style="width: 256px;"><h2 class="text-center">Welcome to Valai</h2>
-click <a href="loginhandle/login.php">here</a> to login
+    <div id="inc">
+    <img class="d-block mx-auto image" src="images/valaiweb.svg"  style="width: 200px;">
+    </div>
+    <div id="inc1">
+    <img class="d-block mx-auto" src="images/valaiweb.svg" style="width: 200px;"><br><h1 class="text-center">Welcome to Valai</h1>
+    click <a href="loginhandle/login.php">here</a> to login
+    </div>
+
+</div>
 <?php
 include 'classes/khatral.php';
 try{
@@ -23,3 +42,24 @@ try{
     header('Location: installation');
 }
 ?>
+<script>
+    $('#inc1').hide();
+    $('#inc').show();
+    setInterval(function () {
+    $.post("api.php",
+        {
+            act:"sayhello",
+            ip:"192.168.1.5",
+            nm:"stat",
+            stat:"failure",
+            inbox:"influx"
+            },
+            function(data, status){
+            // alert(data);
+            if(data == 'hello'){
+                $('#inc').hide();
+                $('#inc1').show();
+            }
+            });
+        }, 1000);
+</script>

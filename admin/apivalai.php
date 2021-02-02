@@ -51,6 +51,21 @@ if($data['apikey'] == 'influx'){
             ':id'=>$data['equipid']
         ));
         echo 'success';
+    }else if($data['act'] == 'retissues'){
+        $ret = khatral::khquery('SELECT down_time, down_id, down_name, down_mess, down_ip, down_group, COUNT(down_time) AS dupe_cnt FROM down_record WHERE down_ip=:ip AND down_group=:group
+                GROUP BY down_time
+                HAVING   COUNT(down_time) >= 1
+                ORDER BY COUNT(down_id) DESC
+                LIMIT 5 
+                ', array(
+                    ':ip'=>$data['ip'],
+                    ':group'=>$data['group']
+                ));
+        $retval = array();
+        foreach($ret as $p){
+            $retval[] = array('date'=>$p['down_time'], 'count'=>$p['dupe_cnt'], 'name'=>$p['down_name'], 'mess'=>$p['down_mess']);
+        }$expo = $retval;
+        echo(json_encode($expo));
     }
     else{
         echo 'failure';

@@ -178,7 +178,10 @@ include '../header.php';
         <div class="p-4" id="process">
         <div class="card border bor-ten ">
             <div class="card-header bg-dark text-white">Process Monitor</div>
-            <div class="card-body" id="incproc">
+            <div class="card-body">
+            <div id="incproc">
+            </div>
+            <a href="processrundet.php?ip=<?php echo $_GET['ip']; ?>&group=<?php echo $_GET['group']; ?>">View Details</a>
             </div>
             <div class="card-footer">Need information about this section click <a href="#">here</a></div>
         </div>

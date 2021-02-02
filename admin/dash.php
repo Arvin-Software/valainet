@@ -48,7 +48,7 @@ include '../header.php';
   };
   
   var myPieChart = new Chart(ctx, {
-      type: 'doughnut',
+      type: 'pie',
       data: data,
       options: {
             legend: {

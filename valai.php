@@ -286,6 +286,20 @@ class valai{
             ':loc'=>$loc
         ));
     }
+    public static function insertDownRec($nm, $mess, $ip, $group){
+        date_default_timezone_set('Asia/Kolkata');
+        $date = date('dmYhis', time());
+        $date1 = date('d/m/Y', time());
+        $date2 = date('d/m/Y h:i:s', time());
+        khatral::khquery('INSERT INTO down_record VALUES(NULL, :nm, :mess, :ip, :group, :tim)', array(
+            ':nm'=>$nm,
+            ':mess'=>$date2,
+            ':ip'=>$ip,
+            ':group'=>$group,
+            ':tim'=>$date1
+        ));
+        echo 'inserted';
+    }
     //Display Build Information
     public static function DisplayVerBuild(){
         // Australia/Adelaide

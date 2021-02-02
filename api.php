@@ -265,7 +265,8 @@ if($auth == "success"){
                     // valai::UpdateAlerts($_POST['nm'], $_POST['mess'], $_POST['ip'], $_POST['group']);
                 }else{
                     if($_POST['stat'] != 'success'){
-                    valai::InsertAlerts($_POST['nm'], "failure", $_POST['ip'], $_POST['group'], $_POST['stat']);    
+                        valai::InsertAlerts($_POST['nm'], "failure", $_POST['ip'], $_POST['group'], $_POST['stat']);
+                        valai::insertDownRec($_POST['nm'], "failure", $_POST['ip'], $_POST['group']);
                     }else{
                         valai::DeleteAlerts($id);
                     }
@@ -274,6 +275,7 @@ if($auth == "success"){
             }else{
                 if($_POST['stat'] != 'success'){
                 valai::InsertAlerts($_POST['nm'], "failure", $_POST['ip'], $_POST['group'], $_POST['stat']);    
+                valai::insertDownRec($_POST['nm'], "failure", $_POST['ip'], $_POST['group']);
                 }
             }
         }else if($_POST['act'] == "updateipstat"){
