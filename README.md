@@ -92,6 +92,6 @@ Copy the file to how many computers your want and change the configuration and r
 
 Thank you for choosing ValaiNet.
 
-Please contact me if you are interested in this project or need support for using this project.
+Please contact me if you are interested in this project or need support using my email id aravindh@arvinsoft.in
 
 Please also note that there are so many things that are currently in development in this project. Please post any issues if you find anything thanks.
