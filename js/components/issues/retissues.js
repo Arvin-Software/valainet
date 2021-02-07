@@ -37,7 +37,7 @@ function retissues(){
         }
         if(data.length >0){
             console.log(data);
-            var output = '<table class="table table-striped">';
+            var output = '<table class="table table-striped border">';
             output += `<tr class="bg-dark text-white">
             <th>SL.NO</th>
             <th>Date</th>
