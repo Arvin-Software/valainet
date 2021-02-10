@@ -5,7 +5,7 @@ echo '<div class="container-fluid" style="margin-top: 5%;">
      <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4 bg-white shadow border p-4" style="border-radius: 20px 20px 20px 20px;">';
-echo '<h3><img src="../images/valaiweb.svg" style="width: 48px;">&nbsp;Valai - Database creation and testing</h3>';
+echo '<h3><img src="../images/valaiweb.svg" style="width: 48px;">&nbsp;Valai - Automated Table Creation</h3>';
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -20,7 +20,7 @@ if ($conn->connect_error) {
     
 }
 
-echo '<img src="../images/tick.png" style="width: 22px;">&nbsp;&nbsp;Connected successfully';
+echo '<img src="../images/tick.png" style="width: 22px;">&nbsp;&nbsp;Database Connected successfully';
 $conn = new mysqli($servername, $username, $password, "valai");
 $query = 'CREATE TABLE IF NOT EXISTS contact_us(
             contact_id              INTEGER         NOT NULL        AUTO_INCREMENT,
@@ -174,13 +174,6 @@ if($conn->query($query) == TRUE){
 }else{
     echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table process_run ' . $conn->error;
 }
-// $query = 'CREATE TABLE IF NOT EXISTS '
-// $query = 'CREATE TABLE IF NOT EXISTS avail_info(
-//             avail_info          INTEGER         NOT NULL        AUTO_INCREMENT,
-//             avail_ip            VARCHAR(255)    NOT NULL,
-//             avail_stat          VARCHAR(255)    NOT NULL,
-//             avail_tim           VARCHAR(255)    NOT NULL,
-//             PRIMARY KEY(avail_info))';
 $query = 'CREATE TABLE IF NOT EXISTS modl(
             modl_id         INTEGER         NOT NULL        AUTO_INCREMENT,
             modl_nm         VARCHAR(255)    NOT NULL,
@@ -301,13 +294,6 @@ if($conn->query($query) == TRUE){
 }else{
     echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table api_valai ' . $conn->error;
 }
-// $query = 'CREATE TABLE IF NOT EXISTS process_moni(
-//     moni_id             INTEGER             NOT NULL        AUTO_INCREMENT,
-//     moni_nm             VARCHAR(255)        NOT NULL,
-//     moni_stat           VARCHAR(255)        NOT NULL,
-//     moni_ip             VARCHAR(255)        NOT NULL,
-//     moni_group          VARCHAR(255)        NOT NULL,
-//     PRIMARY KEY(moni_id))';
 $query = 'CREATE TABLE IF NOT EXISTS ip_addr_moni(
                 aip_id               INTEGER         NOT NULL        AUTO_INCREMENT,
                 aip_nm               VARCHAR(255)    NOT NULL,
