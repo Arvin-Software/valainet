@@ -75,7 +75,7 @@ CREATE DATABASE IF NOT EXISTS valai;
 1. Download the latest release of ValaiNet from the [releases page](https://github.com/Aravindh-Muthuswamy/valainet/releases)
 1. Extract it into the /var/www/html folder using the appropriate terminal commands
 1. Open your web browser and go to the url below according to your configuration
-###### Important : For production use please download the latest release. Don't clone the repository as it may be unstable for production use
+###### Important : For production use please download the latest release. Don't clone the repository to the htdocs folder as it may be unstable for production use
 ```
 http://your-ip-address/valainet/installation
 ```
