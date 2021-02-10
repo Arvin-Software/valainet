@@ -1,18 +1,16 @@
 <?php
-session_start();
-if(isset($inst) == FALSE){
-    if(isset($_SESSION['unme'])){
-        if($_SESSION['hxid'] == "hxieiwccsd"){
+    session_start();
+    if(isset($inst) == FALSE){
+        if(isset($_SESSION['unme'])){
+            if($_SESSION['hxid'] == "hxieiwccsd"){
+            }else{
+                header("Location: logout.php");    
+            }
         }else{
-            header("Location: logout.php");    
+            header("Location: logout.php");
         }
-    }else{
-        header("Location: logout.php");
     }
-}
-?>
-<?php
-  $logo;
+    $logo;
     include 'classes/khatral.php';
     include 'valai.php';
 ?>
@@ -127,22 +125,21 @@ if(isset($inst) == FALSE){
     </style>
 </head>
 <?php
-if(isset($inst) == FALSE){
-    ?>
+    if(isset($inst) == FALSE){
+?>
 <body class="" style="background-color: #FFFFFF;">
-<?php
-$mainnav="comp";
-include 'primarynav.php';
-?>
-<div class="container-fluid">
-    <div class="row" style=" height: 100vh;">
-        <div class="col-lg-2 fade-in text-black" style="background-color: #F2F2F2; padding: 0px 0px 0px 0px;">
-   <?php
-   
-   include 'includenav.php';
-   ?> 
-</div>
-<div class="col-lg-10 fade-in shadow" id="" style=" padding: 1% 2% 2% 2%;">
-<?php
-}
-?>
+    <?php
+        $mainnav="comp";
+        include 'primarynav.php';
+    ?>
+    <div class="container-fluid">
+        <div class="row" style=" height: 100vh;">
+            <div class="col-lg-2 fade-in text-black" style="background-color: #F2F2F2; padding: 0px 0px 0px 0px;">
+                <?php
+                include 'includenav.php';
+                ?> 
+            </div>
+            <div class="col-lg-10 fade-in shadow" id="" style=" padding: 1% 2% 2% 2%;">
+            <?php
+            }
+            ?>

@@ -127,10 +127,10 @@ if(isset($inst) == FALSE){
     </style>
 </head>
 <?php
-if(isset($inst) == FALSE){
-    ?>
+    if(isset($inst) == FALSE){
+?>
 <body class="" style="background-color: #FFFFFF;">
-<?php
-include 'primarynav.php';
-}
+    <?php
+        include 'primarynav.php';
+    }
 ?>
