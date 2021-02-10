@@ -82,8 +82,8 @@ http://your-ip-address/valainet/installation
 
 Note : if you use a different database name make sure your configure in valainet/classes/dbOper.php and valainet/classes/khatral.php
 
-## Running Client Software(Linux)
-1. Copy the client script from the cient/linux from the installation folder to the folder of your choice.
+## Running Agent Software(Linux)
+1. Copy the Agent script from the cient/linux from the installation folder to the folder of your choice.
 2. Convert the file to a executable
 3. Open the file and change the server address and ip address and other things in the .sh file
 4. Run the sh file.
