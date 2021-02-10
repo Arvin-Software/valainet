@@ -300,6 +300,15 @@ class valai{
         ));
         echo 'inserted';
     }
+    public static function insertApiKey($nm, $descr){
+        $key = implode('va', str_split(substr(strtolower(md5(microtime().rand(1000, 9999))), 0, 30), 6));
+        khatral::khquery('INSERT INTO api_key VALUES(NULL, :nm, :descr, :keyhash)', array(
+            ':nm'=>$nm,
+            ':descr'=>$descr,
+            ':keyhash'=>$key
+        ));
+        echo 'successfully saved';
+    }
     //Display Build Information
     public static function DisplayVerBuild(){
         // Australia/Adelaide

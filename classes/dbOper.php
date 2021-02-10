@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 echo '<body class="bg-dark">';
-echo '<div class="container-fluid" style="margin-top: 10%;">
+echo '<div class="container-fluid" style="margin-top: 5%;">
      <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4 bg-white shadow border p-4" style="border-radius: 20px 20px 20px 20px;">';
@@ -332,6 +332,17 @@ if($conn->query($query) == TRUE){
     echo '<br /><img src="../images/tick.png" style="width: 22px;">&nbsp;&nbsp;Table down_record created successfully';
 }else{
     echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table down_record ' . $conn->error;
+}
+$query = 'CREATE TABLE IF NOT EXISTS api_key(
+            api_id              INTEGER         NOT NULL        AUTO_INCREMENT,
+            api_name            VARCHAR(255)    NOT NULL,
+            api_description     LONGTEXT        NOT NULL,
+            api_key_hash        VARCHAR(500)    NOT NULL,
+            PRIMARY KEY(api_id))';
+if($conn->query($query) == TRUE){
+    echo '<br /><img src="../images/tick.png" style="width: 22px;">&nbsp;&nbsp;Table api_key created successfully';
+}else{
+    echo '<br /><img src="../images/error.svg" style="width: 18px;">&nbsp;&nbsp;Error creating table api_key ' . $conn->error;
 }
 echo '<br /><br />';
 echo '<a href="../installation/second.php" class="btn btn-dark bor-ten float-left">&lt; Previous</a>
