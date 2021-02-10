@@ -13,7 +13,14 @@ $auth = "";
 session_start();
 //API key authorization
 if(isset($_POST['apikey'])){
-    if($_POST['apikey'] == "61170bva084bb0vaf3185avaf34d20vae35dcc"){
+    $ret = khatral::khquery('SELECT * FROM api_key WHERE api_key_hash=:keyhash', array(
+        ':keyhash'=>$_POST['apikey']
+    ));
+    $authed = 0;
+    foreach($ret as $p){
+        $authed += 1;
+    }
+    if($authed >= 1){
         $auth = "success";
     }else{
         $auth = "failure";
