@@ -3,7 +3,7 @@
 //Refer documentation for more information on how to extend the functionality of the software.
 //Copyright (C) 2020-2021 valainet. All Rights Reserved.
 //Developed by Aravindh
-//API security level update 081020201652
+//API security level update 100220210940pm
 //Import khatral DB access file
 include 'classes/khatral.php';
 //Insert to action table
@@ -194,20 +194,7 @@ if($auth == "success"){
             valai::DeleteStorage($_POST['ip'], $_POST['group']);
         }
         else if($_POST['act'] == "insertstorage"){
-            // $ret = khatral::khquery('SELECT * FROM storag WHERE ip=:ip AND group_nm=:group', array(
-            //     ':ip'=>$_POST['ip'],
-            //     ':group'=>$_POST['group']
-            // ));
-            // $count = 0;
-            // foreach($ret as $p){
-            //     $count += 1;
-            // }
-            // if($count > 0){
-                
                 valai::InsertStorage($_POST['ip'], $_POST['group'], $_POST['nm'], $_POST['tot'], $_POST['avl']);
-            // }else{
-            //     InsertStorage($_POST['ip'], $_POST['group'], $_POST['nm'], $_POST['tot'], $_POST['avl']);
-            // }
         }else if($_POST['act'] == "insertos"){
             $ret = khatral::khquery('SELECT * FROM os WHERE os_ip=:ip AND os_group=:group', array(
                 ':ip'=>$_POST['ip'],
@@ -366,17 +353,13 @@ if($auth == "success"){
         else{
             echo '<img src="images/valaiweb.svg" style="width: 32px;"><h3>Valai API</h3><br />This is a api file and it will not execute on its own. <br />Please refer documentation for more information on how to access it and work with it. <br />Copyright &copy; 2020 Valainet. All Rights Reserved.';
         }
-    } else if(isset($_GET['act'])){
+    }else if(isset($_GET['act'])){
         if($_GET['act'] == "sayhello"){
             echo 'hello world';
         }
-    }
-
-    else{
+    }else{
         echo 'failure';
-        // echo '<img src="images/valaiweb.svg" style="width: 32px;"><h3>Valai API</h3><br />This is a api file and it will not execute on its own. <br />Please refer documentation for more information on how to access it and work with it. <br />Copyright &copy; 2020 Valainet. All Rights Reserved.';
     }
 }else{
     valai::DisplayError();
 }
-// echo 'success';
