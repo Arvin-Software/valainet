@@ -332,6 +332,6 @@ if($conn->query($query) == TRUE){
 }
 echo '<br /><br />';
 echo '<a href="../installation/second.php" class="btn btn-dark bor-ten float-left">&lt; Previous</a>
-<a href="../installation/finish.php" class="btn btn-dark bor-ten float-right">Next &gt;</a>';
+<a href="../installation/complete.php" class="btn btn-dark bor-ten float-right">Next &gt;</a>';
 echo '</div>';
 echo '<div class="col-sm-4"></div>';
