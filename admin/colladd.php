@@ -14,11 +14,24 @@ if(isset($_GET['iddel'])){
 ?>
 <br><br>
 <div class="container">
-<a onclick="window.history.back();" href="#" class="btn btn-dark">Back</a>
+<a href="users.php" class="btn btn-dark">Back</a>
+<?php
+$ret = khatral::khquery('SELECT COUNT(modl_id) AS total_usr FROM modl WHERE modl_user=:id', array(
+  ':id'=>$_GET['id']
+));
+foreach($ret as $p){
+  // echo $p['total_usr'];
+  if($p['total_usr'] >= 1){
+    echo 'collection addition is limited to 1';
+  }else{
+    echo '<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+    Add Collections
+  </button>';
+  }
+}
+?>
 <!-- Button to Open the Modal -->
-<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-  Add Collections
-</button>
+
 
 <!-- The Modal -->
 <div class="modal" id="myModal">
