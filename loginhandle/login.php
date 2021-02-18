@@ -66,26 +66,29 @@
                                         $_SESSION['hxid'] = "hxieiwccsd";
                                         header("Location: ../admin/dash.php");
                                     }
-                                    $ret = khatral::khquery('SELECT * FROM user WHERE user_nm=:nm AND user_pass=:pass', array(
-                                        ':nm'=>$_POST['unme'],
-                                        ':pass'=>$_POST['pass']
+                                    $ret = khatral::khquery('SELECT * FROM user WHERE user_nm=:nm', array(
+                                        ':nm'=>$_POST['unme']
                                     ));
                                     $count = 0;
                                     $id;
                                     $typ;
+                                    $password_hashed = '';
                                     foreach($ret as $p){
                                         $count += 1;
                                         $id=$p['user_id'];
                                         $typ = $p['user_typ'];
+                                        $password_hashed = $p['user_pass'];
                                     }
                                     if($count > 0){
-                                        $_SESSION['unme'] = $id ;
-                                        $_SESSION['unme_real'] = $_POST['unme'];
-                                        $_SESSION['hxid'] = "hxieiwccsd";
-                                        if($typ == "0"){
-                                            header("Location: ../users/dash.php");
-                                        }else{
-                                            header("Location: ../tech/ticket.php");
+                                        if(password_verify($_POST['pass'], $password_hashed) == TRUE){
+                                            $_SESSION['unme'] = $id ;
+                                            $_SESSION['unme_real'] = $_POST['unme'];
+                                            $_SESSION['hxid'] = "hxieiwccsd";
+                                            if($typ == "0"){
+                                                header("Location: ../users/dash.php");
+                                            }else{
+                                                header("Location: ../tech/ticket.php");
+                                            }
                                         }
                                     }else{
                                         echo '<div class="alert alert-danger alert-dismissible fade show text-center">

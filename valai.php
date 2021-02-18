@@ -214,9 +214,10 @@ class valai{
     }
     //Insert users
     public static function InsertUsers($nm, $pass, $role){
+        $pass_hashed = password_hash($pass, PASSWORD_DEFAULT);
         khatral::khquery('INSERT INTO user VALUES(NULL, :nm, :pass, :typ)', array(
             ':nm'=>$nm,
-            ':pass'=>$pass,
+            ':pass'=>$pass_hashed,
             ':typ'=>$role
         ));
     }
@@ -236,7 +237,7 @@ class valai{
     //Display error for api
     public static function DisplayError(){
         echo 'You are not authorized to issue this request and your ip address will be reported';
-        echo '<br />Valai API security version 02022021103020pm build 2021';
+        echo '<br />Valai API security version 11022021065030pm build 2021';
         echo '<br />Copyright &copy; 2021 Valai API. All Rights Reserved.';
     }
     //Update ticket information
