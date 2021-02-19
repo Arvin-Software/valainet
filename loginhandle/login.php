@@ -105,7 +105,7 @@
                     <div class="col-xl-4"></div>
                 </div>  
                 <h6 class="text-center fixed-bottom" style="">
-                    <p class="text-dark">	&copy; 2021 Valai Net. All Rights Reserved.|
+                    <p class="text-dark">&copy; 2021 Valai Net. All Rights Reserved.|
                     <?php include '../valai.php'; valai::DisplayVerBuild(); ?></p>
                 </h6>
             </div>

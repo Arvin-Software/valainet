@@ -75,7 +75,7 @@ include '../header.php';
                         foreach($res as $pi){
                             $countx += 1;
                             $hrdcount += 1;
-                            echo '<tr><td>' . $countx .'</td><td>Harddisk(' . $hrdcount . ')</td><td>' . $pi['nm'] . ' Size : ' . $pi['tot'] . '</td></tr>';
+                            echo '<tr><td>' . $countx .'</td><td>Harddisk (' . $hrdcount . ')</td><td>' . $pi['nm'] . ' | Size : ' . $pi['tot'] . '</td></tr>';
                         }
                     }
                 ?>
