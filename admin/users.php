@@ -69,9 +69,10 @@ if(isset($_POST['submit'])){
         $count = 1;
         foreach($ret as $p){
 			if($p['user_typ'] == "0"){
-				echo '<tr><td>' . $count . '</td><td>' . $p['user_nm'] . '</td><td>'. $p['user_typ'] . '</td><td><a href="colladd.php?id=' . $p['user_id'] . '">Add Collections to user</a></td></tr>';
+				echo '<tr><td>' . $count . '</td><td>' . $p['user_nm'] . '</td><td>Local Admin</td><td><a href="colladd.php?id=' . $p['user_id'] . '">Add Collections to user</a></td></tr>';
+      }else if($p['user_typ'] == "2"){
 			}else{
-				echo '<tr><td>' . $count . '</td><td>' . $p['user_nm'] . '</td><td>'. $p['user_typ'] . '</td></tr>';
+				echo '<tr><td>' . $count . '</td><td>' . $p['user_nm'] . '</td><td>Technician</td></tr>';
 			}
             $count += 1;
         }
