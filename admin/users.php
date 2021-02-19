@@ -2,8 +2,12 @@
 $mainnav = 'users';
 include '../headerabout.php';
 if(isset($_POST['submit'])){
-    valai::InsertUsers($_POST['unme'], $_POST['pass'], $_POST['role']);
-    echo 'Users inserted';
+    $ret = valai::InsertUsers($_POST['unme'], $_POST['pass'], $_POST['role']);
+    if($ret == "0"){
+      echo 'User inserted';
+    }else{
+      echo 'User already exists';
+    }
 }
 ?>
 <!-- Button to Open the Modal -->

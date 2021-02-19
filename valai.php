@@ -214,12 +214,22 @@ class valai{
     }
     //Insert users
     public static function InsertUsers($nm, $pass, $role){
-        $pass_hashed = password_hash($pass, PASSWORD_DEFAULT);
-        khatral::khquery('INSERT INTO user VALUES(NULL, :nm, :pass, :typ)', array(
-            ':nm'=>$nm,
-            ':pass'=>$pass_hashed,
-            ':typ'=>$role
+        $ret = khatral::khquery('SELECT COUNT(user_id) AS totalusrs FROM user WHERE user_nm=:unm', array(
+            ':unm'=>$nm
         ));
+        foreach($ret as $p){
+            if($p['totalusrs'] >= 1){
+                return '1';
+            }else{
+                $pass_hashed = password_hash($pass, PASSWORD_DEFAULT);
+                khatral::khquery('INSERT INTO user VALUES(NULL, :nm, :pass, :typ)', array(
+                    ':nm'=>$nm,
+                    ':pass'=>$pass_hashed,
+                    ':typ'=>$role
+                ));
+                return '0';
+            }
+        }
     }
     //Insert Module to user
     public static function InsertModl($nm, $user){

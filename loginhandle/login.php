@@ -58,14 +58,14 @@
                                 session_start();
                                 include '../classes/khatral.php';
                                 if(isset($_POST['submit'])){
-                                    if($_POST['unme'] == "admin" && $_POST['pass'] == "admin@2021"){
-                                        echo '<h1>' . $_POST['unme'];
-                                        echo $_POST['pass'] . '</h1>';
+                                    // if($_POST['unme'] == "admin" && $_POST['pass'] == "admin@2021"){
+                                    //     // echo '<h1>' . $_POST['unme'];
+                                    //     // echo $_POST['pass'] . '</h1>';
                     
-                                        $_SESSION['unme'] = "admin";
-                                        $_SESSION['hxid'] = "hxieiwccsd";
-                                        header("Location: ../admin/dash.php");
-                                    }
+                                    //     $_SESSION['unme'] = "admin";
+                                    //     $_SESSION['hxid'] = "hxieiwccsd";
+                                    //     header("Location: ../admin/dash.php");
+                                    // }
                                     $ret = khatral::khquery('SELECT * FROM user WHERE user_nm=:nm', array(
                                         ':nm'=>$_POST['unme']
                                     ));
@@ -86,6 +86,10 @@
                                             $_SESSION['hxid'] = "hxieiwccsd";
                                             if($typ == "0"){
                                                 header("Location: ../users/dash.php");
+                                            }else if($typ == "2"){
+                                                $_SESSION['unme'] = "admin";
+                                                $_SESSION['hxid'] = "hxieiwccsd";
+                                                header("Location: ../admin/dash.php");
                                             }else{
                                                 header("Location: ../tech/ticket.php");
                                             }
