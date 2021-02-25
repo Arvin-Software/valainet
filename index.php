@@ -29,7 +29,7 @@
         </div>
         <div id="inc1">
         <img class="d-block mx-auto" src="images/valaiweb.svg" style="width: 200px; margin-bottom: 0%;"><br><h1 class="text-center">Welcome to Valai</h1>
-        click <a href="loginhandle/login.php">here</a> to login
+        Click <a href="loginhandle/login.php">here</a> to login
         </div>
     </div>
     <?php

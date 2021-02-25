@@ -45,7 +45,7 @@
                 <div class="row" style="height: 80vh; margin-top: 3%;">
                     <div class="col-xl-4"></div>
                     <div class="col-xl-4 my-auto">      
-                        <div class="container bg-white border shadow bor-ten" style="height: 100%; padding: 8% 8% 8% 8%;">
+                        <div class="container bg-white shadow bor-ten" style="height: 100%; padding: 8% 8% 8% 8%;">
                             <div class="">  
                                 <img src="../images/valaiweb.svg" class="mx-auto d-block" style="width: 200px; margin: 1% 1% 1% 1%;">
                                 <h3 class="text-center">Valai</h3>
@@ -105,7 +105,7 @@
                     <div class="col-xl-4"></div>
                 </div>  
                 <h6 class="text-center fixed-bottom" style="">
-                    <p class="text-dark">&copy; 2021 Valai Net. All Rights Reserved.|
+                    <p class="text-dark">&copy; 2020-2021 Valai Net. All Rights Reserved.|
                     <?php include '../valai.php'; valai::DisplayVerBuild(); ?></p>
                 </h6>
             </div>

@@ -42,13 +42,13 @@ if(isset($_POST['submit'])){
 
 <!-- The Modal -->
 <div class="modal" id="myModal">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
 
       <!-- Modal Header -->
-      <div class="modal-header">
+      <div class="modal-header bg-dark text-white">
         <h4 class="modal-title">Ticket Creation</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close  text-white" data-dismiss="modal">&times;</button>
       </div>
 
       <!-- Modal body -->

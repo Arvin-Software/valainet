@@ -196,7 +196,7 @@ include 'header.php';
         <?php
         if($os_human == "Windows"){
             ?>
-        <div class="p-4">
+        <div class="p-4"  style="display: none;">
             <div class="card border bor-ten ">
                 <div class="card-header bg-dark text-white">Processes running in computer</div>
                 <div class="card-body">

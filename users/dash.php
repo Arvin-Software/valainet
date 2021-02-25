@@ -14,7 +14,7 @@ include 'header.php';
 <div class="col-xl-10 fade-in shadow" id="" style="height: 100vh; padding: 1% 2% 2% 2%;">
 <h3>Dashboard</h3><hr>
 <div class="row">
-<div class="col-lg-4 text-center">
+<div class="col-lg-4 text-center"  style="display: none;">
 <div style="width: 80%;" class="p-4 bor-ten">
 <?php
 // echo $_SESSION['unme'];
@@ -112,14 +112,14 @@ include 'header.php';
 </script>
 </div>
 </div>
-	<div class="col-lg-8">
+	<div class="col-lg-12">
 		<div class="p-4 bor-ten">
 			<div id="inc">
-				<div class="spinner-border text-primary"></div>&nbsp;&nbsp;Connecting to primary server please wait...
+				<div class="spinner-border text-dark"></div>&nbsp;&nbsp;Connecting to primary server please wait...
 			</div>
 			<br />
 			<div id="inc1" style="">
-				<div class="spinner-border text-primary"></div>&nbsp;&nbsp;Connecting to interface please wait...
+				<div class="spinner-border text-dark"></div>&nbsp;&nbsp;Connecting to interface please wait...
 			</div>
 		</div>
 		<!-- <div class="text-center fixed-bottom">
