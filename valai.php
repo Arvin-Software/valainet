@@ -334,22 +334,23 @@ class valai{
         // echo 'v1.2.1 Build 06012021015015am-r293';
         // echo 'v1.3 Build 02022021103020pm-r693';
         // echo 'v2.0 alpha1 Build 11022021063340pm-r759';
-        echo 'v2.1 alpha2 build 18022021101555pm-r780';
+        // echo 'v2.1 alpha2 build 18022021101555pm-r780';
+        echo 'v2.0 beta 2 build 25022020030010pm-r785';
     }
     //Display Version number
     public static function DisplayVersion(){
         // echo 'v1.0';
-        echo 'v2.0 alpha 2';
+        echo 'v2.0 beta 2';
     }
     //Display Aves Engine version
     public static function DisplayAvesEngineVersion(){
         // echo 'v2.1-r401';
-        echo 'v2.2-alpha2';
+        echo 'v2.2-beta2';
     }
     //Display Khatral Version
     public static function DisplayKhatralVersion(){
         // echo '0.0.4-r600';
-        echo '0.0.5-alpha2';
+        echo '0.0.6-beta2';
     }
     //Display Change log
     public static function DisplayChangeLog(){

@@ -6,7 +6,7 @@ include 'header.php';
 <body class="" style="background-color: #FFFFFF;">
 <div class="container-fluid">
     <div class="row" style="">
-        <div class="col-lg-1 fade-in border-right text-black bg-dark" style="border-radius: 0px 0px 20px 0px; height: 20vh; padding: 40px 0px 0px 0px;">
+        <div class="col-lg-1 fade-in border-right text-black bg-dark" style="border-radius: 0px 0px 20px 0px; height: 20vh; padding: 80px 10px 180px 10px;">
    <?php
    $curr = 'dash';
 //    include 'includenav.php';
@@ -19,21 +19,21 @@ include 'header.php';
 </div>
 
 <div class="col-lg-11 fade-in" id="" style="height: 40vh; padding: 1% 2% 2% 2%;">
-<div id="inc">
-<div class="spinner-border text-primary"></div>&nbsp;&nbsp;Connection in progress to primary server please wait...
-</div>
-<br />
-<div id="inc1">
-<div class="spinner-border text-primary"></div>&nbsp;&nbsp;Server is booting up please wait...
-</div>
-<br>
-<div id="inc2">
-<div class="spinner-border text-primary"></div>&nbsp;&nbsp;Process monitor server is booting up please wait...
-</div>
-<br>
-<div id="inc3">
-<div class="spinner-border text-primary"></div>&nbsp;&nbsp;IP monitor server is booting up please wait...
-</div>
+    <div id="inc">
+        <div class="spinner-border text-dark"></div>
+    </div>
+    <br />
+    <div id="inc1">
+        <div class="spinner-border text-dark"></div>
+    </div>
+    <br>
+    <div id="inc2">
+        <div class="spinner-border text-dark"></div>
+    </div>
+    <br>
+    <div id="inc3">
+        <div class="spinner-border text-dark"></div>
+    </div>
 </div>
 
 <script>
@@ -130,4 +130,7 @@ include 'header.php';
 </script>
 </div>
 <b class="bg-dark text-white p-2 bor-ten" style="font-size: 38px;">Valai Server</b><br><br>
-This is a server page and it will not execute on its own. <br />Please refer documentation for more information on how to access it and work with it. <br /> <br> <b class="bg-danger text-white p-2 bor-ten">Please don't close this window</b><br /><br /><?php valai::DisplayVerBuild() ?> | An open source software<br />Copyright &copy; 2020-2021 Valainet. All Rights Reserved.
+This is a server page and it will not execute on its own. <br />
+Please refer documentation for more information on how to access it and work with it. <br /> <br> 
+<b class="bg-danger text-white p-2 bor-ten">Please don't close this window</b><br /><br />
+<?php valai::DisplayVerBuild() ?> | An open source software<br />Copyright &copy; 2020-2021 Valainet. All Rights Reserved.

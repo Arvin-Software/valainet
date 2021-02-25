@@ -13,9 +13,9 @@ echo '<nav class="navbar navbar-expand-lg navbar-light">
     <ul class="navbar-nav">
       <li class="nav-item">';
         if($mainnav=="comp"){
-            echo '<a class="btn-nav nav-item nav-link btn text-left bor-five  btn-bb bg-light text-dark bor-none" href="dash.php"><img src="/valainet/images/computer.svg" class="" style="width: 28px;">&nbsp;&nbsp;Computers / servers</a>';
+            echo '<a class="btn-nav nav-item nav-link btn text-left bor-five  btn-bb bg-light text-dark bor-none" href="dash.php"><img src="/valainet/images/computer.svg" class="" style="width: 28px;">&nbsp;&nbsp;Servers / Computers</a>';
         }else{
-            echo '<a class="btn-nav nav-item nav-link btn text-left bor-five text-light btn-bb bor-none" href="dash.php"><img src="/valainet/images/computer.svg" class="" style="width: 28px;">&nbsp;&nbsp;Computers / servers</a>';
+            echo '<a class="btn-nav nav-item nav-link btn text-left bor-five text-light btn-bb bor-none" href="dash.php"><img src="/valainet/images/computer.svg" class="" style="width: 28px;">&nbsp;&nbsp;Servers / Computers</a>';
         }
       echo '</li><li class="nav-item">';
       if($mainnav=="pur"){

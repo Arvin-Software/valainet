@@ -22,7 +22,7 @@ $ret = khatral::khquery('SELECT COUNT(modl_id) AS total_usr FROM modl WHERE modl
 foreach($ret as $p){
   // echo $p['total_usr'];
   if($p['total_usr'] >= 1){
-    echo 'collection addition is limited to 1';
+    echo '<b class="bg-danger text-white p-2">Collection addition is limited to 1</b>';
   }else{
     echo '<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
     Add Collections

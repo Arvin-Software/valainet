@@ -35,7 +35,7 @@ include '../headerabout.php';
     </tr>
     <tr>
         <td>Softview CSS</td>
-        <td>v2.0-r55</td>
+        <td>v2.0-r65</td>
     </tr>
     <tr>
         <td>Khatral-DB Connector and classes</td>
@@ -62,5 +62,5 @@ include '../headerabout.php';
 <h6 class="text-center">ValaiNet Logo, ValaiNet Name, Valai Logo, Valai Name, Softview Name, Khatral name, Aves Engine Name are the properties of Arvin Soft.</h6>
 <h6 class="text-center">Icons in the project are the copyright of the respective owners.</h6>
 <h6 class="text-center">Components like bootstrap, ChartJS, jquery and other products used in this project are the copyright of the respective owners.</h6>
-<h6 class="text-center">&copy; 2021 ValaiNet Project. All Rights Reserved.</h6>
+<h6 class="text-center">&copy; 2020-2021 ValaiNet Project. All Rights Reserved.</h6>
 </div>

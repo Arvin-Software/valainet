@@ -24,10 +24,11 @@
 <body class="bg-white">
     <div class="text-center" style="margin-top: 10%;">
         <div id="inc">
-        <img class="d-block mx-auto image" src="images/valaiweb.svg"  style="width: 200px;">
+        <img class="d-block mx-auto" src="images/valaiweb.svg"  style="width: 200px; margin-bottom: 3%;">
+        <div class="spinner-border text-dark"></div>
         </div>
         <div id="inc1">
-        <img class="d-block mx-auto" src="images/valaiweb.svg" style="width: 200px;"><br><h1 class="text-center">Welcome to Valai</h1>
+        <img class="d-block mx-auto" src="images/valaiweb.svg" style="width: 200px; margin-bottom: 0%;"><br><h1 class="text-center">Welcome to Valai</h1>
         click <a href="loginhandle/login.php">here</a> to login
         </div>
     </div>

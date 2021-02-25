@@ -349,6 +349,13 @@ if($auth == "success"){
             }
             $rows += array("count" => $count);
             echo (json_encode($rows));
+        }else if($_POST['act'] == "retalertcount"){
+            $ret = khatral::khquerypar('SELECT COUNT(alert_id) AS total_alerts FROM alerts');
+            $count = 0;
+            foreach($ret as $p){
+                $count = $p['total_alerts'];
+            }
+            echo $count;
         }
         else{
             echo '<img src="images/valaiweb.svg" style="width: 32px;"><h3>Valai API</h3><br />This is a api file and it will not execute on its own. <br />Please refer documentation for more information on how to access it and work with it. <br />Copyright &copy; 2020 Valainet. All Rights Reserved.';

@@ -1,4 +1,9 @@
-
+/*
+Softview CSS v2.0-r65
+Softview CSS name is a property of Arvin Soft.
+However this file is a open source.
+released under GNU GPL v3.0
+*/
 .bor-twen{
     border-radius: 20px 20px 20px 20px;
 }
@@ -65,12 +70,6 @@ a:focus{
     background-color: #0062CC;
     color: #fff;
 }
-.link-color{
-    /* color: #0062CC; */
-}
-.link-color:hover{
-    /* background-color: #fff; */
-}
 .bor-none{
     border-radius: 0px 0px 0px 0px;
 }
@@ -94,163 +93,64 @@ a:focus{
 .bor-five{
     border-radius: 5px 5px 5px 5px;
 }
-#d-wrapper {
-    background-color: #fff;
+.auth{
+    text-decoration: overline;
+    color: #999;
+    font-size: 2em;
+}
+.fade-in {
+    animation: fadeIn ease 0.5s;
+    -webkit-animation: fadeIn ease 0.5s;
+    -moz-animation: fadeIn ease 0.5s;
+    -o-animation: fadeIn ease 0.5s;
+    -ms-animation: fadeIn ease 0.5s;
     }
-    #d-wrapper * {
-    
-    margin:0;
-    padding:0;}
-    
-    #d-wrapper	div.sep {
-            min-height: 200px;
-            padding: 32px 0;
-    
-        }
-    
-    #d-wrapper	.zig-zag-top:before{
-            background: 
-                        linear-gradient(-45deg, #1ba1e2 16px, red 16px, blue 16px,  transparent 0), 
-                        linear-gradient(45deg, #1ba1e2 16px, transparent 0);
-            background-position: left top;
-            background-repeat: repeat-x;
-            background-size: 22px 32px;
-            content: " ";
-            display: block;
-    
-            height: 32px;
-            width: 100%;
-    
-            position: relative;
-            bottom: 6px;
-            left:0;
-        }
-    
-    #d-wrapper	div > * {
-            margin: 0 40px;
-        }
-    
-    #d-wrapper	.zig-zag-bottom{
-            margin: 32px 0;
-            margin-top: 0;
-            background: #1ba1e2;
-        }
-    
-    #d-wrapper	.zig-zag-top{
-            margin: 32px 0;
-            margin-bottom: 0;
-            background: #1ba1e2;
-        }
-    
-    #d-wrapper	.zig-zag-bottom,
-    #d-wrapper	.zig-zag-top{
-                  padding: 32px 0;
-        }
-    
-    #d-wrapper	p,
-    #d-wrapper  h1{
-              font-size:2em;
-              text-align:center;
-              color:#fff;
-              font-family:"PT Sans Narrow", "Fjalla One", sans-serif;
-              font-weight:900;
-              text-shadow:1px 1px 0 #1b90e2, 2px 2px 0 #1b90e2, 3px 3px 0 #1b90e2, 4px 4px 0 #1b90e2, 5px 5px 0 #1b90e2;
-    
-        }
-    
-    #d-wrapper	div.sep p,
-    #d-wrapper  div.sep h1 {
-            text-shadow:1px 1px 0 #888, 2px 2px 0 #888, 3px 3px 0 #888, 4px 4px 0 #888, 5px 5px 0 #888;
-            color: #fff;
-        }
-    
-    #d-wrapper	h1{
-             font-size:4em;
-        }
-    
-    #d-wrapper	.zig-zag-bottom:after{
-            background: 
-                        linear-gradient(-45deg, transparent 16px, #1ba1e2 0), 
-                        linear-gradient(45deg, transparent 16px, #1ba1e2  0);
-            background-repeat: repeat-x;
-            background-position: left bottom;
-            background-size: 22px 32px;
-            content: "";
-            display: block;
-    
-            width: 100%;
-            height: 32px;
-    
-             position: relative;
-            top:64px;
-            left:0px;
-        }
-    
-    #d-wrapper	p{
-            text-align: center;
-        }
-    
-    #d-wrapper	p:not(:last-child) {
-            margin-bottom: 20px;
-        }
-    .auth{
-      text-decoration: overline;
-      color: #999;
-      font-size: 2em;
+@keyframes fadeIn {
+    0% {
+        opacity:0;
     }
-    .fade-in {
-        animation: fadeIn ease 0.5s;
-        -webkit-animation: fadeIn ease 0.5s;
-        -moz-animation: fadeIn ease 0.5s;
-        -o-animation: fadeIn ease 0.5s;
-        -ms-animation: fadeIn ease 0.5s;
-        }
-        @keyframes fadeIn {
-        0% {
-            opacity:0;
-        }
-        100% {
-            opacity:1;
-        }
+    100% {
+        opacity:1;
     }
+}
 
-    @-moz-keyframes fadeIn {
-        0% {
-            opacity:0;
-        }
-        100% {
-            opacity:1;
-        }
+@-moz-keyframes fadeIn {
+    0% {
+        opacity:0;
     }
+    100% {
+        opacity:1;
+    }
+}
 
-    @-webkit-keyframes fadeIn {
-        0% {
-            opacity:0;
-        }
-        100% {
-            opacity:1;
-        }
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity:0;
     }
+    100% {
+        opacity:1;
+    }
+}
 
-    @-o-keyframes fadeIn {
-        0% {
-            opacity:0;
-        }
-        100% {
-            opacity:1;
-        }
+@-o-keyframes fadeIn {
+    0% {
+        opacity:0;
     }
+    100% {
+        opacity:1;
+    }
+}
 
-    @-ms-keyframes fadeIn {
-        0% {
-            opacity:0;
-        }
-        100% {
-            opacity:1;
-        }
+@-ms-keyframes fadeIn {
+    0% {
+        opacity:0;
     }
-    .bg-grad{
-        background: #56ccf2; /* fallback for old browsers */
-        background: -webkit-linear-gradient(to top, #56ccf2, #2f80ed); /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to top, #56ccf2, #2f80ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    100% {
+        opacity:1;
     }
+}
+.bg-grad{
+    background: #56ccf2; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #56ccf2, #2f80ed); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #56ccf2, #2f80ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
