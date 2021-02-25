@@ -4,8 +4,8 @@ include '../header.php';
 ?>
 <h3>Dashboard</h3><hr>
 <div class="row">
-<div class="col-lg-4 text-center">
-<div style="width: 80%;" class="p-4 bor-ten">
+<div class="col-lg-12 text-center"  style="display: none;">
+<div style="width: 20%;" class="p-4 bor-ten" style="display: none;">
 <h3>Connection overview</h3><br>
 <label for="load" id="loading" name="loading">Loading Data...</label>
 <canvas id="myChart" width="15" height="15">Loading...</canvas>
@@ -91,7 +91,7 @@ include '../header.php';
 </script>
 </div>
 </div>
-	<div class="col-lg-8">
+	<div class="col-lg-12">
 		<div class="p-4 bor-ten">
 			<div id="inc">
 				<div class="spinner-border text-primary"></div>&nbsp;&nbsp;Connecting to primary server please wait...
