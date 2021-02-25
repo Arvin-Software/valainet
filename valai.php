@@ -320,6 +320,12 @@ class valai{
         ));
         echo 'successfully saved';
     }
+    public static function deleteApiKey($id){
+        khatral::khquery('DELETE FROM api_key WHERE api_id=:id', array(
+            ':id'=>$id
+        ));
+        echo 'successfully deleted';
+    }
     //Display Build Information
     public static function DisplayVerBuild(){
         // Australia/Adelaide

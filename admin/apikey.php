@@ -1,6 +1,9 @@
 <?php
 $curr = 'api';
 include '../header.php';
+if(isset($_GET['id'])){
+    valai::deleteApiKey($_GET['id']);
+}
 ?>
 <h3>Api Key Creation</h3>
 <?php
@@ -33,6 +36,7 @@ if(isset($_POST['submit'])){
             <th>Name</th>
             <th>Description</th>
             <th>API Key</th>
+            <th>Actions</th>
         </tr>
         <?php
             $ret = khatral::khquerypar('SELECT * FROM api_key');
@@ -42,7 +46,9 @@ if(isset($_POST['submit'])){
                 echo '<tr><td>' . $count . '</td>';
                 echo '<td>' . $p['api_name'] . '</td>';
                 echo '<td>' . $p['api_description'] . '</td>';
-                echo '<td>' . $p['api_key_hash'] . '</td></tr>';
+                echo '<td>' . $p['api_key_hash'] . '</td>';
+                echo '<td><a href="apikey.php?act=del&id=' . $p['api_id'] . '" class="btn btn-danger">Delete</a></td>';
+                echo '</tr>';
             }
         ?>
     </table>
