@@ -342,7 +342,7 @@ class valai{
         // echo 'v2.0 alpha1 Build 11022021063340pm-r759';
         // echo 'v2.1 alpha2 build 18022021101555pm-r780';
         // echo 'v2.0 beta 2 build 25022021030010pm-r785';
-        echo 'v2.0-r845';
+        echo 'v2.0';
     }
     //Display Version number
     public static function DisplayVersion(){
