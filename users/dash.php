@@ -137,6 +137,24 @@ Build Number : 180820201150pm-alpha-r100
 </div> -->
 
 <script>
+$.post("../api.php",
+            {
+            act:"retstatxuser",
+            ip:"192.168.1.5",
+            nm:$('#modl').val(),
+            stat:"failure",
+            inbox: "influx"
+            },
+          function(data, status){
+              $('#inc1').html(data);
+              
+            //   if(data == "success"){
+            //     $('#ip1').html("Connected");
+            //   }else{
+            //       $('#ip1').html("Not Connected");
+            //   }
+            // alert(data);
+          });
   setInterval(function () {
         
         // alert('hello');

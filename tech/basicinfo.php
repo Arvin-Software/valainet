@@ -206,7 +206,7 @@ include 'header.php';
             <div class="card-footer">Need information about this section click <a href="#">here</a></div>
         </div>
         </div>
-        <div class="p-4">
+        <!-- <div class="p-4">
             <div class="card border bor-ten shadow ">
                 <div class="card-header bg-dark text-white">Processes running in computer</div>
                 <div class="card-body">
@@ -222,13 +222,13 @@ include 'header.php';
                 </div>
                 <div class="card-footer">Need information about this section click <a href="#">here</a></div>
             </div>
-        </div>
+        </div> -->
     </div>
     </div>
 </div>
 <div class="fixed-bottom text-center">
-&copy; 2020 Valai Net. All Rights Reserved.|
-Build Number : 020920200236am-alpha-r101 | An open source software
+&copy; 2021 Valai Net. All Rights Reserved.|
+<?php include '../valai.php'; valai::DisplayVerBuild() ?> | An open source software
 </div>
 <script>
 setInterval(function () {

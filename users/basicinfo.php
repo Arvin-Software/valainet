@@ -70,7 +70,7 @@ include 'header.php';
                             $device = 'Desktop / Workstation / Server';
                         }
                         echo '<tr><td>1</td><td>IP</td><td>' . $_GET['ip'] . '</td></tr>';
-                        echo '<tr><td>2</td><td>Asset Tag</td><td><a href="asset.php?id=' . $p['comp_ip'] . '&group=' . $p['comp_group'] . '&asset=' . $p['comp_asset_tag'] . '">' . $p['comp_asset_tag'] . '</a></td></tr>';
+                        echo '<tr><td>2</td><td>Asset Tag</td><td>' . $p['comp_asset_tag'] . '</td></tr>';
                         echo '<tr><td>3</td><td>Name</td><td><img src="' . $lap . '" style="width: 24px;">&nbsp;&nbsp;' . $p['comp_nm'] . '</td></tr>';
                         echo '<tr><td>4</td><td>Operating System</td><td><img src="' . $img . '" style="width: 24px;">&nbsp;&nbsp;' . $p['comp_os'] . '</td></tr>';
                         echo '<tr><td>5</td><td>Processor</td><td><img src="' . $proc . '" style="width: 24px;">&nbsp;&nbsp;' . $p['comp_processor'] . '</td></tr>';
@@ -213,7 +213,7 @@ include 'header.php';
                 <div class="card-header bg-dark text-white">IP Address to Monitor (Ping)</div>
                 <div class="card-body">
                     <div id="incip"></div>
-                    <a href="addip.php?ip=<?php echo $_GET['ip']; ?>&group=<?php echo $_GET['group']; ?>">Add IP address to monitor</a>
+                    <!-- <a href="addip.php?ip=<?php echo $_GET['ip']; ?>&group=<?php echo $_GET['group']; ?>">Add IP address to monitor</a> -->
                 </div>
                 <div class="card-footer">Need information about this section click <a href="#">here</a></div>
             </div>
