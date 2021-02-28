@@ -139,7 +139,7 @@
                 include 'includenav.php';
                 ?> 
             </div>
-            <div class="col-lg-10 fade-in shadow" id="" style=" padding: 1% 2% 2% 2%;">
+            <div class="col-lg-10 fade-in border-left" id="" style=" padding: 1% 2% 2% 2%;">
             <?php
             }
             ?>

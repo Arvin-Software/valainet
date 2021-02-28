@@ -58,6 +58,15 @@ include '../headerabout.php';
 <h3>License GNU GPL v3.0</h3>
 <iframe src="../LICENSE" frameborder="0" class="border bg-white" style="width: 100%; height: 40vh;"></iframe>
 <hr>
+<h3>Icon attributions</h3>
+<div style="overflow: auto; height: 200px;" class="border p-4">
+    <div>Icons made by <a href="https://www.flaticon.com/authors/nikita-golubev" title="Nikita Golubev">Nikita Golubev</a></div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/surang" title="surang">surang</a></div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a></div>
+    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a></div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/phatplus" title="phatplus">phatplus</a></div>
+</div>
+<hr>
 <h6 class="text-center">ValaiNet is a open source software which is licensed under GNU GPL v3 License</h6>
 <h6 class="text-center">ValaiNet Logo, ValaiNet Name, Valai Logo, Valai Name, Softview Name, Khatral name, Aves Engine Name are the properties of Arvin Soft.</h6>
 <h6 class="text-center">Icons in the project are the copyright of the respective owners.</h6>
