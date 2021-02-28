@@ -17,8 +17,8 @@ if(isset($_POST['submit'])){
     echo 'Information Saved';
 }
 ?>
-<a onclick="window.history.back();" href="#" class="btn btn-dark">Back</a>
 <div class="container">
+<a onclick="window.history.back();" href="#" class="btn btn-dark">Back</a>
     <?php
     echo '<form action="asset.php?id=' . $_GET['id'] . '&group=' . $_GET['group'] . '&asset=' . $_GET['asset'] . '" method="post">';
     $ret = khatral::khquery('SELECT * FROM asset WHERE asset_code=:code', array(
