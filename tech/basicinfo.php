@@ -227,7 +227,7 @@ include 'header.php';
     </div>
 </div>
 <div class="fixed-bottom text-center">
-&copy; 2021 Valai Net. All Rights Reserved.|
+&copy; 2021 Webder. All Rights Reserved.|
 <?php include '../valai.php'; valai::DisplayVerBuild() ?> | An open source software
 </div>
 <script>
