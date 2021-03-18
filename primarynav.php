@@ -31,9 +31,9 @@ echo '<nav class="navbar navbar-expand-lg navbar-light">
       }
       echo '</li><li class="nav-item">';
       if($mainnav=="about"){
-        echo '<a class="btn-nav nav-item nav-link btn text-left bor-five  bor-none bg-light text-dark" href="about.php"><img src="/valainet/images/info.svg" class="" style="width: 28px;">&nbsp;&nbsp;About Webder</a>';
+        echo '<a class="btn-nav nav-item nav-link btn text-left bor-five  bor-none bg-light text-dark" href="about.php"><img src="/valainet/images/info.svg" class="" style="width: 28px;">&nbsp;&nbsp;About Valai</a>';
       }else{
-        echo '<a class="btn-nav nav-item nav-link btn text-left bor-five text-light bor-none" href="about.php"><img src="/valainet/images/info.svg" class="" style="width: 28px;">&nbsp;&nbsp;About Webder</a>';
+        echo '<a class="btn-nav nav-item nav-link btn text-left bor-five text-light bor-none" href="about.php"><img src="/valainet/images/info.svg" class="" style="width: 28px;">&nbsp;&nbsp;About Valai</a>';
       }
       echo '</li><li class="nav-item">';
       if($mainnav=="users"){

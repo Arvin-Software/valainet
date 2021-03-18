@@ -6,11 +6,11 @@ include '../headerabout.php';
 <br>
 <div class="container">
 <img src="../images/valaiweb.svg" alt="Valai Logo" style="width: 128px;">
-<h3>Webder - <?php echo valai::DisplayVersion(); ?></h3>
+<h3>Valai Net - <?php echo valai::DisplayVersion(); ?></h3>
 <p>
-Webder is a IT management software that features server monitoring capabalities, <br />Software monitoring capabalities, Inventory Management, Maintenance Jobwork handling, etc
+Valai Net is a IT management software that features server monitoring capabalities, <br />Software monitoring capabalities, Inventory Management, Maintenance Jobwork handling, etc
 </p>
-<h5>Components of Webder</h5>
+<h5>Components of Valai Net</h5>
 <table class="table table-bordered">
     <tr>
         <th>Component</th>
@@ -21,7 +21,7 @@ Webder is a IT management software that features server monitoring capabalities,
         <td>v4.0</td>
     </tr>
     <tr>
-        <td>Webder Server</td>
+        <td>Valai Net Server</td>
         <td><?php valai::DisplayVerBuild(); ?></td>
     </tr>
     <tr>

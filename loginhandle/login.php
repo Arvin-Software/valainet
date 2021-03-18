@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Webder - Login</title>
+        <title>Valai Net - Login</title>
         <link rel="icon" href="/valainet/images/valaiweb.svg" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src="js/jquery.min.js"></script>
@@ -48,7 +48,7 @@
                         <div class="container bg-white shadow bor-ten" style="height: 100%; padding: 8% 8% 8% 8%;">
                             <div class="">  
                                 <img src="../images/valaiweb.svg" class="mx-auto d-block" style="width: 200px; margin: 1% 1% 1% 1%;">
-                                <h3 class="text-center">Webder</h3>
+                                <h3 class="text-center">Valai Net</h3>
                             </div>
                             
                             <form action="login.php" method="post" autocomplete="off" style="margin-bottom: 2%; padding: 3% 3% 3% 3%;">
@@ -105,7 +105,7 @@
                     <div class="col-xl-4"></div>
                 </div>  
                 <h6 class="text-center fixed-bottom" style="">
-                    <p class="text-dark">&copy; 2020-2021 Webder. All Rights Reserved.|
+                    <p class="text-dark">&copy; 2020-2021 Valai Net. All Rights Reserved.|
                     <?php include '../valai.php'; valai::DisplayVerBuild(); ?></p>
                 </h6>
             </div>
