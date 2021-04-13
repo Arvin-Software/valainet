@@ -2,7 +2,7 @@
 echo '<div class="bg-dark">';
 echo '<nav class="navbar navbar-expand-lg navbar-light">
   <!-- Brand -->
-  <img src="/valainet/images/valaiweb.svg" class="mx-auto d-block rounded-circle p-2" style="background-color: #fff; width: 48px;" alt="logo">
+  <img src="/valainet/images/logonew1.svg" class="mx-auto d-block rounded-circle p-2" style="background-color: #fff; width: 48px;" alt="logo">
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>

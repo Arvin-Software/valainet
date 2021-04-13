@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Valai Net - Login</title>
-        <link rel="icon" href="/valainet/images/valaiweb.svg" />
+        <link rel="icon" href="/valainet/images/logonew1.svg" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src="js/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -47,7 +47,7 @@
                     <div class="col-xl-4 my-auto">      
                         <div class="container bg-white shadow bor-ten" style="height: 100%; padding: 8% 8% 8% 8%;">
                             <div class="">  
-                                <img src="../images/valaiweb.svg" class="mx-auto d-block" style="width: 200px; margin: 1% 1% 1% 1%;">
+                                <img src="../images/logonew1.svg" class="mx-auto d-block" style="width: 200px; margin: 1% 1% 1% 1%;">
                                 <h3 class="text-center">Valai Net</h3>
                             </div>
                             

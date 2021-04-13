@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="images/valaiweb.svg" />
+    <link rel="icon" href="images/logonew1.svg" />
     <title>Valai</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -22,13 +22,13 @@
     </style>
 </head>
 <body class="bg-white">
-    <div class="text-center" style="margin-top: 10%;">
+    <div class="text-center" style="margin-top: 15%;">
         <div id="inc">
-        <img class="d-block mx-auto" src="images/valaiweb.svg"  style="width: 200px; margin-bottom: 3%;">
+        <img class="d-block mx-auto" src="images/logonew1.svg"  style="width: 200px; margin-bottom: 3%;">
         <div class="spinner-border text-dark"></div>
         </div>
         <div id="inc1">
-        <img class="d-block mx-auto" src="images/valaiweb.svg" style="width: 200px; margin-bottom: 0%;"><br><h1 class="text-center">Welcome to Valai Net</h1>
+        <img class="d-block mx-auto" src="images/logonew1.svg" style="width: 200px; margin-bottom: 0%;"><br><h1 class="text-center">Valai Net</h1>
         Click <a href="loginhandle/login.php">here</a> to login
         </div>
     </div>

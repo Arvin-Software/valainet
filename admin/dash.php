@@ -2,7 +2,7 @@
 $curr = 'dash';
 include '../header.php';
 ?>
-<h3>Dashboard</h3><hr>
+<h3><img src="../images/valai.svg" style="width: 30px;">&nbsp;&nbsp;&nbsp;Dashboard</h3><hr>
 <div class="row">
 <div class="col-lg-12 text-center"  style="display: none;">
 <div style="width: 20%;" class="p-4 bor-ten" style="display: none;">
