@@ -9,6 +9,8 @@ include '../header.php';
         echo 'Alert Dismissed';
     }
 ?>
+<h3><img src="../images/warning.svg" style="width: 30px;">&nbsp;&nbsp;&nbsp;Alerts</h3>
+<hr>
 <table class="table table-bordered border">
     <tr>
         <th>Sl.No</th>

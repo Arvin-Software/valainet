@@ -5,7 +5,9 @@ if(isset($_GET['id'])){
     valai::deleteApiKey($_GET['id']);
 }
 ?>
-<h3>Api Key Creation</h3>
+<div class="container-fluid">
+<h3><img src="../images/api.svg" style="width: 30px;">&nbsp;&nbsp;&nbsp;Api Key Creation</h3>
+<hr>
 <?php
 if(isset($_POST['submit'])){
     $nm = $_POST['nm'];
@@ -13,7 +15,7 @@ if(isset($_POST['submit'])){
     valai::insertApiKey($nm, $descr);
 }
 ?>
-<div class="container-fluid">
+
     <form action="apikey.php" method="post">
         <div class="form-group">
             <label for="name">Name</label>
