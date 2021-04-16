@@ -71,6 +71,5 @@ Valai Net is a IT management software that features server monitoring capabaliti
 <h6 class="text-center">ValaiNet Logo, ValaiNet Name, Webder Logo, Webder Name, Softview Name, Khatral name, Aves Engine Name are the properties of Arvin Soft.</h6>
 <h6 class="text-center">Icons in the project are the copyright of the respective owners.</h6>
 <h6 class="text-center">Components like bootstrap, ChartJS, jquery and other products used in this project are the copyright of the respective owners.</h6>
-<h6 class="text-center">&copy; 2020-2021 Webder. All Rights Reserved.</h6>
 <h6 class="text-center">&copy; 2020-2021 ValaiNet Project. All Rights Reserved.</h6>
 </div>

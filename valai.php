@@ -342,12 +342,12 @@ class valai{
         // echo 'v2.0 alpha1 Build 11022021063340pm-r759';
         // echo 'v2.1 alpha2 build 18022021101555pm-r780';
         // echo 'v2.0 beta 2 build 25022021030010pm-r785';
-        echo 'v2.0';
+        echo 'v3.0 alpha1 build 160420211123pm-r788';
     }
     //Display Version number
     public static function DisplayVersion(){
         // echo 'v1.0';
-        echo 'v2.0';
+        echo 'v3.0 alpha1';
     }
     //Display Aves Engine version
     public static function DisplayAvesEngineVersion(){
