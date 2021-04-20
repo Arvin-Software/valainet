@@ -4,12 +4,14 @@ include '../headerabout.php';
 ?>
 <br>
 <br>
-<div class="container">
+<div class="container text-center">
 <img src="../images/logonew1.svg" alt="Valai Logo" style="width: 128px;">
 <h3>Valai Net - <?php echo valai::DisplayVersion(); ?></h3>
 <p>
 Valai Net is a IT management software that features server monitoring capabalities, <br />Software monitoring capabalities, Inventory Management, Maintenance Jobwork handling, etc
 </p>
+</div>
+<div class="container">
 <h5>Components of Valai Net</h5>
 <table class="table table-bordered">
     <tr>

@@ -16,7 +16,7 @@ a{
     /* color: #FFFFFF; */
 }
 .btn-nav{
-    color: #000000;
+    color: #fff;
     transition: 0.3s;
     outline: none;
     box-shadow: none;
@@ -25,7 +25,7 @@ a{
     /* border-radius: 10px 10px 10px 10px; */
 }
 .btn-nav:hover{
-    background-color: rgba(92, 92, 92, 0.8);
+    background-color: #999999;
     outline: none;
     box-shadow: none;
     -webkit-box-shadow: none!important;
@@ -39,9 +39,9 @@ a{
     transition: 0.3s;
     outline: none;
     box-shadow: none;
-    border-radius: 20px 0px 0px 20px;
-    width: 95%;
-    margin: 5% 5% 5% 5%;
+    border-radius: 0px 0px 0px 0px;
+    /* width: 95%; */
+    /* margin: 5% 5% 5% 5%; */
 }
 .btn-nav-sec:hover{
     background-color: rgba(172, 172, 172, 0.8);
@@ -72,9 +72,9 @@ a:focus{
     color: #fff;
     /* border-right: solid rgb(2, 120, 255) 5px; */
     /* border: solid 1px; */
-    border-radius: 20px 0px 0px 20px;
-    width: 95%;
-    margin: 5% 5% 5% 5%;
+    border-radius: 0px 0px 0px 0px;
+    /* width: 95%; */
+    /* margin: 5% 5% 5% 5%; */
     /* color: #FFFFFF; */
     border-right: none;
 }
