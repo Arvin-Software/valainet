@@ -343,12 +343,13 @@ class valai{
         // echo 'v2.1 alpha2 build 18022021101555pm-r780';
         // echo 'v2.0 beta 2 build 25022021030010pm-r785';
         // echo 'v3.0 alpha1 build 160420211123pm-r788';
-        echo 'v3.0 alpha2 build 21042021031620am-r790';
+        // echo 'v3.0 alpha2 build 21042021031620am-r790';
+        echo 'v3.0 alpha3 build 09072021041220am-r801';
     }
     //Display Version number
     public static function DisplayVersion(){
         // echo 'v1.0';
-        echo 'v3.0 alpha2';
+        echo 'v3.0 alpha3';
     }
     //Display Aves Engine version
     public static function DisplayAvesEngineVersion(){

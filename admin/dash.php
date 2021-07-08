@@ -2,6 +2,7 @@
 $curr = 'dash';
 include '../header.php';
 ?>
+<div class="container-fluid">
 <h3><img src="../images/valai.svg" style="width: 30px;">&nbsp;&nbsp;&nbsp;Dashboard</h3><hr>
 <div class="row">
 <div class="col-lg-12 text-center"  style="display: none;">
@@ -91,7 +92,7 @@ include '../header.php';
 </script>
 </div>
 </div>
-	<div class="col-lg-12">
+	<div class="col-lg-12" style="height: 100vh;">
 		<div class="p-4 bor-ten">
 			<div id="inc">
 				<div class="spinner-border text-primary"></div>&nbsp;&nbsp;Connecting to primary server please wait...
