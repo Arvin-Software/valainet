@@ -119,6 +119,10 @@
         .bor-twen{
             border-radius: 20px 20px 20px 20px;
         }
+        .bor-five{
+            margin-left: 12px;
+            border-radius: 7px 7px 7px 7px;
+        }
     </style>
 </head>
 <?php
@@ -131,12 +135,12 @@
     ?>
     <div class="container-fluid">
         <div class="row" style=" height: 100vh;">
-            <div class="col-lg-2 fade-in text-black" style="background-color: #F2F2F2; padding: 0px 0px 0px 0px;">
+            <div class="col-lg-2 fade-in text-black" style="background-color: #fff; padding: 0px 0px 0px 0px;">
                 <?php
                 include 'includenav.php';
                 ?> 
             </div>
-            <div class="col-lg-10 fade-in border-left" id="" style=" padding: 1% 2% 2% 2%;">
+            <div class="col-lg-10 fade-in" id="" style=" padding: 1% 2% 2% 2%;">
             <?php
             }
             ?>

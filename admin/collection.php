@@ -2,7 +2,7 @@
 $curr = 'announce';
 include '../header.php';
 ?>
-<h3><img src="../images/ping.svg" style="width: 30px;">&nbsp;&nbsp;&nbsp;Collection</h3><hr>
+<h3><img src="../images/ping.svg" style="width: 30px;">&nbsp;&nbsp;&nbsp;Groups</h3><hr>
 <?php
 if(isset($_POST['submit'])){
     $groupnm = $_POST['nm'];

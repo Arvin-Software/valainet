@@ -28,7 +28,7 @@ input[type=number]:focus,
   box-shadow: inset 0 -1px 0 #fff;
 }
 .btn:hover{
-	background-color: #F2F2F2;
+	background-color: #f6f6f6;
 }
 </style>
 <!-- Button to Open the Modal -->

@@ -11,7 +11,7 @@ include 'header.php';
    ?> 
 </div>
 
-<div class="col-xl-10 fade-in shadow" id="" style="height: 100vh; padding: 1% 2% 2% 2%;">
+<div class="col-xl-10 fade-in" id="" style="height: 100vh; padding: 1% 2% 2% 2%;">
 <h3>Dashboard</h3><hr>
 <div class="row">
 <div class="col-lg-4 text-center"  style="display: none;">

@@ -1,11 +1,11 @@
 <?php
 include 'header.php';
-echo '<body class="bg-dark">';
-echo '<div class="container-fluid" style="margin-top: 5%;">
+echo '<body class="bg-light">';
+echo '<div class="container-fluid" style="margin-top: 2%;">
      <div class="row">
         <div class="col-sm-4"></div>
-        <div class="col-sm-4 bg-white shadow border p-4" style="border-radius: 20px 20px 20px 20px;">';
-echo '<h3><img src="../images/valaiweb.svg" style="width: 48px;">&nbsp;Valai - Automated Table Creation</h3>';
+        <div class="col-sm-4 bg-white shadow border" style="padding: 2%; border-radius: 10px 10px 10px 10px;">';
+echo '<h3><img src="../images/logonew1.svg" style="width: 48px;">&nbsp;Valai - Automated Table Creation</h3>';
 $servername = "localhost";
 $username = "root";
 $password = "";

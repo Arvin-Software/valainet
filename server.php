@@ -79,7 +79,7 @@ include 'header.php';
             if(data == 'success'){
                 $('#inc1').html('<img src="images/tick.png" style="width: 32px;">&nbsp;&nbsp;Server is booted up and running...');
             }else{
-                $('#inc1').html('<img src="images/error.svg" style="width: 28px;">&nbsp;&nbsp;Error booting up server please refer documentation ( error code : SERBT233501 )');
+                $('#inc1').html('<img src="images/warning.svg" style="width: 28px;">&nbsp;&nbsp;Error booting up server please refer documentation ( error code : SERBT233501 )');
             }
           });
            
@@ -100,7 +100,7 @@ include 'header.php';
             if(data == 'success'){
                 $('#inc2').html('<img src="images/tick.png" style="width: 32px;">&nbsp;&nbsp;Process monitor server is booted up and running...');
             }else{
-                $('#inc2').html('<img src="images/error.svg" style="width: 28px;">&nbsp;&nbsp;Error booting up Process monitor server please refer documentation ( error code : SERBT433509X )');
+                $('#inc2').html('<img src="images/warning.svg" style="width: 28px;">&nbsp;&nbsp;Error booting up Process monitor server please refer documentation ( error code : SERBT433509X )');
             }
           });
            
@@ -121,7 +121,7 @@ include 'header.php';
             if(data == 'success'){
                 $('#inc3').html('<img src="images/tick.png" style="width: 32px;">&nbsp;&nbsp;IP monitor server is booted up and running...');
             }else{
-                $('#inc3').html('<img src="images/error.svg" style="width: 28px;">&nbsp;&nbsp;Error booting up IP monitor server please refer documentation ( error code : SERBT433509X )');
+                $('#inc3').html('<img src="images/warning.svg" style="width: 28px;">&nbsp;&nbsp;Error booting up IP monitor server please refer documentation ( error code : SERBT433509X )');
             }
           });
            

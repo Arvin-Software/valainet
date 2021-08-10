@@ -1,6 +1,6 @@
 <?php
 echo '<div class="" style="background-color: #f2f2f2;">';
-echo '<nav class="navbar navbar-expand-lg navbar-light border shadow" style="margin-bottom: 2px;">
+echo '<nav class="navbar navbar-expand-lg navbar-light" style="margin-bottom: 2px;">
   <!-- Brand -->
   <img src="/valainet/images/logonew1.svg" class="p-2" style="width: 58px; margin-left: 12%;" alt="logo">
   <!-- Toggler/collapsibe Button -->
@@ -30,12 +30,6 @@ echo '<nav class="navbar navbar-expand-lg navbar-light border shadow" style="mar
         echo '<a class="btn-nav nav-item nav-link btn text-left bor-five text-dark bor-none" href="nonit.php"><img src="/valainet/images/other.svg" class="" style="width: 28px;">&nbsp;&nbsp;Non IT Equipment</a>';
       }
       echo '</li><li class="nav-item">';
-      if($mainnav=="about"){
-        echo '<a class="btn-nav nav-item nav-link btn text-left bor-five  bor-none text-light" style="background-color: #999999" href="about.php"><img src="/valainet/images/information.svg" class="" style="width: 28px;">&nbsp;&nbsp;About Valai</a>';
-      }else{
-        echo '<a class="btn-nav nav-item nav-link btn text-left bor-five text-dark bor-none" href="about.php"><img src="/valainet/images/information.svg" class="" style="width: 28px;">&nbsp;&nbsp;About Valai</a>';
-      }
-      echo '</li><li class="nav-item">';
       if($mainnav=="users"){
         echo '<a class="btn-nav nav-item nav-link btn text-left bor-five  bor-none text-light" style="background-color: #999999" href="users.php"><img src="/valainet/images/customer.svg" class="" style="width: 28px;">&nbsp;&nbsp;Access control</a>';
       }else{
@@ -46,6 +40,12 @@ echo '<nav class="navbar navbar-expand-lg navbar-light border shadow" style="mar
         echo '<a class="btn-nav nav-item nav-link btn text-left bor-five  bor-none text-light" style="background-color: #999999" href="ticket.php"><img src="/valainet/images/ticket.svg" class="" style="width: 28px;">&nbsp;&nbsp;Service Tickets</a>';
       }else{
         echo '<a class="btn-nav nav-item nav-link btn text-left bor-five text-dark bor-none" href="ticket.php"><img src="/valainet/images/ticket.svg" class="" style="width: 28px;">&nbsp;&nbsp;Service Tickets</a>';
+      }
+      echo '</li><li class="nav-item">';
+      if($mainnav=="about"){
+        echo '<a class="btn-nav nav-item nav-link btn text-left bor-five  bor-none text-light" style="background-color: #999999" href="about.php"><img src="/valainet/images/information.svg" class="" style="width: 28px;">&nbsp;&nbsp;About Valai</a>';
+      }else{
+        echo '<a class="btn-nav nav-item nav-link btn text-left bor-five text-dark bor-none" href="about.php"><img src="/valainet/images/information.svg" class="" style="width: 28px;">&nbsp;&nbsp;About Valai</a>';
       }
       echo '</li><li class="nav-item">';
       if($mainnav=="logout"){
